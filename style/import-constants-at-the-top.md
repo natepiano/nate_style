@@ -1,7 +1,10 @@
 ---
-tags: [rust, imports]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- imports
+- rust
 ---
-
 ## Import constants at the top
 
 Constants follow the same rule as types — import at the top, use the bare name inline.

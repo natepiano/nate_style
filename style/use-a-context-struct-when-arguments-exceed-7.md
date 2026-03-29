@@ -1,7 +1,10 @@
 ---
-tags: [rust, patterns]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- patterns
+- rust
 ---
-
 ## Use a context struct when arguments exceed 7
 
 When a function accumulates too many parameters, group related arguments into a struct. Bevy systems are exempt (they require owned params), but all other code should refactor.

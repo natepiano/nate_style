@@ -1,7 +1,10 @@
 ---
-tags: [rust, bevy]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- bevy
+- rust
 ---
-
 ## Prefer observers over events
 
 Use observers paired with `Event` / `EntityEvent`. Only reach for events with `EventReader` when there is a clear batch or timing requirement.

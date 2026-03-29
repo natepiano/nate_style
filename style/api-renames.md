@@ -1,7 +1,10 @@
 ---
-tags: [rust, bevy]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- bevy
+- rust
 ---
-
 ## API renames
 
 Use the current names — the old forms no longer exist.

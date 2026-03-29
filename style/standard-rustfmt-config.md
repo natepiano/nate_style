@@ -1,7 +1,10 @@
 ---
-tags: [rust, project-setup]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- project-setup
+- rust
 ---
-
 ## Standard rustfmt config
 
 Every repo has a `rustfmt.toml` at the workspace root with this exact config.

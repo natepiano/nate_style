@@ -1,7 +1,10 @@
 ---
-tags: [rust, visibility]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- rust
+- visibility
 ---
-
 ## No `pub(crate)` in nested modules
 
 `pub(crate)` is only acceptable at **crate root** in **library crates** to keep items out of the external API. Everywhere else, use `pub(super)` or bare `pub` with facade re-exports.

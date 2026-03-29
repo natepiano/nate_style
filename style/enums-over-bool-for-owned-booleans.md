@@ -1,7 +1,10 @@
 ---
-tags: [rust, lints]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- lints
+- rust
 ---
-
 ## Enums over `bool` for owned booleans
 
 Booleans only encode on/off. Enums capture intent, are extensible, and prevent `match`-on-bool code. This applies everywhere we own the type: struct fields, function arguments, and return types.

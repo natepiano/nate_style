@@ -1,7 +1,10 @@
 ---
-tags: [rust, visibility]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- rust
+- visibility
 ---
-
 ## Never use `pub mod`
 
 Declare modules with `mod`, then explicitly export with `pub use`.

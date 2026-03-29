@@ -1,7 +1,10 @@
 ---
-tags: [rust, patterns]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- patterns
+- rust
 ---
-
 ## Prefer functional patterns
 
 Use combinators like `map_or_else` instead of `match`/`if let` when the arms are simple expressions.

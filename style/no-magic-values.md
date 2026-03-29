@@ -1,7 +1,10 @@
 ---
-tags: [rust, style]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- rust
+- style
 ---
-
 ## No magic values
 
 Place all constants in `constants.rs` with descriptive names.

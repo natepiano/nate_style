@@ -1,7 +1,10 @@
 ---
-tags: [rust, visibility]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- rust
+- visibility
 ---
-
 ## Prefer local-relative imports
 
 Use `super::` for peers within the same parent. Use `crate::` only when crossing into a different top-level domain.

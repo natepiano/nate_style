@@ -1,7 +1,10 @@
 ---
-tags: [rust, lints]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- lints
+- rust
 ---
-
 ## Never `#[allow(clippy::too_many_lines)]`
 
 Extract helper functions to bring the function under the line limit.

@@ -1,7 +1,10 @@
 ---
-tags: [rust, imports]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- imports
+- rust
 ---
-
 ## Import types directly
 
 Types (structs, enums, traits) are imported by name so they appear bare at the call site.

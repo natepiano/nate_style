@@ -1,7 +1,10 @@
 ---
-tags: [rust, lints]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- lints
+- rust
 ---
-
 ## Never bare `#[allow(dead_code)]`
 
 Remove the dead code instead of suppressing the warning. A bare `#[allow(dead_code)]` without a `reason` is always a violation.

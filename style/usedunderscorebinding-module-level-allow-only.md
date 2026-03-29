@@ -1,7 +1,10 @@
 ---
-tags: [rust, lints]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- lints
+- rust
 ---
-
 ## `used_underscore_binding` — module-level allow only
 
 Clippy fires false positives on enum variant fields (e.g., `Routed { planner: Planner }`). When this happens, suppress it on the `mod` declaration in the parent module — never in `Cargo.toml`.

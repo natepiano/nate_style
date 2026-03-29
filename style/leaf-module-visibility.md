@@ -1,7 +1,10 @@
 ---
-tags: [rust, visibility]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- rust
+- visibility
 ---
-
 ## Leaf module visibility
 
 In nested leaf modules, use `pub(super)` for parent-managed details. Use bare `pub` only for items the parent intentionally re-exports.

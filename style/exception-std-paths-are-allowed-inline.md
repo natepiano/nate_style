@@ -1,7 +1,10 @@
 ---
-tags: [rust, imports]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- imports
+- rust
 ---
-
 ## Exception: `std::` paths are allowed inline
 
 Standard library paths are short and universally recognized — no import required.

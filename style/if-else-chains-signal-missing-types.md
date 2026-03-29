@@ -1,7 +1,10 @@
 ---
-tags: [rust, patterns]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- patterns
+- rust
 ---
-
 ## If/else chains signal missing types
 
 When branching on the same condition in multiple places, or when an if/else grows beyond two arms, introduce an enum to represent the states. Let `match` enforce exhaustiveness instead of relying on else branches to catch new cases.

@@ -1,7 +1,10 @@
 ---
-tags: [rust, style]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- rust
+- style
 ---
-
 ## Inline variables in format strings
 
 Use inline variable names, not positional arguments. Field accesses and method calls cannot be inlined — use `{}` for those.

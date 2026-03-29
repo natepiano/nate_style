@@ -1,7 +1,10 @@
 ---
-tags: [rust, visibility]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- rust
+- visibility
 ---
-
 ## Facade-first visibility
 
 Module roots (`mod.rs`, `lib.rs`) should only declare submodules, export the public API via `pub use`, and define the plugin. No other logic.

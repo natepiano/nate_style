@@ -1,7 +1,8 @@
 ---
-tags: [rust, lints]
+date_created: "[[2026-03-29]]"
+date_modified: "[[2026-03-29]]"
+tags: [lints, rust]
 ---
-
 ## Standard lint profile
 
 Deny all major Clippy groups and forbid fallible unwrapping. Place this in `[workspace.lints.clippy]` (or `[lints.clippy]` for standalone crates).

@@ -1,7 +1,10 @@
 ---
-tags: [rust, bevy]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- bevy
+- rust
 ---
-
 ## Use `bevy_kana` in all Bevy crates
 
 All Bevy crates should depend on `bevy_kana`. It provides three categories of utilities.

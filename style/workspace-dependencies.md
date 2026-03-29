@@ -1,7 +1,10 @@
 ---
-tags: [rust, project-setup]
+date_created: '[[2026-03-29]]'
+date_modified: '[[2026-03-29]]'
+tags:
+- project-setup
+- rust
 ---
-
 ## Workspace dependencies
 
 Define all dependencies in the workspace `Cargo.toml`. Members reference them with `.workspace = true`.
