@@ -16,3 +16,16 @@ let names: Vec<_> = items.iter().map(|item| item.name()).collect();
 // good
 let names: Vec<_> = items.iter().map(Item::name).collect();
 ```
+
+For `&str` → `String` conversions, use `String::from` rather than a closure or a fully-qualified trait path.
+
+```rust
+// bad — redundant closure
+.map(|s| s.to_string())
+
+// bad — unnecessarily verbose
+.map(std::string::ToString::to_string)
+
+// good
+.map(String::from)
+```
