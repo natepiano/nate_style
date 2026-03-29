@@ -9,4 +9,4 @@ An opinionated Rust style guide used across all of my Rust and Bevy projects.
 
 ## Usage
 
-Rules are loaded by Claude Code via the [`/rust_style`](https://github.com/natepiano/claude_commands/blob/main/commands/rust-style.md) slash command before writing or reviewing Rust code.
+Rules are loaded by claude code via the [`/rust_style`](https://github.com/natepiano/claude_commands/blob/main/commands/rust-style.md) slash command before writing or reviewing Rust code.
