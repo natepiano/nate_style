@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: prompt - all
+    filters:
+      and:
+        - file.hasTag("prompt")
+    order:
+      - file.name
+      - tags
+      - date_created
+      - date_modified
+    sort:
+      - property: file.name
+        direction: ASC

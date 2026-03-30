@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: structure - all
+    filters:
+      and:
+        - file.hasTag("structure")
+    order:
+      - file.name
+      - tags
+      - date_created
+      - date_modified
+    sort:
+      - property: file.name
+        direction: ASC

@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: clarity - all
+    filters:
+      and:
+        - file.hasTag("clarity")
+    order:
+      - file.name
+      - tags
+      - date_created
+      - date_modified
+    sort:
+      - property: file.name
+        direction: ASC
