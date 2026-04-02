@@ -11,8 +11,10 @@ Clippy fires false positives on enum variant fields (e.g., `Routed { planner: Pl
 
 ```rust
 // good — scoped to the module that triggers it
-#[allow(clippy::used_underscore_binding)] // false positive on enum variant fields
+#[allow(clippy::used_underscore_binding, reason = "false positive on enum variant fields")]
 mod enums;
 ```
 
 See `~/rust/bevy_catenary/src/routing/mod.rs` and `~/rust/bevy_catenary/src/plugin/mod.rs` for examples.
+
+**Agent rule:** The agent must not add this allow without user review, even for known false positives. See `agent-must-review-allows.md`.

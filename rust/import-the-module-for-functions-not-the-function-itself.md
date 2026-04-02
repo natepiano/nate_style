@@ -20,3 +20,5 @@ use crate::brp_tools;
 
 let result = brp_tools::execute_brp_method(method, params, port).await?;
 ```
+
+**Tooling:** `cargo mend` detects this as `prefer_module_import` (warning). Run `cargo mend --fix` to auto-fix by replacing function imports with module imports and qualifying call sites.

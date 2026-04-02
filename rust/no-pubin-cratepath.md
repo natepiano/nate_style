@@ -17,3 +17,5 @@ pub(in crate::selection::operations) fn build_label() -> String { ... }
 // selection/build_label.rs
 pub(super) fn build_label() -> String { ... }
 ```
+
+**Tooling:** `cargo mend` detects this as `forbidden_pub_in_crate` (error).

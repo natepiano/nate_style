@@ -52,3 +52,5 @@ fn detail_layout_spec(git: GitPresence, targets: TargetPresence) -> DetailLayout
     }
 }
 ```
+
+See [[no-semantic-stutter-in-field-pairs]].

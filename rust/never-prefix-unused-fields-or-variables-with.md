@@ -21,3 +21,16 @@ struct Drag {
     active: bool,
 }
 ```
+
+**Exception — RAII guards:** When a binding exists solely for its `Drop` impl (timers, lock guards, temp files), `let _name = ...` is the correct Rust idiom. The underscore prefix suppresses `unused_variable` while keeping the value alive until scope exit. Do not remove the underscore — without it, `rustc` warns. Do not remove the name — `let _ = ...` drops the value immediately.
+
+```rust
+// good — _timer lives until end of scope, Drop prints elapsed time
+let _timer = Timer::new("analyze");
+
+// bad — drops immediately, timer measures nothing
+let _ = Timer::new("analyze");
+
+// bad — rustc warns "unused variable: timer"
+let timer = Timer::new("analyze");
+```

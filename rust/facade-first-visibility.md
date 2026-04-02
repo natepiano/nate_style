@@ -18,3 +18,5 @@ mod helpers;
 pub use constants::ZOOM_TO_FIT_MARGIN;
 pub use duplicate::DuplicatePlugin;
 ```
+
+**Tooling:** `cargo mend` detects internal-only facades as `internal_parent_pub_use_facade` (warning). Run `cargo mend --fix-pub-use` to auto-fix facades that are only consumed within the parent's subtree.

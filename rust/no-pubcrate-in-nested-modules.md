@@ -17,3 +17,5 @@ pub(crate) fn build_label() -> String { ... }
 // good — use pub(super), let parent facade control exposure
 pub(super) fn build_label() -> String { ... }
 ```
+
+**Tooling:** `cargo mend` detects this as `forbidden_pub_crate` (error).

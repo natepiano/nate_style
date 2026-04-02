@@ -5,7 +5,9 @@ tags:
 - bevy
 - rust
 ---
-## Prefer observers over events
+## Prefer observers over events (consultation only)
+
+> **Not a style-fix rule.** Whether an observer can replace an event/message depends on the concrete Bevy type (e.g. `Message` vs `Event` trait). This guideline must only be applied during interactive consultation with the user, never during automated style evaluation or style-fix processes.
 
 Use observers paired with `Event` / `EntityEvent`. Only reach for events with `EventReader` when there is a clear batch or timing requirement.
 

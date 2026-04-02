@@ -16,3 +16,5 @@ use crate::app_tools::support::cargo_detector::TargetType;
 // good — shows the local peer relationship
 use super::cargo_detector::TargetType;
 ```
+
+**Tooling:** `cargo mend` detects this as `shorten_local_crate_import` (warning). Run `cargo mend --fix` to auto-fix by rewriting `crate::` imports to `super::` where applicable.

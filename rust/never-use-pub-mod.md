@@ -20,3 +20,5 @@ pub use some_module::SomeOtherType;
 ```
 
 **Exception:** `pub mod prelude;` is allowed to follow Bevy/Rust ecosystem conventions.
+
+**Tooling:** `cargo mend` detects this as `review_pub_mod` (error). Modules can be allowlisted in `mend.toml`.

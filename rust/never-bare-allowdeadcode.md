@@ -9,6 +9,10 @@ tags:
 
 Remove the dead code instead of suppressing the warning. A bare `#[allow(dead_code)]` without a `reason` is always a violation.
 
+**Enforced by:** `allow_attributes_without_reason = "deny"` in the Cargo.toml lint configuration (`cargo-toml-lints.md`). This applies to all `#[allow(...)]` attributes, not just `dead_code`.
+
+**Agent rule:** The agent must never add an `#[allow]` or fill in a `reason` field without user review. See `agent-must-review-allows.md`.
+
 When suppression is genuinely needed (e.g., fields required for deserialization, items used by derive macros), use the `reason` field to document why. The `reason` is the signal that the allow was intentional.
 
 ```rust
