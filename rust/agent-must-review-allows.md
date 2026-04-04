@@ -10,12 +10,17 @@ tags:
 
 The agent must never autonomously add an `#[allow(...)]` attribute or fill in a `reason` field. Every allow must be reviewed with the user to determine if there is a way to avoid the suppression entirely.
 
+### Fix priority
+
+Before adding or keeping any allow, the agent must work through this sequence:
+
+1. **Remove it** — delete the allow and run clippy. If it passes, the allow was stale.
+2. **Restructure** — if the lint still fires, find a way to fix the code that eliminates the need for the allow, without regressing code quality.
+3. **Propose to the user** — if neither works, explain why the allow is unavoidable and propose a reason string. The user decides the final text.
+
 ### Why
 
-`reason` fields are the signal that an allow was intentional. If the agent fills them in automatically, they lose that meaning — a machine-generated reason is no better than a bare allow. The user must decide:
-
-1. Whether the allow is necessary at all (can the code be restructured instead?)
-2. What the reason text should say
+`reason` fields are the signal that an allow was intentional. If the agent fills them in automatically, they lose that meaning — a machine-generated reason is no better than a bare allow.
 
 ### Exception: pre-authorized allows
 

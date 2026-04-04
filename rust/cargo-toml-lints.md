@@ -18,6 +18,7 @@ Deny all major Clippy groups and forbid fallible unwrapping.
 allow_attributes_without_reason = "deny"
 expect_used                     = "deny"
 panic                           = "deny"
+unreachable                     = "deny"
 unwrap_used                     = "deny"
 
 all      = { level = "deny", priority = -1 }

@@ -7,7 +7,7 @@ tags:
 ---
 ## Prefer local-relative imports
 
-Use `super::` for peers within the same parent. Use `crate::` only when crossing into a different top-level domain.
+Use `super::` for peers within the same parent. Use `crate::` when crossing into a different top-level domain or when the path would require `super::super::` or deeper.
 
 ```rust
 // bad — unnecessarily global path for a peer import
@@ -17,4 +17,16 @@ use crate::app_tools::support::cargo_detector::TargetType;
 use super::cargo_detector::TargetType;
 ```
 
-**Tooling:** `cargo mend` detects this as `shorten_local_crate_import` (warning). Run `cargo mend --fix` to auto-fix by rewriting `crate::` imports to `super::` where applicable.
+### Stop at one `super::`
+
+`super::super::` and deeper chains are hard to reason about — the reader has to count hops to figure out where the import lands. When a single `super::` isn't enough, switch to an absolute `crate::` path.
+
+```rust
+// bad — cognitive load increases with each super::
+use super::super::columns::ResolvedWidths;
+
+// good — absolute path is immediately clear
+use crate::tui::columns::ResolvedWidths;
+```
+
+**Tooling:** `cargo mend` detects this as `shorten_local_crate_import` (warning) and only rewrites single `super::` hops. Run `cargo mend --fix` to auto-fix.
