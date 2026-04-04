@@ -29,4 +29,4 @@ use super::super::columns::ResolvedWidths;
 use crate::tui::columns::ResolvedWidths;
 ```
 
-**Tooling:** `cargo mend` detects this as `shorten_local_crate_import` (warning) and only rewrites single `super::` hops. Run `cargo mend --fix` to auto-fix.
+**Tooling:** `cargo mend` detects over-qualified local paths as `shorten_local_crate_import` (warning) and deep `super::super::` chains as `replace_deep_super_import` (warning). Run `cargo mend --fix` to auto-fix both.
