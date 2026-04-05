@@ -26,6 +26,6 @@ Before adding or keeping any allow, the agent must work through this sequence:
 
 Allows that are explicitly pre-authorized by the style guide — with exact lint name, scope, and reason text — may be applied without review. Currently pre-authorized:
 
-- **Test module boilerplate** (`test-module-allow-boilerplate.md`): `expect_used` and `panic` in `#[cfg(test)]` modules
+- **Test module boilerplate** (`test-module-allow-boilerplate.md`): `expect_used`, `unwrap_used`, and `panic` in `#[cfg(test)]` modules — but only the ones actually triggered by code in the module
 
 If the style guide does not explicitly say the agent can apply an allow, the agent must ask.

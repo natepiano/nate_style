@@ -53,4 +53,16 @@ fn detail_layout_spec(git: GitPresence, targets: TargetPresence) -> DetailLayout
 }
 ```
 
+### Avoid stutter in enum names
+
+When naming the replacement enum, don't repeat the variant meaning in the type name:
+
+```rust
+// bad — "Enabled" stutters with "CableDebugEnabled"
+CableDebugEnabled::Enabled
+
+// good — type describes the domain, variant describes the state
+DebugGizmos::Enabled
+```
+
 See [[no-semantic-stutter-in-field-pairs]].
