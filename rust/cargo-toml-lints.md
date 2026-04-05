@@ -1,9 +1,10 @@
 ---
-date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-31]]'
+date_created: "[[2026-03-29]]"
+date_modified: "[[2026-03-31]]"
 tags:
-- lints
-- rust
+  - lints
+  - rust
+  - visibility
 ---
 ## Cargo.toml lint configuration
 
@@ -31,5 +32,5 @@ pedantic = { level = "deny", priority = -1 }
 
 ```toml
 multiple_crate_versions = "allow" # Transitive deps — out of our control
-redundant_pub_crate     = "allow" # `pub(super)` intentionally documents sibling-shared, non-facade items in top-level private modules
+redundant_pub_crate     = "allow" # cargo mend is the visibility authority, not clippy
 ```

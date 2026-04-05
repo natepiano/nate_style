@@ -1,13 +1,13 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-04]]'
 tags:
 - rust
 - visibility
 ---
 ## No `pub(crate)` in nested modules
 
-`pub(crate)` is only acceptable at **crate root** in **library crates** to keep items out of the external API. Everywhere else, use `pub(super)` or bare `pub` with facade re-exports.
+`pub(crate)` is acceptable in top-level modules (direct children of `main.rs` or `lib.rs`) where it says exactly what it means. In nested modules, use `pub(super)` or bare `pub` with facade re-exports — `pub(crate)` bypasses module boundaries.
 
 ```rust
 // bad — nested module using pub(crate)
