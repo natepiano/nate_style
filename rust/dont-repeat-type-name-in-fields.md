@@ -1,9 +1,9 @@
 ---
-date_created: '[[2026-03-31]]'
-date_modified: '[[2026-03-31]]'
+date_created: "[[2026-03-31]]"
+date_modified: "[[2026-03-31]]"
 tags:
-- rust
-- style
+  - rust
+  - naming
 ---
 ## Don't repeat the type name in fields
 

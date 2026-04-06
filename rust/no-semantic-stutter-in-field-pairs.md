@@ -1,10 +1,9 @@
 ---
-date_created: '[[2026-04-02]]'
-date_modified: '[[2026-04-02]]'
+date_created: "[[2026-04-02]]"
+date_modified: "[[2026-04-02]]"
 tags:
-- rust
-- style
-- naming
+  - rust
+  - naming
 ---
 ## No semantic stutter in field pairs
 

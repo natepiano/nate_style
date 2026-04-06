@@ -1,10 +1,9 @@
 ---
-date_created: '[[2026-04-04]]'
-date_modified: '[[2026-04-04]]'
+date_created: "[[2026-04-04]]"
+date_modified: "[[2026-04-04]]"
 tags:
-- constants
-- rust
-- style
+  - constants
+  - rust
 ---
 ## Constants file organization
 

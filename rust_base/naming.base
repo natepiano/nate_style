@@ -1,9 +1,9 @@
 views:
   - type: table
-    name: style - all
+    name: naming - all
     filters:
       and:
-        - file.hasTag("style")
+        - file.hasTag("naming")
     order:
       - file.name
       - tags
@@ -13,4 +13,4 @@ views:
       - property: file.name
         direction: ASC
     columnSize:
-      file.name: 308
+      file.name: 326

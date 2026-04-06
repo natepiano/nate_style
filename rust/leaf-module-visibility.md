@@ -68,4 +68,4 @@ let images = files.image_files;
 
 Re-export the type only when external code would write `use crate::utils::RepositoryFiles`.
 
-**Tooling:** `cargo mend` detects this as `suspicious_pub` (warning). Run `cargo mend --fix-pub-use` to auto-fix cases where a stale parent `pub use` can be removed.
+**Tooling:** `cargo mend` detects this as `suspicious_pub` (warning) and internal-only facades as `internal_parent_pub_use_facade` (warning). Run `cargo mend --fix-pub-use` to auto-fix stale `pub use` re-exports.
