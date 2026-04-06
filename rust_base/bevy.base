@@ -1,6 +1,6 @@
 views:
   - type: table
-    name: bevy - all
+    name: bevy
     filters:
       and:
         - file.hasTag("bevy")

@@ -1,9 +1,9 @@
 views:
   - type: table
-    name: visibility
+    name: types
     filters:
       and:
-        - file.hasTag("visibility")
+        - file.hasTag("types")
     order:
       - file.name
       - tags

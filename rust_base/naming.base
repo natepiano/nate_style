@@ -1,6 +1,6 @@
 views:
   - type: table
-    name: naming - all
+    name: naming
     filters:
       and:
         - file.hasTag("naming")

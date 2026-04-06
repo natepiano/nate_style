@@ -1,10 +1,9 @@
 ---
-date_created: '[[2026-03-31]]'
-date_modified: '[[2026-03-31]]'
+date_created: "[[2026-03-31]]"
+date_modified: "[[2026-03-31]]"
 tags:
-- agent
-- lints
-- rust
+  - lints
+  - rust
 ---
 ## Agent must review all `#[allow]` with the user
 

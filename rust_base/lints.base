@@ -1,6 +1,6 @@
 views:
   - type: table
-    name: lints - all
+    name: lints
     filters:
       and:
         - file.hasTag("lints")
@@ -12,3 +12,5 @@ views:
     sort:
       - property: file.name
         direction: ASC
+    columnSize:
+      file.name: 376

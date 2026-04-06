@@ -1,6 +1,6 @@
 views:
   - type: table
-    name: bevy - all
+    name: constants
     filters:
       and:
         - file.hasTag("constants")
@@ -12,3 +12,5 @@ views:
     sort:
       - property: file.name
         direction: ASC
+    columnSize:
+      file.name: 232

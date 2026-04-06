@@ -1,9 +1,9 @@
 ---
-date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_created: "[[2026-03-29]]"
+date_modified: "[[2026-03-29]]"
 tags:
-- project-setup
-- rust
+  - rust
+  - tests
 ---
 ## Always use nextest
 

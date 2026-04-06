@@ -1,6 +1,6 @@
 views:
   - type: table
-    name: patterns - all
+    name: patterns
     filters:
       and:
         - file.hasTag("patterns")
@@ -12,3 +12,5 @@ views:
     sort:
       - property: file.name
         direction: ASC
+    columnSize:
+      file.name: 462

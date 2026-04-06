@@ -1,9 +1,9 @@
 views:
   - type: table
-    name: project-setup - all
+    name: cargo
     filters:
       and:
-        - file.hasTag("project-setup")
+        - file.hasTag("cargo")
     order:
       - file.name
       - tags
@@ -12,3 +12,6 @@ views:
     sort:
       - property: file.name
         direction: ASC
+    columnSize:
+      file.name: 256
+      note.tags: 307

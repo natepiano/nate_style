@@ -1,6 +1,6 @@
 views:
   - type: table
-    name: imports - all
+    name: imports
     filters:
       and:
         - file.hasTag("imports")

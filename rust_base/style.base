@@ -1,6 +1,6 @@
 views:
   - type: table
-    name: style - all
+    name: style
     filters:
       and:
         - file.hasTag("style")

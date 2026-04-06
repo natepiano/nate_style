@@ -2,7 +2,6 @@
 date_created: "[[2026-03-29]]"
 date_modified: "[[2026-03-29]]"
 tags:
-  - patterns
   - rust
   - bevy
 ---
