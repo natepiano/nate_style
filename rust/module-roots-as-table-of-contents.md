@@ -1,9 +1,7 @@
 ---
-date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-05]]'
-tags:
-- rust
-- visibility
+date_created: "[[2026-04-05]]"
+date_modified: "[[2026-04-06]]"
+tags: [rust, visibility]
 ---
 ## Module roots as table of contents
 
@@ -11,12 +9,12 @@ Module roots (`mod.rs`, `lib.rs`) should only declare submodules and export the 
 
 ```rust
 // good — mod.rs as clean table of contents
-mod constants;
-mod duplicate;
-mod helpers;
+mod history;
+mod paths;
+mod types;
 
-pub use constants::ZOOM_TO_FIT_MARGIN;
-pub use duplicate::DuplicatePlugin;
+pub use history::CacheUsage;
+pub use paths::project_dir;
 ```
 
 ### Exceptions

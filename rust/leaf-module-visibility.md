@@ -11,7 +11,7 @@ Items re-exported by the parent facade must be `pub` — Rust requires `pub` at 
 
 ### `pub(crate)` at the top level
 
-In top-level modules (direct children of `main.rs` or `lib.rs`), `pub(super)` and `pub(crate)` are identical — `super` _is_ the crate root. Use `pub(crate)` because it says what it actually means. This applies to both binary and library crates.
+In top-level modules — those declared directly in `main.rs` or `lib.rs`, whether as `src/foo.rs` or `src/foo/mod.rs` — `pub(super)` and `pub(crate)` are identical because `super` _is_ the crate root. Use `pub(crate)` because it says what it actually means. This applies to both binary and library crates.
 
 ```rust
 // src/constants.rs (direct child of main.rs or lib.rs)
