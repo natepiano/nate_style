@@ -18,4 +18,8 @@ type_complexity        = "allow" # Bevy query types are inherently complex
 wildcard_imports       = "allow" # Bevy prelude convention
 ```
 
-Do not allow these in non-Bevy crates — refactor instead.
+### Mixed workspaces
+
+When a workspace contains both Bevy and non-Bevy crates, the Bevy-only allows live in `[workspace.lints.clippy]`. Cargo does not support per-member lint overrides — `lints.workspace = true` cannot be combined with a member-level `[lints.clippy]` section. Non-Bevy members inherit the Bevy allows; this is acceptable since they are permissive relaxations of pedantic lints, not warning suppressions.
+
+Do not add Bevy-only allows to a workspace that has no Bevy dependency at all.
