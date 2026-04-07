@@ -34,3 +34,5 @@ let _ = Timer::new("analyze");
 // bad — rustc warns "unused variable: timer"
 let timer = Timer::new("analyze");
 ```
+
+**Exception — observer triggers:** Bevy observer functions require a trigger parameter for their signature even when the body doesn't use it. Use `_trigger`.

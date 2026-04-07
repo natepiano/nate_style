@@ -102,9 +102,9 @@ def load_entries(
             continue
 
         if since:
-            ts = datetime.fromisoformat(entry["timestamp"]).replace(
-                tzinfo=timezone.utc
-            )
+            ts = datetime.fromisoformat(
+                entry["timestamp"].replace("Z", "+00:00")
+            ).replace(tzinfo=timezone.utc)
             if now - ts > since:
                 continue
 
@@ -119,7 +119,9 @@ def compute_stats(entries: list[LogEntry]) -> dict[str, StyleStats]:
 
     for entry in entries:
         sid = entry["style_id"]
-        ts = datetime.fromisoformat(entry["timestamp"]).replace(tzinfo=timezone.utc)
+        ts = datetime.fromisoformat(
+            entry["timestamp"].replace("Z", "+00:00")
+        ).replace(tzinfo=timezone.utc)
 
         if sid not in stats:
             stats[sid] = StyleStats(
