@@ -9,6 +9,8 @@ tags:
 
 All Bevy crates should depend on `bevy_kana`.
 
+**Exception:** If a crate has no possible uses of the `bevy_kana` public API (no spatial math, no numeric casts, no input macros), skip the dependency.
+
 **`bevy_kana` is an internal dependency.** Library crates must never leak `bevy_kana` types through their public API.
 
 ### Public API boundary
