@@ -9,17 +9,7 @@ tags:
 
 Items re-exported by the parent facade must be `pub` — Rust requires `pub` at the source for `pub use` to work (`E0364`). Items that are not re-exported should use restricted visibility.
 
-### `pub(crate)` at the top level
-
-In top-level modules — those declared directly in `main.rs` or `lib.rs`, whether as `src/foo.rs` or `src/foo/mod.rs` — `pub(super)` and `pub(crate)` are identical because `super` _is_ the crate root. Use `pub(crate)` because it says what it actually means. This applies to both binary and library crates.
-
-```rust
-// src/constants.rs (direct child of main.rs or lib.rs)
-
-pub(crate) const DEATH_VELOCITY_EPSILON: f32 = 0.001;
-```
-
-### `pub(super)` everywhere else
+### `pub(super)` in nested modules
 
 In nested modules (anything deeper than top-level), use `pub(super)` to scope items to the parent module subtree. `pub(crate)` is forbidden here because it bypasses module boundaries.
 
@@ -39,7 +29,7 @@ pub use timer::Timer;
 // DUPLICATE_OFFSET is not listed — it stays internal to actor/
 ```
 
-`cargo mend` enforces this distinction.
+`cargo mend` enforces this distinction. See also: [Use `pub(crate)` in top-level private modules](use-pubcrate-in-top-level-private-modules.md).
 
 ### Structurally-used types
 

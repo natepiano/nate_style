@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-04-05]]"
-date_modified: "[[2026-04-05]]"
+date_created: "[[2026-04-07]]"
+date_modified: "[[2026-04-07]]"
 tags:
   - report
   - style
@@ -23,7 +23,7 @@ tags:
 | [[use-a-context-struct-when-arguments-exceed-7]] | 2 | 2 | 0 | 0 | 2026-04-05 08:24 | active |
 | [[imports-go-at-the-top-of-the-file]] | 2 | 2 | 0 | 0 | 2026-04-04 08:47 | active |
 | [[no-pubcrate-in-nested-modules]] | 2 | 2 | 0 | 0 | 2026-04-04 08:39 | active |
-| [[use-bevykana-in-all-bevy-crates]] | 1 | 1 | 0 | 0 | 2026-04-04 08:39 | active |
+| [[use-bevy_kana-in-all-bevy-crates]] | 1 | 1 | 0 | 0 | 2026-04-04 08:39 | active |
 | [[prefer-local-relative-imports]] | 1 | 1 | 0 | 0 | 2026-04-04 08:28 | active |
 | [[cargo-toml-bevy-lints]] | 1 | 1 | 0 | 0 | 2026-04-04 16:51 | active |
 | [[reflectcomponent-suffices-for-brp-mutation]] | 1 | 1 | 0 | 0 | 2026-04-05 08:24 | active |
@@ -50,4 +50,4 @@ tags:
 |---|---|---|---|
 | [[cargo-toml-lints]] | nateroids | 2026-04-04 | Binary crate intentionally allows cargo_common_metadata; style guide needs policy for binary crates. |
 
-*Generated 2026-04-05T13:31:23Z from 61 log entries across 9 projects*
+*Generated 2026-04-07T01:59:09Z from 61 log entries across 9 projects*
