@@ -43,4 +43,6 @@ pub struct DimensionLock {
 // DimensionLockGizmo is a separate gizmo group — leaf file.
 ```
 
+**Delegation functions:** A `mod.rs` may contain thin forwarding functions (single-expression body that calls into a child module) when the alternative would require `pub(in crate::...)` visibility on the inner items. Delegation functions are the facade — they keep inner items at `pub(super)` while exposing them one level higher. If you find yourself writing more than a few delegation functions, consider whether the module nesting depth is justified.
+
 **Bevy plugin:** Bevy projects may also define the plugin (`impl Plugin for ...`) in `mod.rs`, since the plugin wires together the module's submodules and is conceptually part of the facade. The plugin should appear after the table of contents (after all `mod` declarations and `pub use` re-exports).
