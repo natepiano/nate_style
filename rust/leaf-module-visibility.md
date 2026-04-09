@@ -33,6 +33,8 @@ pub use timer::Timer;
 
 ### Structurally-used types
 
+If a `pub` item in a leaf module is not re-exported by the parent facade, it is only a candidate for narrowing. If it is structurally exposed through any public API position, including public function signatures, public fields of public structs, public enum variants, or nested public field graphs, it must remain `pub` and is not a style violation.
+
 If a `pub` type in a leaf module appears only in the return type of a re-exported function and no external code imports it by name, do **not** re-export it — that triggers an unused-import warning. Leave it as `pub` (required by the compiler for the function signature) without a corresponding `pub use` in the facade.
 
 ```rust
