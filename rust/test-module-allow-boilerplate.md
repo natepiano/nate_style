@@ -5,6 +5,7 @@ tags:
 - lints
 - tests
 - rust
+group: allows
 ---
 ## Test module allow boilerplate
 

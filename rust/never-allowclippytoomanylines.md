@@ -2,6 +2,7 @@
 date_created: "[[2026-04-03]]"
 date_modified: "[[2026-04-07]]"
 tags: [lints, rust]
+group: allows
 ---
 ## Never `#[allow(clippy::too_many_lines)]` in production code
 

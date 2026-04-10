@@ -4,6 +4,7 @@ date_modified: '[[2026-04-04]]'
 tags:
 - rust
 - visibility
+group: visibility
 ---
 ## No `pub(crate)` in nested modules
 

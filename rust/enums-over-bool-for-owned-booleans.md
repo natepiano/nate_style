@@ -4,6 +4,7 @@ date_modified: "[[2026-03-29]]"
 tags:
   - rust
   - types
+group: type-naming
 ---
 ## Enums over `bool` for owned booleans
 

@@ -4,6 +4,7 @@ date_modified: '[[2026-04-06]]'
 tags:
 - rust
 - visibility
+group: visibility
 ---
 ## Use `pub(crate)` in top-level private modules
 

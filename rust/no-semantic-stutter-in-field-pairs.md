@@ -4,6 +4,7 @@ date_modified: "[[2026-04-02]]"
 tags:
   - rust
   - naming
+group: type-naming
 ---
 ## No semantic stutter in field pairs
 

@@ -4,6 +4,7 @@ date_modified: "[[2026-03-31]]"
 tags:
   - lints
   - rust
+group: allows
 ---
 ## Agent must review all `#[allow]` with the user
 

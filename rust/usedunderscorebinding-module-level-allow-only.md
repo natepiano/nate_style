@@ -4,6 +4,7 @@ date_modified: '[[2026-03-29]]'
 tags:
 - lints
 - rust
+group: allows
 ---
 ## `used_underscore_binding` — module-level allow only
 

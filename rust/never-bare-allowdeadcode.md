@@ -4,6 +4,7 @@ date_modified: '[[2026-03-29]]'
 tags:
 - lints
 - rust
+group: allows
 ---
 ## Never bare `#[allow(dead_code)]`
 

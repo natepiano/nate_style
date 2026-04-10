@@ -4,6 +4,7 @@ date_modified: '[[2026-03-29]]'
 tags:
 - imports
 - rust
+group: import-style
 ---
 ## Import types directly
 
