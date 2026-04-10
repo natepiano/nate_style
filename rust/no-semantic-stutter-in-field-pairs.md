@@ -1,10 +1,10 @@
 ---
-date_created: "[[2026-04-02]]"
-date_modified: "[[2026-04-02]]"
-tags:
-  - rust
-  - naming
+date_created: '[[2026-04-10]]'
+date_modified: '[[2026-04-10]]'
 group: type-naming
+tags:
+- naming
+- rust
 ---
 ## No semantic stutter in field pairs
 

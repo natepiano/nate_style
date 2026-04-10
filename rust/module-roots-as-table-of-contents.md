@@ -1,10 +1,10 @@
 ---
-date_created: "[[2026-04-05]]"
-date_modified: "[[2026-04-06]]"
+date_created: '[[2026-04-07]]'
+date_modified: '[[2026-04-07]]'
 tags:
-  - rust
-  - visibility
-  - types
+- rust
+- types
+- visibility
 ---
 ## Module roots as table of contents
 

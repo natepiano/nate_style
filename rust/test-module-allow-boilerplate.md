@@ -1,11 +1,11 @@
 ---
-date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-31]]'
+date_created: '[[2026-04-10]]'
+date_modified: '[[2026-04-10]]'
+group: allows
 tags:
 - lints
-- tests
 - rust
-group: allows
+- tests
 ---
 ## Test module allow boilerplate
 

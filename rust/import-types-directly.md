@@ -1,10 +1,10 @@
 ---
-date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_created: '[[2026-04-10]]'
+date_modified: '[[2026-04-10]]'
+group: import-style
 tags:
 - imports
 - rust
-group: import-style
 ---
 ## Import types directly
 

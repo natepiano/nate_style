@@ -1,10 +1,10 @@
 ---
-date_created: "[[2026-03-29]]"
-date_modified: "[[2026-03-29]]"
-tags:
-  - rust
-  - types
+date_created: '[[2026-04-10]]'
+date_modified: '[[2026-04-10]]'
 group: type-naming
+tags:
+- rust
+- types
 ---
 ## Enums over `bool` for owned booleans
 

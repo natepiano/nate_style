@@ -1,10 +1,10 @@
 ---
-date_created: "[[2026-03-29]]"
-date_modified: "[[2026-03-31]]"
+date_created: '[[2026-04-04]]'
+date_modified: '[[2026-04-04]]'
 tags:
-  - lints
-  - rust
-  - visibility
+- lints
+- rust
+- visibility
 ---
 ## Cargo.toml lint configuration
 

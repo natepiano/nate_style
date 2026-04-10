@@ -1,10 +1,10 @@
 ---
-date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-04]]'
+date_created: '[[2026-04-10]]'
+date_modified: '[[2026-04-10]]'
+group: visibility
 tags:
 - rust
 - visibility
-group: visibility
 ---
 ## No `pub(crate)` in nested modules
 

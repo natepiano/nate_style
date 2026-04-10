@@ -1,10 +1,10 @@
 ---
-date_created: '[[2026-04-06]]'
-date_modified: '[[2026-04-06]]'
+date_created: '[[2026-04-10]]'
+date_modified: '[[2026-04-10]]'
+group: visibility
 tags:
 - rust
 - visibility
-group: visibility
 ---
 ## Use `pub(crate)` in top-level private modules
 
