@@ -1,10 +1,8 @@
 ---
 date_created: "[[2026-04-10]]"
 date_modified: "[[2026-04-10]]"
-tags:
-  - rust
-  - modules
 group: module-splitting
+tags: [modules, rust]
 ---
 ## Split along type ownership, not code shape
 
