@@ -39,6 +39,14 @@ class LogEntry(TypedDict):
     findings: list[FindingEntry]
 
 
+class FailureEntry(TypedDict):
+    timestamp: str
+    project: str
+    base_branch: str
+    status: str  # "error"
+    reason: str
+
+
 class StyleStats(TypedDict):
     style_id: str
     style_file: str
@@ -78,25 +86,36 @@ def parse_since(value: str) -> timedelta:
     return timedelta(days=amount * 30)
 
 
-def load_entries(
-    since: timedelta | None = None,
-    project: str | None = None,
-) -> list[LogEntry]:
-    """Load and filter JSONL entries."""
+def _load_raw_entries() -> list[dict[str, object]]:
+    """Load all JSONL entries as raw dicts."""
     if not LOG_FILE.exists():
         return []
-
-    now = datetime.now(tz=timezone.utc)
-    entries: list[LogEntry] = []
-
+    raw: list[dict[str, object]] = []
     for line in LOG_FILE.read_text().splitlines():
         line = line.strip()
         if not line:
             continue
         try:
-            entry = cast(LogEntry, json.loads(line))
+            raw.append(json.loads(line))  # pyright: ignore[reportAny]
         except json.JSONDecodeError:
             continue
+    return raw
+
+
+def load_entries(
+    since: timedelta | None = None,
+    project: str | None = None,
+) -> list[LogEntry]:
+    """Load and filter JSONL entries (excludes failure entries)."""
+    now = datetime.now(tz=timezone.utc)
+    entries: list[LogEntry] = []
+
+    for raw in _load_raw_entries():
+        # Skip failure entries (they have a top-level "status" field)
+        if "status" in raw:
+            continue
+
+        entry: LogEntry = cast(object, raw)  # pyright: ignore[reportAssignmentType]
 
         if project and entry["project"] != project:
             continue
@@ -111,6 +130,25 @@ def load_entries(
         entries.append(entry)
 
     return entries
+
+
+def load_failure_entries(since_days: int = TREND_ACTIVE_DAYS) -> list[FailureEntry]:
+    """Load failure entries from the last N days."""
+    cutoff = datetime.now(tz=timezone.utc) - timedelta(days=since_days)
+    failures: list[FailureEntry] = []
+
+    for raw in _load_raw_entries():
+        if raw.get("status") != "error":
+            continue
+
+        entry: FailureEntry = cast(object, raw)  # pyright: ignore[reportAssignmentType]
+        ts = datetime.fromisoformat(
+            entry["timestamp"].replace("Z", "+00:00")
+        ).replace(tzinfo=timezone.utc)
+        if ts >= cutoff:
+            failures.append(entry)
+
+    return failures
 
 
 def compute_stats(entries: list[LogEntry]) -> dict[str, StyleStats]:
@@ -425,6 +463,21 @@ def write_daily_report(entries: list[LogEntry]) -> None:
         for style, proj, date, reason in all_skips:
             wikilink = style_to_wikilink(style)
             lines.append(f"| {wikilink} | {proj} | {date} | {reason} |")
+        lines.append("")
+
+    # Section 5: Fix failures
+    failures = load_failure_entries()
+    if failures:
+        lines.append("## Fix Failures")
+        lines.append("")
+        lines.append("| Project | Branch | Date | Reason |")
+        lines.append("|---|---|---|---|")
+        for f in failures:
+            date = f["timestamp"][:10]
+            lines.append(
+                f"| {f['project']} | {f['base_branch']}"
+                + f" | {date} | {f['reason']} |"
+            )
         lines.append("")
 
     total_entries = len(entries)

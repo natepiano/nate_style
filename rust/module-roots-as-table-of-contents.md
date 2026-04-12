@@ -1,10 +1,11 @@
 ---
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-04-07]]'
+date_modified: '[[2026-04-11]]'
 tags:
 - rust
 - types
 - visibility
+group: module-root-contents
 ---
 ## Module roots as table of contents
 
@@ -45,4 +46,4 @@ pub struct DimensionLock {
 
 **Delegation functions:** A `mod.rs` may contain thin forwarding functions (single-expression body that calls into a child module) when the alternative would require `pub(in crate::...)` visibility on the inner items. Delegation functions are the facade — they keep inner items at `pub(super)` while exposing them one level higher. If you find yourself writing more than a few delegation functions, consider whether the module nesting depth is justified.
 
-**Bevy plugin:** Bevy projects may also define the plugin (`impl Plugin for ...`) in `mod.rs`, since the plugin wires together the module's submodules and is conceptually part of the facade. The plugin should appear after the table of contents (after all `mod` declarations and `pub use` re-exports).
+**Bevy plugin:** See `bevy-plugin-ownership.md` for where plugin definitions belong. In Bevy projects, `impl Plugin` is allowed in module roots after the table of contents.
