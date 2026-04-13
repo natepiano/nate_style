@@ -19,4 +19,16 @@ pub(crate) fn build_label() -> String { ... }
 pub(super) fn build_label() -> String { ... }
 ```
 
+### When bare `pub` is required
+
+`pub(super)` cannot be re-exported at wider visibility (E0364). If the parent facade re-exports an item as `pub(crate) use`, the source must be bare `pub`. The same applies to types that appear as fields of such structs (`private_interfaces`).
+
+```rust
+// keyboard/keys.rs — re-exported by mod.rs as pub(crate) use
+pub fn send_keys_handler(...) { ... }        // must be pub (E0364)
+
+// keyboard/keys.rs — NOT re-exported, only used within keyboard/
+pub(super) struct SendKeysRequest { ... }    // pub(super) is correct
+```
+
 **Tooling:** `cargo mend` detects this as `forbidden_pub_crate` (error).
