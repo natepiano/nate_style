@@ -7,7 +7,7 @@ tags:
 ---
 ## Collapse `if let` with inner conditions
 
-When an `if let` immediately contains another `if`, merge them with `&&`.
+When an `if let` block contains **only** another `if` (no sibling statements), merge them with `&&`.
 
 ```rust
 // bad
