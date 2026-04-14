@@ -36,3 +36,5 @@ let timer = Timer::new("analyze");
 ```
 
 **Exception — observer triggers:** Bevy observer functions require a trigger parameter for their signature even when the body doesn't use it. Use `_trigger`.
+
+**Evaluation note:** Code matching the RAII guard exception above is conforming — do not count it as a finding.
