@@ -11,6 +11,8 @@ group: module-root-contents
 
 Module roots (`mod.rs`, `lib.rs`) should only declare submodules and export the public API via `pub use`. No other logic.
 
+Place `mod` declarations first, before any `use` or `pub use` statements. Import ordering after the `mod` block is owned by rustfmt — do not manually reorder `use` vs `pub use`.
+
 ```rust
 // good — mod.rs as clean table of contents
 mod history;

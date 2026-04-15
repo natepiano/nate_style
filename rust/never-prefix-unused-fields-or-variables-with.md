@@ -35,6 +35,6 @@ let _ = Timer::new("analyze");
 let timer = Timer::new("analyze");
 ```
 
-**Exception — observer triggers:** Bevy observer functions require a trigger parameter for their signature even when the body doesn't use it. Use `_trigger`.
+**Exception — observer triggers:** Bevy observer functions require a trigger parameter for their signature even when the body doesn't use it. Prefer a descriptive name that communicates the event — e.g., `_drag`, `_added`, `_clear_selection`. A generic `_trigger` is acceptable but a meaningful name improves readability at the call site.
 
 **Evaluation note:** Code matching the RAII guard exception above is conforming — do not count it as a finding.
