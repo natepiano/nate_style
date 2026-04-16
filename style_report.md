@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-04-15]]"
-date_modified: "[[2026-04-15]]"
+date_created: "[[2026-04-16]]"
+date_modified: "[[2026-04-16]]"
 tags:
   - report
   - style
@@ -99,4 +99,15 @@ tags:
 | [[avoid-redundant-closures]] | cargo-port | 2026-04-15 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 | [[no-pubin-cratepath]] | cargo-port | 2026-04-12 | Inherent methods on App split across child modules cannot be re-exported; fixing requires module hierarchy restructuring. |
 
-*Generated 2026-04-15T09:29:20Z from 317 log entries across 12 projects*
+## Fix Failures
+
+| Project | Branch | Date | Reason |
+|---|---|---|---|
+| bevy_lagrange | main | 2026-04-16 | claude failed after producing output (see /private/tmp/claude/style_fix_bevy_lagrange.log) |
+| bevy_lagrange | main | 2026-04-16 | claude failed after producing output (see /private/tmp/claude/style_fix_bevy_lagrange.log) |
+| bevy_liminal | main | 2026-04-16 | claude failed after producing output (see /private/tmp/claude/style_fix_bevy_liminal.log) |
+| bevy_liminal | main | 2026-04-16 | claude failed after producing output (see /private/tmp/claude/style_fix_bevy_liminal.log) |
+| cargo-mend | main | 2026-04-16 | claude failed after producing output (see /private/tmp/claude/style_fix_cargo-mend.log) |
+| cargo-mend | main | 2026-04-16 | claude failed after producing output (see /private/tmp/claude/style_fix_cargo-mend.log) |
+
+*Generated 2026-04-16T11:41:19Z from 317 log entries across 12 projects*

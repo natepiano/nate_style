@@ -315,3 +315,9 @@
 {"timestamp":"2026-04-15T08:28:30Z","style_id":"shared:rust/no-magic-values.md","style_file":"no-magic-values.md","local":false,"project":"obsidian_knife","base_branch":"main","findings":[{"finding":3,"status":"applied"}]}
 {"timestamp":"2026-04-15T08:28:30Z","style_id":"shared:rust/backtick-names-in-comments.md","style_file":"backtick-names-in-comments.md","local":false,"project":"obsidian_knife","base_branch":"main","findings":[{"finding":4,"status":"applied"}]}
 {"timestamp":"2026-04-15T08:28:30Z","style_id":"shared:rust/prefer-functional-patterns.md","style_file":"prefer-functional-patterns.md","local":false,"project":"obsidian_knife","base_branch":"main","findings":[{"finding":5,"status":"applied"}]}
+{"timestamp":"2026-04-16T11:40:47Z","project":"bevy_lagrange","base_branch":"main","status":"error","reason":"claude failed after producing output (see /private/tmp/claude/style_fix_bevy_lagrange.log)"}
+{"timestamp":"2026-04-16T11:40:57Z","project":"bevy_lagrange","base_branch":"main","status":"error","reason":"claude failed after producing output (see /private/tmp/claude/style_fix_bevy_lagrange.log)"}
+{"timestamp":"2026-04-16T11:40:47Z","project":"bevy_liminal","base_branch":"main","status":"error","reason":"claude failed after producing output (see /private/tmp/claude/style_fix_bevy_liminal.log)"}
+{"timestamp":"2026-04-16T11:41:07Z","project":"bevy_liminal","base_branch":"main","status":"error","reason":"claude failed after producing output (see /private/tmp/claude/style_fix_bevy_liminal.log)"}
+{"timestamp":"2026-04-16T11:40:47Z","project":"cargo-mend","base_branch":"main","status":"error","reason":"claude failed after producing output (see /private/tmp/claude/style_fix_cargo-mend.log)"}
+{"timestamp":"2026-04-16T11:41:18Z","project":"cargo-mend","base_branch":"main","status":"error","reason":"claude failed after producing output (see /private/tmp/claude/style_fix_cargo-mend.log)"}
