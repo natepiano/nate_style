@@ -12,18 +12,18 @@ tags:
 | rust/no-magic-values.md | 11 | 41 | 1 | 1 | 0 | 0 | 2026-04-15T08:28 |
 | rust/constants-file-organization.md | 9 | 23 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
 | rust/spell-out-names.md | 9 | 22 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
-| rust/enums-over-bool-for-owned-booleans.md | 9 | 20 | 0 | 0 | 0 | 0 | 2026-04-17T14:27 |
+| rust/enums-over-bool-for-owned-booleans.md | 9 | 20 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
 | rust/backtick-names-in-comments.md | 8 | 18 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
 | rust/module-roots-as-table-of-contents.md | 9 | 14 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
 | rust/leaf-module-visibility.md | 9 | 8 | 3 | 3 | 0 | 0 | 2026-04-14T08:33 |
 | rust/imports-go-at-the-top-of-the-file.md | 7 | 13 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
-| rust/import-types-directly.md | 6 | 12 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
+| rust/import-types-directly.md | 6 | 12 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
 | rust/cargo-toml-lints.md | 10 | 10 | 0 | 1 | 0 | 1 | 2026-04-17T13:08 |
 | rust/prefer-local-relative-imports.md | 6 | 9 | 0 | 1 | 0 | 0 | 2026-04-14T08:33 |
 | rust/never-prefix-unused-fields-or-variables-with.md | 4 | 7 | 1 | 2 | 0 | 0 | 2026-04-15T08:28 |
 | rust/make-functions-const-fn-when-possible.md | 7 | 9 | 0 | 1 | 0 | 0 | 2026-04-15T08:28 |
+| rust/import-the-module-for-functions-not-the-function-itself.md | 7 | 10 | 0 | 0 | 0 | 0 | 2026-04-17T16:20 |
 | rust/no-pubcrate-in-nested-modules.md | 6 | 7 | 1 | 1 | 0 | 0 | 2026-04-15T08:28 |
-| rust/import-the-module-for-functions-not-the-function-itself.md | 6 | 9 | 0 | 0 | 0 | 0 | 2026-04-14T08:33 |
 | rust/test-module-allow-boilerplate.md | 5 | 8 | 0 | 0 | 0 | 0 | 2026-04-17T13:08 |
 | rust/use-pubcrate-in-top-level-private-modules.md | 6 | 6 | 1 | 0 | 0 | 0 | 2026-04-14T08:33 |
 | rust/use-a-context-struct-when-arguments-exceed-7.md | 4 | 6 | 1 | 0 | 0 | 0 | 2026-04-12T08:32 |
@@ -32,27 +32,30 @@ tags:
 | rust/inline-variables-in-format-strings.md | 4 | 6 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
 | rust/collapse-if-let-with-inner-conditions.md | 5 | 6 | 0 | 0 | 0 | 0 | 2026-04-13T08:31 |
 | rust/borrow-the-slice-not-the-container.md | 4 | 6 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
+| rust/avoid-repeated-field-affixes.md | 5 | 5 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
 | rust/avoid-redundant-closures.md | 4 | 3 | 0 | 2 | 0 | 0 | 2026-04-15T08:28 |
-| rust/import-constants-at-the-top.md | 4 | 4 | 0 | 0 | 0 | 0 | 2026-04-08T08:28 |
+| rust/import-constants-at-the-top.md | 5 | 4 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
 | rust/derive-test-values-from-production-constants.md | 3 | 4 | 0 | 0 | 0 | 0 | 2026-04-17T13:08 |
-| rust/avoid-repeated-field-affixes.md | 5 | 4 | 0 | 0 | 0 | 1 | 2026-04-17T14:27 |
 | rust/dont-create-traits-for-single-implementations.md | 4 | 3 | 0 | 0 | 0 | 1 | 2026-04-17T14:27 |
 | rust/bevy-plugin-ownership.md | 3 | 3 | 0 | 0 | 0 | 0 | 2026-04-13T08:31 |
 | docs/style/frontend-boundaries.md | 1 | 3 | 0 | 0 | 0 | 0 | 2026-04-13T08:31 |
 | rust/use-bevy_kana-in-all-bevy-crates.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-04T08:39 |
 | rust/type-registration-is-automatic.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-08T08:28 |
 | rust/reflectcomponent-suffices-for-brp-mutation.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-05T08:24 |
+| rust/prefer-type-named-fields-and-bindings.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-17T16:20 |
 | rust/one-use-per-line.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-12T08:32 |
 | rust/no-wildcard-reexports.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-05T08:24 |
 | rust/no-pubin-cratepath.md | 1 | 0 | 0 | 1 | 0 | 0 | 2026-04-12T09:33 |
 | rust/never-bare-allowdeadcode.md | 2 | 1 | 0 | 0 | 0 | 1 | 2026-04-17T13:08 |
 | rust/module-splitting-2-anchor-types.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-15T08:28 |
-| rust/if-else-chains-signal-missing-types.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-14T08:33 |
-| rust/fix-root-causes-never-workarounds.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-14T08:33 |
+| rust/if-else-chains-signal-missing-types.md | 2 | 1 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
+| rust/fix-root-causes-never-workarounds.md | 2 | 1 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
 | rust/cargo-toml-bevy-lints.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-04T16:51 |
 | rust/usedunderscorebinding-module-level-allow-only.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T13:08 |
 | rust/never-allowclippytoomanylines.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T13:08 |
 | rust/exception-std-paths-are-allowed-inline.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T14:27 |
+| rust/dont-repeat-type-name-in-fields.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
+| rust/dont-repeat-enum-domain-in-variant-names.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T16:20 |
 | rust/directory-modules-for-child-modules.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T14:27 |
 | rust/always-use-nextest.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T13:08 |
 | rust/always-use-cargo-mend.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-17T13:08 |
@@ -61,18 +64,18 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 50 | 0 | 2 | 0.18 |
-| bevy_catenary | 50 | 0 | 5 | 0.42 |
-| bevy_diegetic | 50 | 0 | 2 | 0.18 |
-| bevy_kana | 50 | 0 | 1 | 0.02 |
-| bevy_lagrange | 50 | 0 | 3 | 0.46 |
-| bevy_liminal | 50 | 0 | 2 | 0.24 |
-| bevy_window_manager | 50 | 0 | 2 | 0.24 |
-| cargo-mend | 44 | 0 | 2 | 0.3 |
-| cargo-port | 43 | 0 | 5 | 0.53 |
-| hana | 50 | 0 | 3 | 0.26 |
-| nateroids | 50 | 0 | 5 | 0.42 |
-| obsidian_knife | 40 | 0 | 7 | 1.02 |
+| bevy_brp | 49 | 0 | 2 | 0.18 |
+| bevy_catenary | 49 | 0 | 5 | 0.41 |
+| bevy_diegetic | 49 | 0 | 2 | 0.18 |
+| bevy_kana | 49 | 0 | 1 | 0.02 |
+| bevy_lagrange | 49 | 0 | 3 | 0.45 |
+| bevy_liminal | 49 | 0 | 2 | 0.22 |
+| bevy_window_manager | 49 | 0 | 2 | 0.24 |
+| cargo-mend | 43 | 0 | 2 | 0.3 |
+| cargo-port | 42 | 0 | 5 | 0.55 |
+| hana | 49 | 0 | 3 | 0.24 |
+| nateroids | 49 | 0 | 5 | 0.43 |
+| obsidian_knife | 39 | 0 | 7 | 1.15 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
@@ -98,4 +101,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-04-17T15:32:09Z from 71 recorded runs*
+*Generated 2026-04-17T16:20:21Z from 72 recorded runs*
