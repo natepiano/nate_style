@@ -1,28 +1,23 @@
 ---
-date_created: '[[2026-03-31]]'
-date_modified: '[[2026-04-05]]'
-tags:
-- naming
-- rust
+date_created: "[[2026-04-17]]"
+date_modified: "[[2026-04-17]]"
+group: structs
+tags: [naming, rust]
 ---
 ## Don't repeat the type name in fields
 
-When every field in a struct shares a common prefix or suffix, the repetition adds noise without information — the struct name already provides that context. Name fields for what they hold, not what they belong to.
+The enclosing struct already provides the domain. Field names should describe the member, not restate the struct name.
 
 ```rust
-// bad — every field ends with _count
-struct Summary {
-    error_count:   usize,
-    warning_count: usize,
-    fixable_count: usize,
+// bad
+struct Point {
+    point_x: u32,
+    point_y: u32,
 }
 
-// good — the struct name provides context
-struct Summary {
-    errors:   usize,
-    warnings: usize,
-    fixable:  usize,
+// good
+struct Point {
+    x: u32,
+    y: u32,
 }
 ```
-
-This is enforced by `clippy::struct_field_names`. If serialization requires specific key names, use `#[serde(rename = "...")]` rather than baking wire-format names into the Rust API.

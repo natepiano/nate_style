@@ -1,10 +1,8 @@
 ---
-date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-10]]'
-group: type-naming
-tags:
-- rust
-- types
+date_created: "[[2026-04-17]]"
+date_modified: "[[2026-04-17]]"
+group: enums
+tags: [rust, types]
 ---
 ## Enums over `bool` for owned booleans
 
@@ -59,11 +57,17 @@ fn detail_layout_spec(git: GitPresence, targets: TargetPresence) -> DetailLayout
 When naming the replacement enum, don't repeat the variant meaning in the type name:
 
 ```rust
-// bad — "Enabled" stutters with "CableDebugEnabled"
-CableDebugEnabled::Enabled
+// bad
+enum CableDebugEnabled {
+    Enabled,
+    Disabled,
+}
 
-// good — type describes the domain, variant describes the state
-DebugGizmos::Enabled
+// good
+enum DebugGizmos {
+    Enabled,
+    Disabled,
+}
 ```
 
-See [[no-semantic-stutter-in-field-pairs]].
+See [[dont-repeat-enum-domain-in-variant-names]].
