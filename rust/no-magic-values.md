@@ -1,7 +1,7 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-04-06]]"
-group: constants
+date_modified: "[[2026-04-19]]"
+see_also: "[[constants-file-organization]]"
 tags: [constants, rust]
 ---
 ## No magic values

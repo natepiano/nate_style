@@ -2,7 +2,7 @@
 clippy: single_component_path_imports
 date_created: "[[2026-04-19]]"
 date_modified: "[[2026-04-19]]"
-group: import-style
+see_also: "[[import-the-module-for-functions-not-the-function-itself]]"
 tags: [imports, rust]
 ---
 ## No single-component `use` imports
@@ -19,7 +19,7 @@ let syntax = syn::parse_file(&text)?;
 let syntax = syn::parse_file(&text)?;
 ```
 
-### Interaction with [[import-the-module-for-functions-not-the-function-itself]]
+### External crate roots
 
 The module-import rule says to call free functions as `module::function()` rather than importing the free function directly. For items inside a crate the canonical form is `use crate::some_module;` + `some_module::function(...)`. For an **external crate's root**, there is no local `use` to write — the crate name is already the module, so call `external_crate::function(...)` inline.
 

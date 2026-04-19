@@ -1,10 +1,10 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-10]]"
+date_modified: "[[2026-04-19]]"
+see_also: "[[split-by-type-ownership]]"
 tags:
   - rust
   - modules
-group: module-splitting
 ---
 ## Anchor types drive submodule boundaries and names
 
@@ -54,7 +54,7 @@ project/
   paths.rs          # anchor: AbsolutePath (+ DisplayPath, home_relative_path)
   git.rs            # cohort: GitOrigin, GitInfo, GitPathState, detection functions
   cargo.rs          # cohort: ProjectType, ExampleGroup, from_cargo_toml, target collection
-  types.rs          # anchor: RustProject<Kind> (+ NonRustProject, WorktreeGroup, RootItem, traversal)
+  rust_project.rs   # anchor: RustProject<Kind> (+ NonRustProject, WorktreeGroup, RootItem, traversal)
   member_group.rs   # anchor: MemberGroup (+ count_rs_files_recursive)
 ```
 
@@ -68,4 +68,8 @@ helpers.rs
 utils.rs
 common.rs
 misc.rs
+types.rs
+model.rs
 ```
+
+`types.rs` and `model.rs` describe code shape, not domain — they signal that types were grouped by what they *are* (data definitions) instead of what they *do*. When every submodule has an anchor type, the anchor's name is always more predictive than "types."

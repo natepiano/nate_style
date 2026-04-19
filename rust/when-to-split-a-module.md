@@ -1,10 +1,13 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-10]]"
+date_modified: "[[2026-04-19]]"
 tags:
   - rust
   - modules
-group: module-splitting
+see_also:
+  - "[[types-live-with-their-behavior]]"
+  - "[[name-submodules-after-anchor-types]]"
+  - "[[split-by-type-ownership]]"
 ---
 ## When to split a module into submodules
 

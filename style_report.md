@@ -19,8 +19,8 @@ tags:
 | rust/imports-go-at-the-top-of-the-file.md | 10 | 14 | 0 | 0 | 0 | 6 | 2026-04-19T08:52 |
 | rust/import-types-directly.md | 9 | 14 | 0 | 0 | 0 | 9 | 2026-04-19T08:52 |
 | rust/avoid-repeated-field-affixes.md | 10 | 13 | 0 | 0 | 0 | 6 | 2026-04-19T08:52 |
+| rust/when-to-split-a-module.md | 8 | 10 | 0 | 2 | 0 | 4 | 2026-04-19T08:52 |
 | rust/never-prefix-unused-fields-or-variables-with.md | 7 | 9 | 1 | 2 | 0 | 4 | 2026-04-19T08:52 |
-| rust/module-splitting-1-when-to-split.md | 8 | 10 | 0 | 2 | 0 | 4 | 2026-04-19T08:52 |
 | rust/import-the-module-for-functions-not-the-function-itself.md | 10 | 12 | 0 | 0 | 0 | 8 | 2026-04-19T08:52 |
 | rust/prefer-local-relative-imports.md | 9 | 10 | 0 | 1 | 0 | 5 | 2026-04-19T08:52 |
 | rust/cargo-toml-lints.md | 12 | 10 | 0 | 1 | 0 | 10 | 2026-04-19T08:52 |
@@ -38,10 +38,10 @@ tags:
 | rust/bevy-plugin-ownership.md | 8 | 5 | 0 | 0 | 1 | 3 | 2026-04-18T20:05 |
 | rust/prefer-type-named-fields-and-bindings.md | 10 | 5 | 0 | 0 | 0 | 9 | 2026-04-19T08:52 |
 | rust/import-constants-at-the-top.md | 9 | 5 | 0 | 0 | 0 | 10 | 2026-04-19T08:52 |
-| rust/module-splitting-2-anchor-types.md | 5 | 3 | 0 | 0 | 1 | 6 | 2026-04-19T08:52 |
+| rust/name-submodules-after-anchor-types.md | 5 | 3 | 0 | 0 | 1 | 6 | 2026-04-19T08:52 |
 | rust/fix-root-causes-never-workarounds.md | 9 | 4 | 0 | 0 | 0 | 9 | 2026-04-19T08:52 |
 | rust/dont-create-traits-for-single-implementations.md | 10 | 4 | 0 | 0 | 0 | 10 | 2026-04-19T08:52 |
-| rust/module-splitting-3-type-ownership.md | 5 | 2 | 0 | 0 | 1 | 6 | 2026-04-19T08:52 |
+| rust/split-by-type-ownership.md | 5 | 2 | 0 | 0 | 1 | 6 | 2026-04-19T08:52 |
 | docs/style/frontend-boundaries.md | 1 | 3 | 0 | 0 | 0 | 0 | 2026-04-13T08:31 |
 | rust/omit-return-in-expression-position.md | 4 | 2 | 0 | 0 | 0 | 5 | 2026-04-19T08:52 |
 | rust/agent-must-review-allows.md | 10 | 2 | 0 | 0 | 0 | 12 | 2026-04-19T08:52 |
@@ -78,18 +78,18 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 48 | 0 | 2 | 0.5 |
-| bevy_catenary | 48 | 0 | 5 | 0.81 |
-| bevy_diegetic | 48 | 0 | 2 | 0.19 |
-| bevy_kana | 48 | 0 | 2 | 1.0 |
-| bevy_lagrange | 48 | 0 | 3 | 0.71 |
-| bevy_liminal | 48 | 0 | 3 | 1.21 |
-| bevy_window_manager | 48 | 0 | 2 | 0.67 |
-| cargo-mend | 42 | 0 | 2 | 0.64 |
-| cargo-port | 41 | 0 | 5 | 0.56 |
-| hana | 48 | 0 | 3 | 0.58 |
-| nateroids | 48 | 1 | 5 | 1.4 |
-| obsidian_knife | 38 | 4 | 8 | 4.92 |
+| bevy_brp | 60 | 0 | 4 | 0.63 |
+| bevy_catenary | 60 | 0 | 5 | 0.87 |
+| bevy_diegetic | 60 | 0 | 2 | 0.2 |
+| bevy_kana | 60 | 0 | 2 | 0.95 |
+| bevy_lagrange | 60 | 0 | 3 | 0.78 |
+| bevy_liminal | 60 | 0 | 3 | 1.2 |
+| bevy_window_manager | 61 | 0 | 2 | 0.69 |
+| cargo-mend | 53 | 0 | 6 | 0.79 |
+| cargo-port | 52 | 0 | 5 | 0.58 |
+| hana | 60 | 0 | 3 | 0.65 |
+| nateroids | 60 | 0 | 5 | 1.33 |
+| obsidian_knife | 49 | 0 | 8 | 4.61 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
@@ -102,15 +102,15 @@ tags:
 | cargo-mend | rust/no-magic-values.md | 2 | 1 | 0 | 0 | APP_NAME and GLOBAL_CONFIG_FILE could not be moved due to include!() in test harness breaking super::constants resolution. |
 | bevy_window_manager | rust/leaf-module-visibility.md | 2 | 0 | 1 | 0 | Type is structurally exposed in a pub fn signature; narrowing causes private_interfaces error. |
 | nateroids | rust/leaf-module-visibility.md | 2 | 0 | 1 | 0 | Types are structurally exposed through pub NateroidSettings, narrowing causes E0446 |
+| cargo-mend | rust/when-to-split-a-module.md | 1 | 0 | 1 | 0 | Splitting a 3725-line rustc driver file is too large and risky for automated style fix. |
+| hana | rust/when-to-split-a-module.md | 1 | 0 | 1 | 0 | Module splitting is a major structural refactoring too risky for automated style fix. |
 | bevy_lagrange | rust/use-a-context-struct-when-arguments-exceed-7.md | 1 | 1 | 0 | 0 | Bevy Query invariant lifetimes prevent bundling queries into a struct; only non-query params were bundled. |
+| bevy_window_manager | rust/split-by-type-ownership.md | 1 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
 | hana | rust/prefer-local-relative-imports.md | 1 | 0 | 1 | 0 | Recommended super::super:: pattern contradicts style guide which says stop at one super::. |
 | cargo-port | rust/no-pubin-cratepath.md | 1 | 0 | 1 | 0 | Inherent methods on App split across child modules cannot be re-exported; fixing requires module hierarchy restructuring. |
 | bevy_diegetic | rust/no-magic-values.md | 1 | 0 | 1 | 0 | Moving 28 constants across 9 files into 3 new constants.rs files risks compile errors alongside 11 other concurrent findings. |
 | hana | rust/never-prefix-unused-fields-or-variables-with.md | 1 | 1 | 0 | 0 | Style guide exempts observer triggers with _trigger naming; only non-standard names and non-observer _app were fixed. |
-| bevy_window_manager | rust/module-splitting-3-type-ownership.md | 1 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
-| bevy_window_manager | rust/module-splitting-2-anchor-types.md | 1 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
-| cargo-mend | rust/module-splitting-1-when-to-split.md | 1 | 0 | 1 | 0 | Splitting a 3725-line rustc driver file is too large and risky for automated style fix. |
-| hana | rust/module-splitting-1-when-to-split.md | 1 | 0 | 1 | 0 | Module splitting is a major structural refactoring too risky for automated style fix. |
+| bevy_window_manager | rust/name-submodules-after-anchor-types.md | 1 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
 | bevy_liminal | rust/make-functions-const-fn-when-possible.md | 1 | 0 | 1 | 0 | Msaa::samples() is not const fn in Bevy 0.18, so from_msaa cannot be made const fn. |
 | bevy_diegetic | rust/leaf-module-visibility.md | 1 | 0 | 1 | 0 | All 5 items are structurally required to be pub because they appear in public interfaces. |
 | cargo-port | rust/leaf-module-visibility.md | 1 | 1 | 0 | 0 | Only narrowed RetrySpawnMode flagged by cargo mend; remaining bare pub items deferred to avoid E0364 risk. |
@@ -120,4 +120,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-04-19T08:52:53Z from 90 recorded runs*
+*Generated 2026-04-19T20:35:13Z from 90 recorded runs*

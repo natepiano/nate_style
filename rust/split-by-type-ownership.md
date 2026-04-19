@@ -1,7 +1,9 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-10]]"
-group: module-splitting
+date_modified: "[[2026-04-19]]"
+see_also:
+  - "[[name-submodules-after-anchor-types]]"
+  - "[[types-live-with-their-behavior]]"
 tags: [modules, rust]
 ---
 ## Split along type ownership, not code shape

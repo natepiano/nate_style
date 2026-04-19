@@ -1,7 +1,6 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-10]]"
-group: allows
+date_modified: "[[2026-04-19]]"
 tags: [lints, rust]
 ---
 ## Agent must review all `#[allow]` with the user
