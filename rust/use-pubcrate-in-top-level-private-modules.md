@@ -1,7 +1,7 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-10]]'
-group: visibility
+date_modified: '[[2026-04-19]]'
+see_also: "[[leaf-module-visibility]]"
 tags:
 - rust
 - visibility

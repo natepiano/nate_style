@@ -1,7 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-17]]"
-group: enums
+date_modified: "[[2026-04-19]]"
 tags: [naming, rust]
 ---
 ## Don't repeat the enum domain in variant names
