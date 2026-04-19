@@ -1,0 +1,140 @@
+{
+  "budget": 5,
+  "last_unit_id": "group::module-splitting",
+  "last_unit_result": "counted",
+  "phase": "evaluation",
+  "reviewed_unit_ids": [
+    "group::allows",
+    "rust/exception-std-paths-are-allowed-inline.md",
+    "rust/fix-root-causes-never-workarounds.md",
+    "rust/if-else-chains-signal-missing-types.md",
+    "group::import-style",
+    "rust/imports-go-at-the-top-of-the-file.md",
+    "rust/inline-variables-in-format-strings.md",
+    "group::visibility",
+    "rust/messages-are-strongly-discouraged.md",
+    "rust/methods-that-dont-use-self-should-be-associated-functions.md",
+    "group::module-splitting"
+  ],
+  "reviewed_units": [
+    {
+      "guideline_id": "rust/agent-must-review-allows.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/never-allow-clippy-too-many-lines.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/never-bare-allowdeadcode.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/test-module-allow-boilerplate.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/usedunderscorebinding-module-level-allow-only.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/exception-std-paths-are-allowed-inline.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/fix-root-causes-never-workarounds.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/if-else-chains-signal-missing-types.md"
+    },
+    {
+      "guideline_id": "rust/import-constants-at-the-top.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/import-the-module-for-functions-not-the-function-itself.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/import-types-directly.md"
+    },
+    {
+      "guideline_id": "rust/imports-go-at-the-top-of-the-file.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/inline-variables-in-format-strings.md"
+    },
+    {
+      "guideline_id": "rust/leaf-module-visibility.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/no-pubcrate-in-nested-modules.md"
+    },
+    {
+      "guideline_id": "rust/use-pubcrate-in-top-level-private-modules.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/messages-are-strongly-discouraged.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/methods-that-dont-use-self-should-be-associated-functions.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/module-splitting-1-when-to-split.md"
+    },
+    {
+      "guideline_id": "rust/module-splitting-2-anchor-types.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/module-splitting-3-type-ownership.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    }
+  ],
+  "scored_count": 5,
+  "start_time": "2026-04-19T08:11:06Z",
+  "updated_at": "2026-04-19T08:21:42Z"
+}

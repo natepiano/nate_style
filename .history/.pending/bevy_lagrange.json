@@ -1,21 +1,27 @@
 {
   "budget": 5,
-  "last_unit_id": "rust/if-else-chains-signal-missing-types.md",
+  "last_unit_id": "group::visibility",
   "last_unit_result": "counted",
   "phase": "evaluation",
   "reviewed_unit_ids": [
     "group::allows",
-    "group::visibility",
+    "rust/directory-modules-for-child-modules.md",
+    "group::enums",
+    "rust/exception-std-paths-are-allowed-inline.md",
+    "rust/if-else-chains-signal-missing-types.md",
+    "group::import-style",
+    "rust/inline-variables-in-format-strings.md",
     "rust/messages-are-strongly-discouraged.md",
     "rust/methods-that-dont-use-self-should-be-associated-functions.md",
     "group::module-splitting",
     "rust/name-bindings-to-match-parameters.md",
+    "rust/never-prefix-unused-fields-or-variables-with.md",
     "rust/never-use-pub-mod.md",
+    "rust/reflectcomponent-suffices-for-brp-mutation.md",
+    "rust/use-a-context-struct-when-arguments-exceed-7.md",
     "rust/no-pubin-cratepath.md",
     "rust/no-wildcard-reexports.md",
     "rust/omit-return-in-expression-position.md",
-    "rust/one-use-per-line.md",
-    "rust/prefer-local-relative-imports.md",
     "rust/prefer-observers-over-events.md",
     "rust/prefer-observers-over-polling.md",
     "rust/type-registration-is-automatic.md",
@@ -34,14 +40,12 @@
     "rust/cargo-toml-bevy-lints.md",
     "rust/cargo-toml-lints.md",
     "rust/collapse-if-let-with-inner-conditions.md",
+    "group::constants",
     "rust/current-version-bevy-0180.md",
     "rust/derive-test-values-from-production-constants.md",
-    "rust/directory-modules-for-child-modules.md",
     "rust/dont-create-traits-for-single-implementations.md",
-    "group::enums",
-    "rust/exception-std-paths-are-allowed-inline.md",
     "rust/fix-root-causes-never-workarounds.md",
-    "rust/if-else-chains-signal-missing-types.md"
+    "group::visibility"
   ],
   "reviewed_units": [
     {
@@ -75,19 +79,53 @@
       }
     },
     {
-      "guideline_id": "rust/leaf-module-visibility.md",
+      "guideline_id": "rust/directory-modules-for-child-modules.md",
       "outcome": {
         "status": "no_findings"
       }
     },
     {
-      "guideline_id": "rust/no-pubcrate-in-nested-modules.md",
+      "guideline_id": "rust/dont-repeat-enum-domain-in-variant-names.md",
       "outcome": {
         "status": "no_findings"
       }
     },
     {
-      "guideline_id": "rust/use-pubcrate-in-top-level-private-modules.md",
+      "finding_source": "new",
+      "guideline_id": "rust/enums-over-bool-for-owned-booleans.md"
+    },
+    {
+      "guideline_id": "rust/exception-std-paths-are-allowed-inline.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/if-else-chains-signal-missing-types.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/import-constants-at-the-top.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/import-the-module-for-functions-not-the-function-itself.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/import-types-directly.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/inline-variables-in-format-strings.md",
       "outcome": {
         "status": "no_findings"
       }
@@ -109,12 +147,16 @@
       "guideline_id": "rust/module-splitting-1-when-to-split.md"
     },
     {
-      "finding_source": "new",
-      "guideline_id": "rust/module-splitting-2-anchor-types.md"
+      "guideline_id": "rust/module-splitting-2-anchor-types.md",
+      "outcome": {
+        "status": "no_findings"
+      }
     },
     {
-      "finding_source": "new",
-      "guideline_id": "rust/module-splitting-3-type-ownership.md"
+      "guideline_id": "rust/module-splitting-3-type-ownership.md",
+      "outcome": {
+        "status": "no_findings"
+      }
     },
     {
       "guideline_id": "rust/name-bindings-to-match-parameters.md",
@@ -123,7 +165,23 @@
       }
     },
     {
+      "finding_source": "new",
+      "guideline_id": "rust/never-prefix-unused-fields-or-variables-with.md"
+    },
+    {
       "guideline_id": "rust/never-use-pub-mod.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/reflectcomponent-suffices-for-brp-mutation.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/use-a-context-struct-when-arguments-exceed-7.md",
       "outcome": {
         "status": "no_findings"
       }
@@ -147,26 +205,16 @@
       }
     },
     {
-      "guideline_id": "rust/one-use-per-line.md",
-      "outcome": {
-        "status": "no_findings"
-      }
-    },
-    {
-      "guideline_id": "rust/prefer-local-relative-imports.md",
-      "outcome": {
-        "status": "no_findings"
-      }
-    },
-    {
       "guideline_id": "rust/prefer-observers-over-events.md",
       "outcome": {
         "status": "no_findings"
       }
     },
     {
-      "finding_source": "new",
-      "guideline_id": "rust/prefer-observers-over-polling.md"
+      "guideline_id": "rust/prefer-observers-over-polling.md",
+      "outcome": {
+        "status": "no_findings"
+      }
     },
     {
       "guideline_id": "rust/type-registration-is-automatic.md",
@@ -175,8 +223,10 @@
       }
     },
     {
-      "finding_source": "new",
-      "guideline_id": "rust/use-bevy_kana-in-all-bevy-crates.md"
+      "guideline_id": "rust/use-bevy_kana-in-all-bevy-crates.md",
+      "outcome": {
+        "status": "no_findings"
+      }
     },
     {
       "guideline_id": "rust/use-usizefrombool-for-bool-to-integer-conversion.md",
@@ -233,8 +283,10 @@
       }
     },
     {
-      "finding_source": "new",
-      "guideline_id": "rust/backtick-names-in-comments.md"
+      "guideline_id": "rust/backtick-names-in-comments.md",
+      "outcome": {
+        "status": "no_findings"
+      }
     },
     {
       "guideline_id": "rust/bevy-plugin-ownership.md",
@@ -279,6 +331,16 @@
       }
     },
     {
+      "guideline_id": "rust/constants-file-organization.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/no-magic-values.md"
+    },
+    {
       "guideline_id": "rust/current-version-bevy-0180.md",
       "outcome": {
         "status": "no_findings"
@@ -291,31 +353,7 @@
       }
     },
     {
-      "guideline_id": "rust/directory-modules-for-child-modules.md",
-      "outcome": {
-        "status": "no_findings"
-      }
-    },
-    {
       "guideline_id": "rust/dont-create-traits-for-single-implementations.md",
-      "outcome": {
-        "status": "no_findings"
-      }
-    },
-    {
-      "guideline_id": "rust/dont-repeat-enum-domain-in-variant-names.md",
-      "outcome": {
-        "status": "no_findings"
-      }
-    },
-    {
-      "guideline_id": "rust/enums-over-bool-for-owned-booleans.md",
-      "outcome": {
-        "status": "no_findings"
-      }
-    },
-    {
-      "guideline_id": "rust/exception-std-paths-are-allowed-inline.md",
       "outcome": {
         "status": "no_findings"
       }
@@ -328,10 +366,22 @@
     },
     {
       "finding_source": "new",
-      "guideline_id": "rust/if-else-chains-signal-missing-types.md"
+      "guideline_id": "rust/leaf-module-visibility.md"
+    },
+    {
+      "guideline_id": "rust/no-pubcrate-in-nested-modules.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/use-pubcrate-in-top-level-private-modules.md",
+      "outcome": {
+        "status": "no_findings"
+      }
     }
   ],
   "scored_count": 5,
   "start_time": "2026-04-19T08:11:05Z",
-  "updated_at": "2026-04-19T08:27:01Z"
+  "updated_at": "2026-04-19T08:28:34Z"
 }

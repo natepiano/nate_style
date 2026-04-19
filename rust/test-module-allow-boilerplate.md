@@ -1,4 +1,5 @@
 ---
+clippy: [expect_used, unwrap_used, panic]
 date_created: '[[2026-04-10]]'
 date_modified: '[[2026-04-10]]'
 group: allows
