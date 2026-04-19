@@ -10,7 +10,7 @@ tags:
 
 Module roots (`mod.rs`, `lib.rs`) should only declare submodules and export the public API via `pub use`. No other logic.
 
-Place `mod` declarations first, before any `use` or `pub use` statements. Import ordering after the `mod` block is owned by rustfmt — do not manually reorder `use` vs `pub use`.
+Place `mod` declarations first, before any `use` or `pub use` statements. Import ordering after the `mod` block is owned by rustfmt — do not manually reorder `use` vs `pub use`. In particular, rustfmt may interleave plain `use` lines with `pub use` re-exports when both reference the same crate path; that is the expected output and does not break the table-of-contents rule.
 
 ```rust
 // good — mod.rs as clean table of contents
@@ -20,6 +20,17 @@ mod types;
 
 pub use history::CacheUsage;
 pub use paths::project_dir;
+```
+
+```rust
+// also good — rustfmt interleaves `use` and `pub use` by path,
+// the `mod` block at the top is what matters.
+mod animation;
+mod types;
+
+pub use animation::CameraMove;
+use bevy::prelude::*;
+pub use types::ActiveCameraData;
 ```
 
 ### Exceptions
