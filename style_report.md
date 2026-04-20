@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-19]]"
+date_created: "[[2026-04-20]]"
+date_modified: "[[2026-04-20]]"
 tags:
   - report
   - style
@@ -45,7 +45,7 @@ tags:
 | docs/style/frontend-boundaries.md | 1 | 3 | 0 | 0 | 0 | 0 | 2026-04-13T08:31 |
 | rust/omit-return-in-expression-position.md | 4 | 2 | 0 | 0 | 0 | 5 | 2026-04-19T08:52 |
 | rust/agent-must-review-allows.md | 10 | 2 | 0 | 0 | 0 | 12 | 2026-04-19T08:52 |
-| rust/usedunderscorebinding-module-level-allow-only.md | 10 | 1 | 0 | 0 | 0 | 13 | 2026-04-19T08:52 |
+| rust/used-underscore-binding-module-level-allow-only.md | 10 | 1 | 0 | 0 | 0 | 13 | 2026-04-19T08:52 |
 | rust/use-bevy_kana-in-all-bevy-crates.md | 3 | 1 | 0 | 0 | 0 | 3 | 2026-04-18T20:02 |
 | rust/type-registration-is-automatic.md | 4 | 1 | 0 | 0 | 0 | 3 | 2026-04-18T20:02 |
 | rust/reflectcomponent-suffices-for-brp-mutation.md | 4 | 1 | 0 | 0 | 0 | 3 | 2026-04-18T20:02 |
@@ -78,18 +78,18 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 60 | 0 | 4 | 0.63 |
-| bevy_catenary | 60 | 0 | 5 | 0.87 |
-| bevy_diegetic | 60 | 0 | 2 | 0.2 |
-| bevy_kana | 60 | 0 | 2 | 0.95 |
-| bevy_lagrange | 60 | 0 | 3 | 0.78 |
-| bevy_liminal | 60 | 0 | 3 | 1.2 |
-| bevy_window_manager | 61 | 0 | 2 | 0.69 |
-| cargo-mend | 53 | 0 | 6 | 0.79 |
-| cargo-port | 52 | 0 | 5 | 0.58 |
-| hana | 60 | 0 | 3 | 0.65 |
-| nateroids | 60 | 0 | 5 | 1.33 |
-| obsidian_knife | 49 | 0 | 8 | 4.61 |
+| bevy_brp | 67 | 0 | 4 | 0.72 |
+| bevy_catenary | 67 | 0 | 5 | 0.91 |
+| bevy_diegetic | 67 | 0 | 5 | 0.31 |
+| bevy_kana | 67 | 0 | 2 | 0.96 |
+| bevy_lagrange | 67 | 0 | 3 | 0.75 |
+| bevy_liminal | 67 | 0 | 5 | 1.34 |
+| bevy_window_manager | 68 | 0 | 3 | 0.78 |
+| cargo-mend | 60 | 0 | 6 | 0.85 |
+| cargo-port | 59 | 0 | 5 | 0.56 |
+| hana | 67 | 0 | 4 | 0.66 |
+| nateroids | 67 | 0 | 7 | 1.45 |
+| obsidian_knife | 56 | 0 | 11 | 4.8 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
@@ -120,4 +120,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-04-19T20:35:13Z from 90 recorded runs*
+*Generated 2026-04-20T01:12:27Z from 90 recorded runs*
