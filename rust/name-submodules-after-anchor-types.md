@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-21]]"
 see_also: "[[split-by-type-ownership]]"
 tags:
   - rust
@@ -73,3 +73,7 @@ model.rs
 ```
 
 `types.rs` and `model.rs` describe code shape, not domain — they signal that types were grouped by what they *are* (data definitions) instead of what they *do*. When every submodule has an anchor type, the anchor's name is always more predictive than "types."
+
+### Sweep satellite identifiers
+
+A submodule rename cascades through `mod` declarations, `use`/`pub use` paths, doc-comment path references, and matching test file names. Rename the directory/file and sweep the rest in the same pass.

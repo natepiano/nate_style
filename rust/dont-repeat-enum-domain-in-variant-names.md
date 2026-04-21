@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-21]]"
 tags: [naming, rust]
 ---
 ## Don't repeat the enum domain in variant names
@@ -20,3 +20,7 @@ enum FluctuationMode {
     Disabled,
 }
 ```
+
+### Sweep satellite identifiers
+
+Renaming the enum leaves bindings, field types, and helpers that embedded the old name stale: `set_fluctuation_enabled(...)` or a field `fluctuation_enabled: FluctuationMode` still carries the dropped term.

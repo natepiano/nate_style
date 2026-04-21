@@ -29,6 +29,15 @@ let left: KeyPressState = key_input.pressed(KeyCode::ShiftLeft).into();
 
 Call sites read as idiomatic Rust, compose with `impl Into<T>` parameter bounds, and get the standard `Into::into` blanket impl for free. `From` is the signal that says "this is a lossless, unambiguous conversion" — future readers recognize the shape without looking up a custom constructor.
 
+### `.into()` vs `Type::from(value)`
+
+Both are idiomatic. Pick whichever makes the target type most visible at the call site:
+
+- `value.into()` — when a binding annotation or function signature already names the target (`let left: KeyPressState = pressed.into();`).
+- `Type::from(value)` — when there is no annotation to carry the target, especially inline in larger expressions (`let sample_mode = SampleMode::from(msaa);`).
+
+`From::from(value)` (fully qualified) is only needed when neither shorter form can infer — rare.
+
 ### When a named constructor is still appropriate
 
 Use a named constructor when `From` would be ambiguous or wrong:

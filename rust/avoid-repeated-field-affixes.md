@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-21]]"
 tags: [naming, rust]
 ---
 ## Avoid repeated field affixes
@@ -22,3 +22,7 @@ struct Summary {
 ```
 
 If wire-format names require repetition, use `#[serde(rename = "...")]` instead of baking it into the Rust API.
+
+### Sweep satellite identifiers
+
+After dropping an affix, check helper methods, constructor params, and format tokens that still carry it: `errors_count_total()` alongside a renamed `errors` field, or `format!("{error_count}")` tokens, all go stale.
