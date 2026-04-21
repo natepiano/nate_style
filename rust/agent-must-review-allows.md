@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-20]]"
 tags: [lints, rust]
 ---
 ## Agent must review all `#[allow]` with the user
@@ -14,6 +14,10 @@ Before adding or keeping any allow, the agent must work through this sequence:
 1. **Remove it** — delete the allow and run clippy. If it passes, the allow was stale.
 2. **Restructure** — if the lint still fires, find a way to fix the code that eliminates the need for the allow, without regressing code quality.
 3. **Propose to the user** — if neither works, explain why the allow is unavoidable and propose a reason string. The user decides the final text.
+
+### Restructure vs. evasion
+
+If the rewrite produces bit-identical output and exists only to hide the operation from clippy (`value.to_le_bytes()[0]` for `as u8`, `from_ne_bytes(to_ne_bytes())` for sign/width reinterpretation, or the same tucked inside a helper), it is evasion, not restructuring. Test: can you name what it does differently at runtime? If not, go to step 3.
 
 ### Why
 

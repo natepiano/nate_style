@@ -1,7 +1,7 @@
 ---
 clippy: used_underscore_binding
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-20]]'
 see_also: "[[agent-must-review-allows]]"
 tags:
 - lints
@@ -9,15 +9,13 @@ tags:
 ---
 ## `used_underscore_binding` — module-level allow only
 
-Clippy fires false positives on enum variant fields (e.g., `Routed { planner: Planner }`). When this happens, suppress it on the `mod` declaration in the parent module — never in `Cargo.toml`.
+Clippy fires false positives on enum variant fields (e.g., `Routed { planner: Planner }`). Suppress it with an inner `#![allow(...)]` at the top of the file that triggers it — never in `Cargo.toml`. Promote to a parent `mod.rs` only when two or more sibling submodules would each need the same allow.
 
 ```rust
-// good — scoped to the module that triggers it
-#[allow(clippy::used_underscore_binding, reason = "false positive on enum variant fields")]
-mod enums;
+// good — inner allow in the file that triggers it
+// src/panel/modes.rs
+#![allow(clippy::used_underscore_binding, reason = "false positive on enum variant fields")]
 ```
-
-See `~/rust/bevy_catenary/src/routing/mod.rs` and `~/rust/bevy_catenary/src/plugin/mod.rs` for examples.
 
 ### Exception: single-file crate roots
 

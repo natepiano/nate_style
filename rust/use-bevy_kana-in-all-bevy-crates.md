@@ -23,6 +23,32 @@ Only standard types cross the public API boundary (`pub` struct fields, `pub` fn
 - **Return types**: `Vec3`
 - **Never** `pub use` re-export bevy_kana types
 
+**Why `impl Into<Vec3>` on args.** `bevy_kana::Position` (and its siblings) implement `From<Position> for Vec3` (via `Deref`-free conversion) and `From<Vec3> for Position`. Accepting `impl Into<Vec3>` at the boundary means callers who already work in `bevy_kana` newtypes can pass them directly — no `*position` dereferencing, no visible bridging — while callers who work in `Vec3` pass them unchanged. The public signature stays newtype-free and callers on either side pay nothing.
+
+### Prefer `impl Into<Vec3>` over `const fn` at the public boundary
+
+On public constructors and public free functions, an `impl Into<Vec3>` parameter is more valuable than `const fn` usability. `From::from` is not `const fn` on stable, so the two are mutually exclusive — and most public constructors aren't called from `const` contexts anyway.
+
+Default to dropping `const` to gain the `impl Into<Vec3>` affordance. Keep `const fn` only when the constructor is actually used inside a `const` expression (associated `const` items, array initializers, `static`s) — and in those rare cases, take `Vec3` directly.
+
+```rust
+// good — public API takes impl Into<Vec3>, drops const
+impl Anchor {
+    pub fn new(position: impl Into<Vec3>) -> Self {
+        Self { position: position.into(), direction: None }
+    }
+}
+
+// also good — const fn kept because it's used in a const expression elsewhere
+impl Obstacle {
+    pub const fn unit_at_origin() -> Self {
+        Self { half_extents: Vec3::splat(0.5), position: Vec3::ZERO, rotation: Quat::IDENTITY }
+    }
+}
+```
+
+See `prefer-from-impl-over-named-constructors.md` for the `const fn` / `From` tension in the general case.
+
 ### Internal code
 
 Internal functions use bevy_kana newtypes freely. Use `impl Into<Position>` for parameters so callers can pass either `Vec3` or `Position` without manual wrapping. Return newtypes directly — callers dereference (`*position`) when storing into a public `Vec3` field.

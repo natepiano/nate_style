@@ -53,4 +53,12 @@ Before splitting, verify:
 
 1. Can you name each proposed submodule with a domain noun? If not, the boundary may be artificial.
 2. Are the type clusters independent -- no circular references between proposed submodules?
-3. Does each proposed submodule have at least ~100 lines? Smaller than that, leave it in the parent.
+
+### Where the original file goes
+
+Splitting is a replacement, not a layering. The flat file either becomes `module/mod.rs` or disappears entirely:
+
+1. **Rename to `module/mod.rs`** if a facade is genuinely useful -- module docs, cross-cluster impls, or re-exports that differ from the parent's.
+2. **Delete** if the parent's `mod.rs` can declare the new submodules directly (e.g. `mod font_features;` in `layout/mod.rs` instead of hidden inside a leftover `types.rs`).
+
+Never keep the original file as a shell that declares the new modules via `#[path = "peer_file.rs"]`. That preserves the original name as an empty intermediary and forces every use to hop through it. When in doubt, pick (2) -- a facade is only useful if it hides something.

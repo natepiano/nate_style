@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-04-07]]'
+date_modified: '[[2026-04-20]]'
 tags:
 - rust
 - style
@@ -34,6 +34,20 @@ let _ = Timer::new("analyze");
 // bad — rustc warns "unused variable: timer"
 let timer = Timer::new("analyze");
 ```
+
+**Required-but-unused function parameters:** When a parameter must remain in a function signature (trait-impl defaults, callback signatures, or derive-macro hooks like `Deserialize::deserialize`), use bare `_` instead of `_name`. The type annotation sitting next to the underscore already identifies what is being ignored — the name would only restate the type in worse form.
+
+```rust
+// bad — leading underscore on a signature-required parameter
+async fn handle_impl(&self, _params: Self::Params) -> Result<Self::Output> { ... }
+fn deserialize<D>(_deserializer: D) -> Result<Self, D::Error> { ... }
+
+// good — type annotation identifies what is being ignored
+async fn handle_impl(&self, _: Self::Params) -> Result<Self::Output> { ... }
+fn deserialize<D>(_: D) -> Result<Self, D::Error> { ... }
+```
+
+This applies regardless of function length — reviewers encounter the signature before the body, and the type is always visible.
 
 **Exception — observer triggers:** Bevy observer functions require a trigger parameter for their signature even when the body doesn't use it. Prefer a descriptive name that communicates the event — e.g., `_drag`, `_added`, `_clear_selection`. A generic `_trigger` is acceptable but a meaningful name improves readability at the call site.
 
