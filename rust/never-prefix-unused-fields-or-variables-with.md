@@ -1,6 +1,7 @@
 ---
+clippy: ignored_unit_patterns
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-04-20]]'
+date_modified: '[[2026-04-22]]'
 tags:
 - rust
 - style
@@ -48,6 +49,18 @@ fn deserialize<D>(_: D) -> Result<Self, D::Error> { ... }
 ```
 
 This applies regardless of function length — reviewers encounter the signature before the body, and the type is always visible.
+
+**Exception — the ignored type is `()`:** When the required-but-unused parameter's type is the unit type, use the unit-destructuring pattern `()` instead of bare `_`. Clippy's `ignored_unit_patterns` lint (part of `clippy::pedantic`, denied in most workspaces) fires on `_: ()` and requires `(): ()`. This commonly shows up in trait impls whose associated type is bound to `()`:
+
+```rust
+// bad — fires clippy::ignored_unit_patterns
+async fn load(&self, reader: &mut dyn Reader, _: &Self::Settings, ...) -> ... { ... }
+
+// good — unit-destructuring pattern
+async fn load(&self, reader: &mut dyn Reader, (): &Self::Settings, ...) -> ... { ... }
+```
+
+The bare-`_` prescription above still governs every non-unit case; the `()` pattern is specifically for the unit type, because destructuring `()` costs nothing and clippy considers it more explicit than `_` when the matched type is already unit.
 
 **Exception — observer triggers:** Bevy observer functions require a trigger parameter for their signature even when the body doesn't use it. Prefer a descriptive name that communicates the event — e.g., `_drag`, `_added`, `_clear_selection`. A generic `_trigger` is acceptable but a meaningful name improves readability at the call site.
 
