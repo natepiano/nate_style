@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-24]]"
 tags:
   - rust
   - modules
@@ -9,6 +9,8 @@ see_also: "[[when-to-split-a-module]]"
 ## Types live with their behavior
 
 A type belongs in the module that owns its behavior — the module where its sole constructor, primary mutator, or single consumer already lives. When a file accumulates types that are "used elsewhere," that file has become a data dictionary instead of a unit of behavior. Before splitting such a file, relocate each type to the module that already owns its behavior, and only consider splitting what remains.
+
+**Scope:** types only. Constants live in `constants.rs` — see `no-magic-values.md`.
 
 ### The relocation check
 
