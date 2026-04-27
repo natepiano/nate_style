@@ -1,0 +1,143 @@
+{
+  "budget": 5,
+  "last_unit_id": "rust/collapse-thin-module.md",
+  "last_unit_result": "counted",
+  "phase": "fix",
+  "reviewed_unit_ids": [
+    "rust/use-a-context-struct-when-arguments-exceed-7.md",
+    "rust/use-bevy_kana-in-all-bevy-crates.md",
+    "rust/use-usizefrombool-for-bool-to-integer-conversion.md",
+    "rust/used-underscore-binding-module-level-allow-only.md",
+    "rust/when-to-split-a-module.md",
+    "rust/workspace-dependencies.md",
+    "rust/agent-must-review-allows.md",
+    "rust/always-use-cargo-mend.md",
+    "rust/always-use-nextest.md",
+    "rust/api-renames.md",
+    "rust/avoid-redundant-closures.md",
+    "rust/avoid-repeated-field-affixes.md",
+    "rust/backtick-names-in-comments.md",
+    "rust/bevy-plugin-ownership.md",
+    "rust/borrow-the-slice-not-the-container.md",
+    "rust/bundles-are-deprecated-use-required-components.md",
+    "rust/cargo-toml-bevy-lints.md",
+    "rust/cargo-toml-lints.md",
+    "rust/collapse-if-let-with-inner-conditions.md",
+    "rust/collapse-thin-module.md"
+  ],
+  "reviewed_units": [
+    {
+      "guideline_id": "rust/use-a-context-struct-when-arguments-exceed-7.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/use-bevy_kana-in-all-bevy-crates.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/use-usizefrombool-for-bool-to-integer-conversion.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/used-underscore-binding-module-level-allow-only.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/when-to-split-a-module.md"
+    },
+    {
+      "guideline_id": "rust/workspace-dependencies.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/agent-must-review-allows.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/always-use-cargo-mend.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/always-use-nextest.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/api-renames.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/avoid-redundant-closures.md"
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/avoid-repeated-field-affixes.md"
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/backtick-names-in-comments.md"
+    },
+    {
+      "guideline_id": "rust/bevy-plugin-ownership.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/borrow-the-slice-not-the-container.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/bundles-are-deprecated-use-required-components.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/cargo-toml-bevy-lints.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/cargo-toml-lints.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/collapse-if-let-with-inner-conditions.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/collapse-thin-module.md"
+    }
+  ],
+  "scored_count": 5,
+  "start_time": "2026-04-27T08:30:52Z",
+  "updated_at": "2026-04-27T12:38:26Z"
+}

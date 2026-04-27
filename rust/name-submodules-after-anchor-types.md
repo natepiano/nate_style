@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-21]]"
+date_modified: "[[2026-04-26]]"
 see_also: "[[split-by-type-ownership]]"
 tags:
   - rust
@@ -36,6 +36,20 @@ project/
   git.rs       # GitOrigin, GitInfo, GitPathState — all peers in the git domain
   paths.rs     # AbsolutePath, DisplayPath — both path newtypes
 ```
+
+### Avoid stutter with the parent module name
+
+Drop the parent's name from a child filename when the path already carries it.
+
+```text
+# bad
+light/light_markers.rs    light/light_settings.rs
+
+# good
+light/markers.rs          light/settings.rs
+```
+
+Keep the prefix only when the trimmed name would be a generic dumping-ground (`types.rs`, `state.rs`).
 
 ### Parent module naming
 

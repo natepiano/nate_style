@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-24]]'
+date_modified: '[[2026-04-25]]'
 tags:
 - bevy
 - rust
@@ -31,3 +31,13 @@ for inspector-style mutation and for values written by another
 schedule (e.g. `GlobalTransform`). Do **not** rewrite
 `Changed<C>` into `On<Insert/Replace, C>`: it silently drops `&mut`
 edits.
+
+### Exception: racing a deferred-producer sibling
+
+`On<Add, T>` fires synchronously at command-flush, before any later
+system runs. If the reaction needs a sibling resource that another
+producer creates *after* the insert, the observer wins the race and
+sees nothing. Canonical case: `commands.spawn((Window, Marker))` —
+`bevy_winit` creates the OS-level `NSWindow`/`HWND` later, so an
+`On<Add, Marker>` observer that touches the OS handle gets `None`.
+Poll `Added<Marker>` in the stage where the producer has run.

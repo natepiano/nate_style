@@ -1,0 +1,150 @@
+{
+  "budget": 5,
+  "last_unit_id": "rust/backtick-names-in-comments.md",
+  "last_unit_result": "counted",
+  "phase": "fix",
+  "reviewed_unit_ids": [
+    "rust/prefer-observers-over-events.md",
+    "rust/prefer-type-named-fields-and-bindings.md",
+    "rust/reflectcomponent-suffices-for-brp-mutation.md",
+    "rust/split-by-type-ownership.md",
+    "rust/test-module-allow-boilerplate.md",
+    "rust/type-registration-is-automatic.md",
+    "rust/types-live-with-their-behavior.md",
+    "rust/use-a-context-struct-when-arguments-exceed-7.md",
+    "rust/use-bevy_kana-in-all-bevy-crates.md",
+    "rust/use-pubcrate-in-top-level-private-modules.md",
+    "rust/use-usizefrombool-for-bool-to-integer-conversion.md",
+    "rust/used-underscore-binding-module-level-allow-only.md",
+    "rust/when-to-split-a-module.md",
+    "rust/workspace-dependencies.md",
+    "rust/agent-must-review-allows.md",
+    "rust/always-use-cargo-mend.md",
+    "rust/always-use-nextest.md",
+    "rust/api-renames.md",
+    "rust/avoid-redundant-closures.md",
+    "rust/avoid-repeated-field-affixes.md",
+    "rust/backtick-names-in-comments.md"
+  ],
+  "reviewed_units": [
+    {
+      "guideline_id": "rust/prefer-observers-over-events.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/prefer-type-named-fields-and-bindings.md"
+    },
+    {
+      "guideline_id": "rust/reflectcomponent-suffices-for-brp-mutation.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/split-by-type-ownership.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/test-module-allow-boilerplate.md"
+    },
+    {
+      "guideline_id": "rust/type-registration-is-automatic.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/types-live-with-their-behavior.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/use-a-context-struct-when-arguments-exceed-7.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/use-bevy_kana-in-all-bevy-crates.md"
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/use-pubcrate-in-top-level-private-modules.md"
+    },
+    {
+      "guideline_id": "rust/use-usizefrombool-for-bool-to-integer-conversion.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/used-underscore-binding-module-level-allow-only.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/when-to-split-a-module.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/workspace-dependencies.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/agent-must-review-allows.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/always-use-cargo-mend.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/always-use-nextest.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/api-renames.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/avoid-redundant-closures.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/avoid-repeated-field-affixes.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/backtick-names-in-comments.md"
+    }
+  ],
+  "scored_count": 5,
+  "start_time": "2026-04-27T08:30:52Z",
+  "updated_at": "2026-04-27T12:38:26Z"
+}

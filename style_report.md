@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-04-25]]"
-date_modified: "[[2026-04-25]]"
+date_created: "[[2026-04-26]]"
+date_modified: "[[2026-04-26]]"
 tags:
   - report
   - style
@@ -59,7 +59,7 @@ tags:
 | rust/one-use-per-line.md | 10 | 1 | 0 | 0 | 0 | 27 | 2026-04-25T11:06 |
 | rust/no-wildcard-reexports.md | 10 | 1 | 0 | 0 | 0 | 26 | 2026-04-25T11:06 |
 | rust/no-single-component-use-imports.md | 11 | 1 | 0 | 0 | 0 | 22 | 2026-04-25T11:06 |
-| rust/no-pubin-cratepath.md | 12 | 0 | 0 | 1 | 0 | 28 | 2026-04-25T11:06 |
+| rust/no-pub-in-path.md | 12 | 0 | 0 | 1 | 0 | 28 | 2026-04-25T11:06 |
 | rust/never-bare-allowdeadcode.md | 11 | 1 | 0 | 0 | 0 | 28 | 2026-04-25T11:01 |
 | rust/never-allow-clippy-too-many-lines.md | 11 | 1 | 0 | 0 | 0 | 25 | 2026-04-25T11:06 |
 | rust/dont-repeat-enum-domain-in-variant-names.md | 11 | 0 | 0 | 0 | 1 | 29 | 2026-04-25T11:01 |
@@ -130,7 +130,7 @@ tags:
 | bevy_lagrange | rust/use-a-context-struct-when-arguments-exceed-7.md | 1 | 1 | 0 | 0 | Bevy Query invariant lifetimes prevent bundling queries into a struct; only non-query params were bundled. |
 | bevy_window_manager | rust/split-by-type-ownership.md | 1 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
 | hana | rust/prefer-local-relative-imports.md | 1 | 0 | 1 | 0 | Recommended super::super:: pattern contradicts style guide which says stop at one super::. |
-| cargo-port | rust/no-pubin-cratepath.md | 1 | 0 | 1 | 0 | Inherent methods on App split across child modules cannot be re-exported; fixing requires module hierarchy restructuring. |
+| cargo-port | rust/no-pub-in-path.md | 1 | 0 | 1 | 0 | Inherent methods on App split across child modules cannot be re-exported; fixing requires module hierarchy restructuring. |
 | bevy_diegetic | rust/no-magic-values.md | 1 | 0 | 1 | 0 | Moving 28 constants across 9 files into 3 new constants.rs files risks compile errors alongside 11 other concurrent findings. |
 | hana | rust/never-prefix-unused-fields-or-variables-with.md | 1 | 1 | 0 | 0 | Style guide exempts observer triggers with _trigger naming; only non-standard names and non-observer _app were fixed. |
 | bevy_window_manager | rust/name-submodules-after-anchor-types.md | 1 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
@@ -143,4 +143,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-04-25T11:06:19Z from 123 recorded runs*
+*Generated 2026-04-26T08:13:48Z from 123 recorded runs*
