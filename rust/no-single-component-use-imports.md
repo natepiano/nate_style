@@ -1,9 +1,11 @@
 ---
-lint: single_component_path_imports
 date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-28]]"
 see_also: "[[import-the-module-for-functions-not-the-function-itself]]"
 tags: [imports, rust]
+mechanism: clippy
+mode: auto
+lint: single_component_path_imports
 ---
 ## No single-component `use` imports
 
@@ -36,6 +38,4 @@ let file = syn_module::parse_file(&text)?;
 let file = syn::parse_file(&text)?;
 ```
 
-### Tooling
-
-`clippy::single_component_path_imports` is part of `clippy::all` (default warn; denied in most projects via workspace lints). When it fires, the fix is always to delete the offending `use` line — never to add an `#[allow]`.
+When this lint fires, the fix is always to delete the offending `use` line — never to add an `#[allow]`.

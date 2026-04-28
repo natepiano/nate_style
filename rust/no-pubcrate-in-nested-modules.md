@@ -1,10 +1,13 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-28]]'
 see_also: "[[leaf-module-visibility]]"
 tags:
 - rust
 - visibility
+mechanism: mend
+mode: flag
+lint: forbidden_pub_crate
 ---
 ## No `pub(crate)` in nested modules
 
@@ -30,5 +33,3 @@ pub fn send_keys_handler(...) { ... }        // must be pub (E0364)
 // keyboard/keys.rs — NOT re-exported, only used within keyboard/
 pub(super) struct SendKeysRequest { ... }    // pub(super) is correct
 ```
-
-**Tooling:** `cargo mend` detects this as `forbidden_pub_crate` (error).

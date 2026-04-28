@@ -1,9 +1,12 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - visibility
+mechanism: mend
+mode: flag
+lint: review_pub_mod
 ---
 ## Never use `pub mod`
 
@@ -19,6 +22,4 @@ pub use some_module::SomeType;
 pub use some_module::SomeOtherType;
 ```
 
-**Exception:** `pub mod prelude;` is allowed to follow Bevy/Rust ecosystem conventions.
-
-**Tooling:** `cargo mend` detects this as `review_pub_mod` (error). Modules can be allowlisted in `mend.toml`.
+**Exception:** `pub mod prelude;` is allowed to follow Bevy/Rust ecosystem conventions. Other allowlisted modules can be configured in `mend.toml`.

@@ -1,8 +1,9 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-28]]"
 see_also: "[[constants-file-organization]]"
 tags: [constants, rust]
+mechanism: llm
 ---
 ## No magic values
 

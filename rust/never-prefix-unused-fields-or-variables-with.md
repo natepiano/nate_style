@@ -1,10 +1,10 @@
 ---
-lint: ignored_unit_patterns
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-04-22]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - style
+mechanism: llm
 ---
 ## Never prefix unused fields or variables with `_`
 

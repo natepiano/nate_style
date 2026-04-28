@@ -1,9 +1,12 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - visibility
+mechanism: mend
+mode: flag
+lint: wildcard_parent_pub_use
 ---
 ## No wildcard re-exports
 
@@ -17,5 +20,3 @@ pub use helpers::*;
 pub use helpers::build_label;
 pub use helpers::format_name;
 ```
-
-**Tooling:** `cargo mend` detects this as `wildcard_parent_pub_use` (warning).

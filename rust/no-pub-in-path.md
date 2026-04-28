@@ -1,9 +1,12 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-26]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - visibility
+mechanism: mend
+mode: flag
+lint: forbidden_pub_in_crate
 ---
 ## No `pub(in <path>)`
 
@@ -18,4 +21,4 @@ pub(in super::super) fn build_label() -> String { ... }
 pub(super) fn build_label() -> String { ... }
 ```
 
-**Tooling:** `cargo mend` detects the absolute form as `forbidden_pub_in_crate` (error). The relative form is not yet caught — flag manually during review until mend grows `forbidden_pub_in_path`.
+Mend only catches the absolute form (`pub(in crate::...)`); manually flag the relative form (`pub(in super::super)`) during review until mend grows coverage for it.
