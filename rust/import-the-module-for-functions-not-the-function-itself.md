@@ -1,13 +1,14 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - imports
 - rust
+mechanism: mend
+mode: auto
+lint: prefer_module_import
 ---
 ## Import the module for functions, not the function itself
-
-**IMPORTANT:** Review the Tooling section at the end before making changes for this guideline.
 
 Free functions are called as `module::function()` so the origin is clear at the call site.
 
@@ -48,5 +49,3 @@ use crate::tui::render;
 
 render::format_bytes(bytes);
 ```
-
-**Tooling:** `cargo mend` detects this as `prefer_module_import` (warning). First run `cargo mend` and evaluate what it reports for this rule. If `cargo mend` indicates that a fix is available, you may then run `cargo mend --fix` and review the resulting changes to confirm it fixed this issue correctly before making any manual edits.

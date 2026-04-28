@@ -1,10 +1,11 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-27]]'
 tags:
 - constants
 - imports
 - rust
+mechanism: llm
 ---
 ## Import constants at the top
 

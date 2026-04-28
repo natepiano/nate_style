@@ -1,9 +1,10 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-27]]'
 tags:
 - patterns
 - rust
+mechanism: llm
 ---
 ## If/else chains signal missing types
 

@@ -1,9 +1,10 @@
 ---
 date_created: '[[2026-04-04]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-27]]'
 tags:
 - constants
 - rust
+mechanism: llm
 ---
 ## Constants file organization
 

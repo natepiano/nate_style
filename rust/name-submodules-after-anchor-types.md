@@ -1,10 +1,11 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-26]]"
+date_modified: "[[2026-04-28]]"
 see_also: "[[split-by-type-ownership]]"
 tags:
   - rust
   - modules
+mechanism: llm
 ---
 ## Anchor types drive submodule boundaries and names
 

@@ -1,8 +1,9 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-21]]"
+date_modified: "[[2026-04-27]]"
 see_also: "[[prefer-type-named-fields-and-bindings]]"
 tags: [naming, rust]
+mechanism: llm
 ---
 ## Don't repeat the type name in fields
 

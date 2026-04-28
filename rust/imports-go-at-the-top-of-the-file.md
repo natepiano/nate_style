@@ -1,9 +1,10 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - imports
 - rust
+mechanism: llm
 ---
 ## Imports go at the top of the file
 

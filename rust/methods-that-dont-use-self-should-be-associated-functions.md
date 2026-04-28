@@ -1,10 +1,12 @@
 ---
-clippy: unused_self
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - patterns
 - rust
+mechanism: clippy
+mode: flag
+lint: unused_self
 ---
 ## Methods that don't use `self` should be associated functions
 

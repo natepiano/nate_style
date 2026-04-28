@@ -1,7 +1,8 @@
 ---
 date_created: "[[2026-04-05]]"
-date_modified: "[[2026-04-17]]"
+date_modified: "[[2026-04-28]]"
 tags: [naming, rust]
+mechanism: llm
 ---
 ## Name bindings to match parameters they feed
 

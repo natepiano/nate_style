@@ -1,5 +1,5 @@
 ---
-clippy: single_component_path_imports
+lint: single_component_path_imports
 date_created: "[[2026-04-19]]"
 date_modified: "[[2026-04-19]]"
 see_also: "[[import-the-module-for-functions-not-the-function-itself]]"

@@ -1,12 +1,15 @@
 ---
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - types
 - visibility
+mechanism: llm
 ---
 ## Module roots as table of contents
+
+A module root that has submodules lives in `module/mod.rs` (directory form). Never use `module.rs` alongside a sibling `module/` directory containing Rust submodule files — this is enforced by `clippy::self_named_module_files = "deny"` in the workspace lint config, and it fails to compile.
 
 Module roots (`mod.rs`, `lib.rs`) should only declare submodules and export the public API via `pub use`. No other logic.
 

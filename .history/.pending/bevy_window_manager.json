@@ -1,0 +1,39 @@
+{
+  "budget": 5,
+  "last_unit_id": "rust/always-use-cargo-mend.md",
+  "last_unit_result": "no_findings",
+  "phase": "evaluation",
+  "reviewed_unit_ids": [
+    "rust/reflectcomponent-suffices-for-brp-mutation.md",
+    "rust/split-by-type-ownership.md",
+    "rust/test-module-allow-boilerplate.md",
+    "rust/always-use-cargo-mend.md"
+  ],
+  "reviewed_units": [
+    {
+      "guideline_id": "rust/reflectcomponent-suffices-for-brp-mutation.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/split-by-type-ownership.md"
+    },
+    {
+      "guideline_id": "rust/test-module-allow-boilerplate.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/always-use-cargo-mend.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    }
+  ],
+  "scored_count": 1,
+  "start_time": "2026-04-28T05:10:45Z",
+  "updated_at": "2026-04-28T05:45:37Z"
+}

@@ -1,9 +1,12 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - imports
 - rust
+mechanism: mend
+mode: auto
+lint: inline_path_qualified_type
 ---
 ## Import types directly
 
@@ -28,5 +31,3 @@ use super::actor_settings::Spawnability;
 
 if settings.spawnability == Spawnability::Disabled {
 ```
-
-**Tooling:** `cargo mend` detects this as `inline_path_qualified_type` (warning). Run `cargo mend --fix` to auto-fix by adding a `use` import and replacing inline paths with bare type names.

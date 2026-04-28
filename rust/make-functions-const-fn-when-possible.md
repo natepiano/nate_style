@@ -1,10 +1,12 @@
 ---
-clippy: missing_const_for_fn
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - patterns
 - rust
+mechanism: clippy
+mode: flag
+lint: missing_const_for_fn
 ---
 ## Make functions `const fn` when possible
 

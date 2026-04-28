@@ -1,5 +1,5 @@
 ---
-clippy: [manual_map, needless_collect, manual_find]
+lint: [manual_map, needless_collect, manual_find]
 date_created: '[[2026-03-29]]'
 date_modified: '[[2026-03-29]]'
 tags:

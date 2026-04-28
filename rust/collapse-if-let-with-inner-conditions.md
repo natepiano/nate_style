@@ -1,10 +1,12 @@
 ---
-clippy: [collapsible_if, collapsible_match]
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-27]]'
 tags:
 - patterns
 - rust
+mechanism: clippy
+mode: auto
+lint: [collapsible_if, collapsible_match]
 ---
 ## Collapse `if let` with inner conditions
 

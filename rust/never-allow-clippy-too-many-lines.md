@@ -1,9 +1,11 @@
 ---
-clippy: too_many_lines
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-28]]"
 see_also: "[[agent-must-review-allows]]"
 tags: [lints, rust]
+mechanism: clippy
+mode: flag
+lint: too_many_lines
 ---
 ## Never `#[allow(clippy::too_many_lines)]` in production code
 
@@ -46,10 +48,6 @@ fn get_annotations(self) -> Annotation { match self { ... } }
 Splitting a match into sub-functions with `_ => unreachable!()` catch-alls trades compile-time exhaustiveness for a runtime panic. When a new variant is added, the compiler won't flag it — it silently reaches `unreachable!()` and crashes.
 
 If a function is long solely due to exhaustive enum dispatch, do not split it mechanically. Either find a structural solution that preserves compile-time safety, or flag it for the user.
-
-**Tooling:** `cargo mend` detects this as `forbidden_allow` (warning). Configurable in `mend.toml` via `[forbidden_allows]` with scope `"prod"`, `"test"`, or `"all"` (default).
-
-**Agent rule:** The agent must never add this allow without user review. See `agent-must-review-allows.md`.
 
 ## orchestrator pattern
 It is not helpful to just simply refactor a small number of lines to get under the limit. Often it's the case that a new change will come along that will once again push it over.

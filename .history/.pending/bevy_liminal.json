@@ -1,0 +1,352 @@
+{
+  "budget": 2,
+  "last_unit_id": "rust/prefer-local-relative-imports.md",
+  "last_unit_result": "counted",
+  "phase": "evaluation",
+  "reviewed_unit_ids": [
+    "rust/collapse-thin-module.md",
+    "rust/never-allow-clippy-too-many-lines.md",
+    "rust/no-single-component-use-imports.md",
+    "rust/one-use-per-line.md",
+    "rust/prefer-from-impl-over-named-constructors.md",
+    "rust/prefer-type-named-fields-and-bindings.md",
+    "rust/reflectcomponent-suffices-for-brp-mutation.md",
+    "rust/split-by-type-ownership.md",
+    "rust/type-registration-is-automatic.md",
+    "rust/types-live-with-their-behavior.md",
+    "rust/use-usizefrombool-for-bool-to-integer-conversion.md",
+    "rust/used-underscore-binding-module-level-allow-only.md",
+    "rust/when-to-split-a-module.md",
+    "rust/workspace-dependencies.md",
+    "rust/agent-must-review-allows.md",
+    "rust/always-use-cargo-mend.md",
+    "rust/always-use-nextest.md",
+    "rust/avoid-redundant-closures.md",
+    "rust/avoid-repeated-field-affixes.md",
+    "rust/backtick-names-in-comments.md",
+    "rust/bevy-plugin-ownership.md",
+    "rust/borrow-the-slice-not-the-container.md",
+    "rust/collapse-if-let-with-inner-conditions.md",
+    "rust/derive-test-values-from-production-constants.md",
+    "rust/dont-create-traits-for-single-implementations.md",
+    "rust/dont-repeat-enum-domain-in-variant-names.md",
+    "rust/dont-repeat-type-name-in-fields.md",
+    "rust/exception-std-paths-are-allowed-inline.md",
+    "rust/fix-root-causes-never-workarounds.md",
+    "rust/if-else-chains-signal-missing-types.md",
+    "rust/import-constants-at-the-top.md",
+    "rust/imports-go-at-the-top-of-the-file.md",
+    "rust/inline-variables-in-format-strings.md",
+    "rust/leaf-module-visibility.md",
+    "rust/make-functions-const-fn-when-possible.md",
+    "rust/messages-are-strongly-discouraged.md",
+    "rust/methods-that-dont-use-self-should-be-associated-functions.md",
+    "rust/module-roots-as-table-of-contents.md",
+    "rust/name-bindings-to-match-parameters.md",
+    "rust/name-submodules-after-anchor-types.md",
+    "rust/never-bare-allowdeadcode.md",
+    "rust/never-prefix-unused-fields-or-variables-with.md",
+    "rust/never-use-pub-mod.md",
+    "rust/no-pub-in-path.md",
+    "rust/no-pubcrate-in-nested-modules.md",
+    "rust/no-wildcard-reexports.md",
+    "rust/omit-return-in-expression-position.md",
+    "rust/prefer-functional-patterns.md",
+    "rust/prefer-local-relative-imports.md"
+  ],
+  "reviewed_units": [
+    {
+      "guideline_id": "rust/collapse-thin-module.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/never-allow-clippy-too-many-lines.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/no-single-component-use-imports.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/one-use-per-line.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/prefer-from-impl-over-named-constructors.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/prefer-type-named-fields-and-bindings.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/reflectcomponent-suffices-for-brp-mutation.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/split-by-type-ownership.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/type-registration-is-automatic.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/types-live-with-their-behavior.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/use-usizefrombool-for-bool-to-integer-conversion.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/used-underscore-binding-module-level-allow-only.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/when-to-split-a-module.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/workspace-dependencies.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/agent-must-review-allows.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/always-use-cargo-mend.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/always-use-nextest.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/avoid-redundant-closures.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/avoid-repeated-field-affixes.md"
+    },
+    {
+      "guideline_id": "rust/backtick-names-in-comments.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/bevy-plugin-ownership.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/borrow-the-slice-not-the-container.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/collapse-if-let-with-inner-conditions.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/derive-test-values-from-production-constants.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/dont-create-traits-for-single-implementations.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/dont-repeat-enum-domain-in-variant-names.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/dont-repeat-type-name-in-fields.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/exception-std-paths-are-allowed-inline.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/fix-root-causes-never-workarounds.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/if-else-chains-signal-missing-types.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/import-constants-at-the-top.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/imports-go-at-the-top-of-the-file.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/inline-variables-in-format-strings.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/leaf-module-visibility.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/make-functions-const-fn-when-possible.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/messages-are-strongly-discouraged.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/methods-that-dont-use-self-should-be-associated-functions.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/module-roots-as-table-of-contents.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/name-bindings-to-match-parameters.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/name-submodules-after-anchor-types.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/never-bare-allowdeadcode.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/never-prefix-unused-fields-or-variables-with.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/never-use-pub-mod.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/no-pub-in-path.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/no-pubcrate-in-nested-modules.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/no-wildcard-reexports.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/omit-return-in-expression-position.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "guideline_id": "rust/prefer-functional-patterns.md",
+      "outcome": {
+        "status": "no_findings"
+      }
+    },
+    {
+      "finding_source": "new",
+      "guideline_id": "rust/prefer-local-relative-imports.md"
+    }
+  ],
+  "scored_count": 2,
+  "start_time": "2026-04-28T03:48:39Z",
+  "updated_at": "2026-04-28T09:05:45Z"
+}

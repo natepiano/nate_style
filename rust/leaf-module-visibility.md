@@ -1,9 +1,12 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - visibility
+mechanism: mend
+mode: flag
+lint: [suspicious_pub, internal_parent_pub_use_facade]
 ---
 ## Leaf module visibility
 
@@ -59,5 +62,3 @@ let images = files.image_files;
 ```
 
 Re-export the type only when external code would write `use crate::utils::RepositoryFiles`.
-
-**Tooling:** `cargo mend` detects this as `suspicious_pub` (warning) and internal-only facades as `internal_parent_pub_use_facade` (warning). Run `cargo mend --fix-pub-use` to auto-fix stale `pub use` re-exports.

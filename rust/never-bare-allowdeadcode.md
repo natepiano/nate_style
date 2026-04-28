@@ -1,18 +1,17 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-28]]'
 see_also: "[[agent-must-review-allows]]"
 tags:
 - lints
 - rust
+mechanism: clippy
+mode: flag
+lint: allow_attributes_without_reason
 ---
 ## Never bare `#[allow(dead_code)]`
 
-Remove the dead code instead of suppressing the warning. A bare `#[allow(dead_code)]` without a `reason` is always a violation.
-
-**Enforced by:** `allow_attributes_without_reason = "deny"` in the Cargo.toml lint configuration (`cargo-toml-lints.md`). This applies to all `#[allow(...)]` attributes, not just `dead_code`.
-
-**Agent rule:** The agent must never add an `#[allow]` or fill in a `reason` field without user review. See `agent-must-review-allows.md`.
+Remove the dead code instead of suppressing the warning. A bare `#[allow(dead_code)]` without a `reason` is always a violation. The lint applies to all `#[allow(...)]` attributes, not just `dead_code`.
 
 When suppression is genuinely needed (e.g., fields required for deserialization, items used by derive macros), use the `reason` field to document why. The `reason` is the signal that the allow was intentional.
 
