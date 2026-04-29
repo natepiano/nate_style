@@ -1,6 +1,7 @@
 ---
 date_created: '[[2026-04-29]]'
 date_modified: '[[2026-04-29]]'
+exceptions: text shaping
 tags:
 - rust
 - style
@@ -46,6 +47,10 @@ unreachable!()
 // unreachable: caller validates the variant before dispatch
 unreachable!()
 ```
+
+### Exception: industry-standard terms
+
+Leave domain terminology alone. `text shaping` / `shaper` (the typography pipeline step, e.g. HarfBuzz) is the canonical term — keep it in identifiers, types, and comments. Same rule for any other established term of art; the ban targets vague analogies, not domain vocabulary.
 
 ### Why
 
