@@ -7,6 +7,7 @@ tags:
 mechanism: mend
 mode: flag
 lint: review_pub_mod
+pre_filter: '^\s*pub mod\b'
 ---
 ## Never use `pub mod`
 

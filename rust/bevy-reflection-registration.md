@@ -5,6 +5,7 @@ tags:
 - bevy
 - rust
 mechanism: llm
+pre_filter: '\.register_type::<'
 ---
 ## Bevy reflection registration
 

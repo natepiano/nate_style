@@ -6,6 +6,7 @@ tags:
 - rust
 mechanism: llm
 mode: propose
+pre_filter: '\bMessage(Reader|Writer)<'
 ---
 ## Prefer events over messages
 

@@ -7,6 +7,7 @@ tags:
 mechanism: mend
 mode: flag
 lint: forbidden_pub_in_crate
+pre_filter: 'pub\s*\(\s*in\b'
 ---
 ## No `pub(in <path>)`
 
