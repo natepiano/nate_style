@@ -80,18 +80,18 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 59 | 2 | 4 | 2.39 |
-| bevy_catenary | 59 | 4 | 5 | 4.25 |
-| bevy_diegetic | 59 | 0 | 5 | 0.81 |
-| bevy_kana | 59 | 2 | 4 | 3.25 |
-| bevy_lagrange | 59 | 1 | 3 | 1.93 |
-| bevy_liminal | 59 | 1 | 5 | 1.97 |
-| bevy_window_manager | 60 | 1 | 3 | 1.83 |
-| cargo-mend | 58 | 2 | 6 | 2.9 |
-| cargo-port | 57 | 0 | 5 | 0.53 |
-| hana | 59 | 0 | 4 | 1.07 |
-| nateroids | 59 | 2 | 7 | 3.1 |
-| obsidian_knife | 54 | 2 | 11 | 6.54 |
+| bevy_brp | 48 | 0 | 4 | 2.35 |
+| bevy_catenary | 48 | 0 | 5 | 4.15 |
+| bevy_diegetic | 48 | 0 | 5 | 0.81 |
+| bevy_kana | 48 | 0 | 4 | 3.19 |
+| bevy_lagrange | 48 | 0 | 3 | 1.9 |
+| bevy_liminal | 48 | 0 | 5 | 1.88 |
+| bevy_window_manager | 49 | 0 | 3 | 1.8 |
+| cargo-mend | 47 | 0 | 6 | 2.85 |
+| cargo-port | 46 | 0 | 5 | 0.48 |
+| hana | 48 | 0 | 4 | 1.1 |
+| nateroids | 48 | 0 | 7 | 3.06 |
+| obsidian_knife | 43 | 0 | 11 | 6.47 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
@@ -135,4 +135,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-04-29T08:41:55Z from 125 recorded runs*
+*Generated 2026-04-29T13:23:18Z from 125 recorded runs*
