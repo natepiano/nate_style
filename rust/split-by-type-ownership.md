@@ -1,10 +1,13 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-29]]"
 see_also:
   - "[[name-submodules-after-anchor-types]]"
   - "[[types-live-with-their-behavior]]"
+  - "[[no-magic-values]]"
+  - "[[constants-file-organization]]"
 tags: [modules, rust]
+mechanism: llm
 ---
 ## Split along type ownership, not code shape
 

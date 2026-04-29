@@ -1,9 +1,11 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-25]]'
+date_modified: '[[2026-04-29]]'
 tags:
 - bevy
 - rust
+mechanism: llm
+mode: propose
 ---
 ## Prefer observers over polling
 

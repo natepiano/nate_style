@@ -1,9 +1,12 @@
 ---
 date_created: '[[2026-04-03]]'
-date_modified: '[[2026-04-03]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - visibility
+mechanism: mend
+mode: auto
+lint: [shorten_local_crate_import, replace_deep_super_import]
 ---
 ## Prefer local-relative imports
 
@@ -28,5 +31,3 @@ use super::super::columns::ResolvedWidths;
 // good — absolute path is immediately clear
 use crate::tui::columns::ResolvedWidths;
 ```
-
-**Tooling:** `cargo mend` detects over-qualified local paths as `shorten_local_crate_import` (warning) and deep `super::super::` chains as `replace_deep_super_import` (warning). Run `cargo mend --fix` to auto-fix both.

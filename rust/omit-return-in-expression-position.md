@@ -1,10 +1,12 @@
 ---
-lint: needless_return
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-03-29]]'
+date_modified: '[[2026-04-28]]'
 tags:
 - rust
 - style
+mechanism: clippy
+mode: auto
+lint: needless_return
 ---
 ## Omit `return` in expression position
 

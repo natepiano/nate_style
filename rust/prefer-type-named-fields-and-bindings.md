@@ -1,7 +1,8 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-21]]"
+date_modified: "[[2026-04-29]]"
 tags: [naming, rust]
+mechanism: llm
 ---
 ## Prefer type-named fields and bindings
 

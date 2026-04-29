@@ -1,7 +1,10 @@
 ---
 date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-28]]"
 tags: [imports, rust]
+mechanism: rustfmt
+mode: auto
+lint: imports_granularity
 ---
 ## One `use` per line
 

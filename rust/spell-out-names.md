@@ -1,9 +1,10 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-21]]'
+date_modified: '[[2026-04-29]]'
 tags:
 - naming
 - rust
+mechanism: llm
 ---
 ## Spell out names
 

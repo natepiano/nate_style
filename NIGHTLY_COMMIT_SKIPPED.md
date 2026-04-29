@@ -1,4 +1,4 @@
-# Nightly style commit skipped — 2026-04-28T09:34:35Z
+# Nightly style commit skipped — 2026-04-29T02:59:32Z
 
 **Reason:** unexpected working-tree changes
 
@@ -7,51 +7,19 @@
 Unexpected working-tree entries (only worktree-modified `.history/*.jsonl` and `style_report.md` are permitted):
 
 ```
- D .history/.pending/bevy_brp.json
- D .history/.pending/bevy_catenary.json
- M rust/agent-must-review-allows.md
- M rust/always-use-cargo-mend.md
- M rust/always-use-nextest.md
- D rust/api-renames.md
- M rust/avoid-redundant-closures.md
- M rust/avoid-repeated-field-affixes.md
- M rust/backtick-names-in-comments.md
- M rust/bevy-plugin-ownership.md
- M rust/borrow-the-slice-not-the-container.md
- D rust/bundles-are-deprecated-use-required-components.md
- D rust/cargo-toml-bevy-lints.md
- D rust/cargo-toml-lints.md
- M rust/collapse-if-let-with-inner-conditions.md
- M rust/collapse-thin-module.md
- M rust/constants-file-organization.md
- D rust/current-version-bevy-0180.md
- M rust/derive-test-values-from-production-constants.md
- D rust/directory-modules-for-child-modules.md
- M rust/dont-create-traits-for-single-implementations.md
- M rust/dont-repeat-enum-domain-in-variant-names.md
- M rust/dont-repeat-type-name-in-fields.md
- M rust/enums-over-bool-for-owned-booleans.md
- M rust/exception-std-paths-are-allowed-inline.md
- M rust/fix-root-causes-never-workarounds.md
- M rust/if-else-chains-signal-missing-types.md
- M rust/import-constants-at-the-top.md
- M rust/import-the-module-for-functions-not-the-function-itself.md
- M rust/inline-variables-in-format-strings.md
- M rust/make-functions-const-fn-when-possible.md
- M rust/methods-that-dont-use-self-should-be-associated-functions.md
- M rust/module-roots-as-table-of-contents.md
- M rust/never-allow-clippy-too-many-lines.md
- M rust/never-prefix-unused-fields-or-variables-with.md
- M rust/no-single-component-use-imports.md
+ D .history/.pending/bevy_lagrange.json
+ D .history/.pending/bevy_liminal.json
+ D .history/.pending/bevy_window_manager.json
+ D .history/.pending/hana.json
+ D NIGHTLY_COMMIT_SKIPPED.md
+ D rust/messages-are-strongly-discouraged.md
  M rust/omit-return-in-expression-position.md
+ M rust/one-use-per-line.md
+ M rust/prefer-from-impl-over-named-constructors.md
  M rust/prefer-functional-patterns.md
- M rust/test-module-allow-boilerplate.md
- M rust/use-bevy_kana-in-all-bevy-crates.md
- M rust/used-underscore-binding-module-level-allow-only.md
-?? .history/.pending/bevy_lagrange.json
-?? .history/.pending/bevy_liminal.json
-?? .history/.pending/bevy_window_manager.json
-?? .history/.pending/hana.json
+ M rust/prefer-local-relative-imports.md
+ D rust/prefer-observers-over-events.md
+?? rust/prefer-events-over-messages.md
 ```
 
 ---

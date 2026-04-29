@@ -1,7 +1,8 @@
 ---
 date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-28]]"
 tags: [rust, patterns]
+mechanism: llm
 ---
 ## Prefer `From`/`Into` impls over named constructor methods
 

@@ -1,10 +1,13 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-29]]'
 see_also: "[[leaf-module-visibility]]"
 tags:
 - rust
 - visibility
+mechanism: mend
+mode: auto
+lint: narrow_to_pub_crate
 ---
 ## Use `pub(crate)` in top-level private modules
 
@@ -31,5 +34,3 @@ pub(crate) const DEATH_VELOCITY_EPSILON: f32 = 0.001;
 ```
 
 Bare `pub` in this position is misleading — it suggests the item is part of the public API when it is not.
-
-**Tooling:** `cargo mend` detects this as `narrow_to_pub_crate` (warning). Run `cargo mend --fix` to auto-fix.

@@ -1,12 +1,12 @@
 ---
-lint: [expect_used, unwrap_used, panic]
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-29]]'
 see_also: "[[agent-must-review-allows]]"
 tags:
 - lints
 - rust
 - tests
+mechanism: llm
 ---
 ## Test module allow boilerplate
 

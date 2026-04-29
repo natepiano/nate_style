@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-19]]"
+date_modified: "[[2026-04-29]]"
 tags:
   - rust
   - modules
@@ -8,6 +8,7 @@ see_also:
   - "[[types-live-with-their-behavior]]"
   - "[[name-submodules-after-anchor-types]]"
   - "[[split-by-type-ownership]]"
+mechanism: llm
 ---
 ## When to split a module into submodules
 

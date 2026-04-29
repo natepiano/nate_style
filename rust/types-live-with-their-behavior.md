@@ -1,10 +1,16 @@
 ---
 date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-24]]"
+date_modified: "[[2026-04-29]]"
 tags:
   - rust
   - modules
-see_also: "[[when-to-split-a-module]]"
+see_also:
+  - "[[when-to-split-a-module]]"
+  - "[[split-by-type-ownership]]"
+  - "[[name-submodules-after-anchor-types]]"
+  - "[[collapse-thin-module]]"
+  - "[[no-magic-values]]"
+mechanism: llm
 ---
 ## Types live with their behavior
 

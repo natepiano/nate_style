@@ -1,10 +1,11 @@
 ---
 date_created: '[[2026-04-15]]'
-date_modified: '[[2026-04-15]]'
+date_modified: '[[2026-04-29]]'
 tags:
 - rust
 - api
 - non-negotiable
+mechanism: llm
 ---
 ## Public API changes require explicit approval
 

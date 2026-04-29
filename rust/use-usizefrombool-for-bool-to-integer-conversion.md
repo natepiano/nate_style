@@ -1,10 +1,13 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-19]]'
+date_modified: '[[2026-04-29]]'
 see_also: "[[prefer-from-impl-over-named-constructors]]"
 tags:
 - patterns
 - rust
+mechanism: clippy
+mode: auto
+lint: bool_to_int_with_if
 ---
 ## Use `usize::from(bool)` for bool-to-integer conversion
 

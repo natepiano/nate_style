@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-04-28]]"
-date_modified: "[[2026-04-28]]"
+date_created: "[[2026-04-29]]"
+date_modified: "[[2026-04-29]]"
 tags:
   - report
   - style
@@ -14,66 +14,64 @@ tags:
 | rust/spell-out-names.md | 11 | 29 | 0 | 0 | 0 | 5 | 2026-04-25T11:06 |
 | rust/enums-over-bool-for-owned-booleans.md | 12 | 27 | 0 | 0 | 0 | 13 | 2026-04-25T11:01 |
 | rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 12 | 2026-04-27T12:56 |
-| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 12 | 2026-04-25T11:06 |
-| rust/when-to-split-a-module.md | 10 | 16 | 0 | 2 | 0 | 8 | 2026-04-27T12:56 |
+| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 13 | 2026-04-29T02:48 |
+| rust/when-to-split-a-module.md | 10 | 16 | 0 | 2 | 0 | 8 | 2026-04-29T02:48 |
 | rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 15 | 2026-04-28T09:25 |
 | rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 14 | 2026-04-25T11:01 |
 | rust/imports-go-at-the-top-of-the-file.md | 12 | 17 | 0 | 0 | 0 | 18 | 2026-04-28T09:25 |
 | rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 17 | 2026-04-28T09:25 |
-| rust/prefer-local-relative-imports.md | 12 | 15 | 0 | 1 | 0 | 15 | 2026-04-25T11:06 |
+| rust/prefer-local-relative-imports.md | 12 | 15 | 0 | 1 | 0 | 16 | 2026-04-29T02:48 |
 | rust/import-types-directly.md | 11 | 15 | 0 | 0 | 1 | 19 | 2026-04-25T11:01 |
 | rust/name-submodules-after-anchor-types.md | 11 | 13 | 0 | 0 | 2 | 15 | 2026-04-28T09:25 |
-| rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 14 | 2026-04-28T09:25 |
-| rust/prefer-type-named-fields-and-bindings.md | 10 | 12 | 0 | 0 | 1 | 14 | 2026-04-27T12:45 |
+| rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 15 | 2026-04-29T02:48 |
+| rust/prefer-type-named-fields-and-bindings.md | 10 | 12 | 0 | 0 | 1 | 15 | 2026-04-29T02:48 |
 | rust/import-the-module-for-functions-not-the-function-itself.md | 12 | 13 | 0 | 0 | 0 | 20 | 2026-04-28T09:25 |
 | rust/avoid-redundant-closures.md | 12 | 11 | 0 | 2 | 0 | 21 | 2026-04-28T09:25 |
-| rust/no-pubcrate-in-nested-modules.md | 12 | 9 | 1 | 1 | 1 | 19 | 2026-04-25T11:06 |
+| rust/no-pubcrate-in-nested-modules.md | 12 | 9 | 1 | 1 | 1 | 20 | 2026-04-29T02:48 |
 | rust/make-functions-const-fn-when-possible.md | 11 | 10 | 0 | 1 | 0 | 20 | 2026-04-28T09:25 |
-| rust/use-a-context-struct-when-arguments-exceed-7.md | 9 | 9 | 1 | 0 | 0 | 16 | 2026-04-27T12:56 |
-| rust/test-module-allow-boilerplate.md | 11 | 10 | 0 | 0 | 0 | 18 | 2026-04-28T09:25 |
-| rust/prefer-from-impl-over-named-constructors.md | 10 | 9 | 0 | 0 | 1 | 12 | 2026-04-25T11:06 |
+| rust/use-a-context-struct-when-arguments-exceed-7.md | 9 | 9 | 1 | 0 | 0 | 17 | 2026-04-29T02:48 |
+| rust/test-module-allow-boilerplate.md | 11 | 10 | 0 | 0 | 0 | 19 | 2026-04-29T02:48 |
+| rust/prefer-from-impl-over-named-constructors.md | 10 | 9 | 0 | 0 | 1 | 13 | 2026-04-29T02:48 |
 | rust/collapse-if-let-with-inner-conditions.md | 11 | 10 | 0 | 0 | 0 | 23 | 2026-04-28T09:25 |
 | rust/inline-variables-in-format-strings.md | 11 | 8 | 0 | 0 | 1 | 21 | 2026-04-28T09:25 |
 | rust/derive-test-values-from-production-constants.md | 11 | 9 | 0 | 0 | 0 | 24 | 2026-04-28T09:34 |
-| rust/use-pubcrate-in-top-level-private-modules.md | 10 | 7 | 1 | 0 | 0 | 16 | 2026-04-28T09:25 |
-| rust/prefer-functional-patterns.md | 11 | 8 | 0 | 0 | 0 | 21 | 2026-04-25T11:06 |
+| rust/use-pubcrate-in-top-level-private-modules.md | 10 | 7 | 1 | 0 | 0 | 17 | 2026-04-29T02:48 |
+| rust/prefer-functional-patterns.md | 11 | 8 | 0 | 0 | 0 | 22 | 2026-04-29T02:48 |
 | rust/if-else-chains-signal-missing-types.md | 11 | 7 | 0 | 0 | 1 | 22 | 2026-04-28T09:25 |
-| rust/types-live-with-their-behavior.md | 9 | 7 | 0 | 0 | 0 | 11 | 2026-04-28T09:25 |
-| rust/prefer-observers-over-polling.md | 8 | 6 | 0 | 0 | 1 | 11 | 2026-04-25T11:06 |
+| rust/types-live-with-their-behavior.md | 9 | 7 | 0 | 0 | 0 | 12 | 2026-04-29T02:48 |
+| rust/prefer-observers-over-polling.md | 8 | 6 | 0 | 0 | 1 | 11 | 2026-04-29T02:48 |
 | rust/fix-root-causes-never-workarounds.md | 11 | 7 | 0 | 0 | 0 | 24 | 2026-04-28T09:34 |
 | rust/bevy-plugin-ownership.md | 9 | 6 | 0 | 0 | 1 | 16 | 2026-04-28T09:25 |
 | rust/agent-must-review-allows.md | 11 | 6 | 0 | 0 | 1 | 26 | 2026-04-28T09:25 |
-| rust/omit-return-in-expression-position.md | 10 | 6 | 0 | 0 | 0 | 21 | 2026-04-25T11:06 |
+| rust/omit-return-in-expression-position.md | 10 | 6 | 0 | 0 | 0 | 22 | 2026-04-29T02:48 |
 | rust/borrow-the-slice-not-the-container.md | 12 | 6 | 0 | 0 | 0 | 30 | 2026-04-28T09:25 |
-| rust/use-bevy_kana-in-all-bevy-crates.md | 7 | 5 | 0 | 0 | 0 | 10 | 2026-04-28T09:25 |
+| rust/use-bevy_kana-in-all-bevy-crates.md | 7 | 5 | 0 | 0 | 0 | 11 | 2026-04-29T02:48 |
 | rust/import-constants-at-the-top.md | 11 | 5 | 0 | 0 | 0 | 25 | 2026-04-28T09:25 |
 | rust/dont-create-traits-for-single-implementations.md | 11 | 5 | 0 | 0 | 0 | 27 | 2026-04-28T09:34 |
 | rust/dont-repeat-type-name-in-fields.md | 11 | 3 | 0 | 0 | 1 | 28 | 2026-04-28T09:34 |
 | rust/name-bindings-to-match-parameters.md | 11 | 3 | 0 | 0 | 0 | 26 | 2026-04-28T09:25 |
 | rust/collapse-thin-module.md | 11 | 3 | 0 | 0 | 0 | 23 | 2026-04-28T09:25 |
 | docs/style/frontend-boundaries.md | 1 | 3 | 0 | 0 | 0 | 0 | 2026-04-13T08:31 |
-| rust/used-underscore-binding-module-level-allow-only.md | 10 | 2 | 0 | 0 | 0 | 21 | 2026-04-28T09:25 |
-| rust/type-registration-is-automatic.md | 8 | 2 | 0 | 0 | 0 | 13 | 2026-04-28T09:25 |
-| rust/reflectcomponent-suffices-for-brp-mutation.md | 9 | 1 | 0 | 0 | 0 | 16 | 2026-04-28T09:25 |
+| rust/used-underscore-binding-module-level-allow-only.md | 10 | 2 | 0 | 0 | 0 | 22 | 2026-04-29T02:48 |
+| rust/bevy-reflection-registration.md | 8 | 2 | 0 | 0 | 0 | 14 | 2026-04-29T02:48 |
 | rust/one-use-per-line.md | 10 | 1 | 0 | 0 | 0 | 28 | 2026-04-28T09:13 |
-| rust/no-wildcard-reexports.md | 10 | 1 | 0 | 0 | 0 | 26 | 2026-04-25T11:06 |
-| rust/no-single-component-use-imports.md | 11 | 1 | 0 | 0 | 0 | 22 | 2026-04-25T11:06 |
-| rust/no-pub-in-path.md | 12 | 0 | 0 | 1 | 0 | 28 | 2026-04-25T11:06 |
-| rust/never-bare-allowdeadcode.md | 11 | 1 | 0 | 0 | 0 | 28 | 2026-04-25T11:01 |
-| rust/never-allow-clippy-too-many-lines.md | 11 | 1 | 0 | 0 | 0 | 25 | 2026-04-25T11:06 |
+| rust/no-wildcard-reexports.md | 10 | 1 | 0 | 0 | 0 | 27 | 2026-04-29T02:48 |
+| rust/no-single-component-use-imports.md | 11 | 1 | 0 | 0 | 0 | 23 | 2026-04-29T02:48 |
+| rust/no-pub-in-path.md | 12 | 0 | 0 | 1 | 0 | 29 | 2026-04-29T02:48 |
+| rust/never-bare-allowdeadcode.md | 11 | 1 | 0 | 0 | 0 | 29 | 2026-04-29T02:48 |
+| rust/never-allow-clippy-too-many-lines.md | 11 | 1 | 0 | 0 | 0 | 26 | 2026-04-29T02:48 |
 | rust/dont-repeat-enum-domain-in-variant-names.md | 11 | 0 | 0 | 0 | 1 | 31 | 2026-04-28T09:34 |
 | rust/always-use-cargo-mend.md | 11 | 1 | 0 | 0 | 0 | 32 | 2026-04-28T09:25 |
 | docs/style/stable-toolchain-install.md | 1 | 1 | 0 | 0 | 0 | 1 | 2026-04-24T09:25 |
 | docs/style/pixel-units-in-names.md | 1 | 1 | 0 | 0 | 0 | 0 | 2026-04-20T09:20 |
 | docs/style/diagnostic-lifecycle.md | 1 | 1 | 0 | 0 | 0 | 1 | 2026-04-24T09:25 |
 | rust/workspace-dependencies.md | 9 | 0 | 0 | 0 | 0 | 22 | 2026-04-27T12:56 |
-| rust/use-usizefrombool-for-bool-to-integer-conversion.md | 9 | 0 | 0 | 0 | 0 | 22 | 2026-04-28T09:25 |
-| rust/prefer-observers-over-events.md | 8 | 0 | 0 | 0 | 0 | 18 | 2026-04-27T12:45 |
-| rust/never-use-pub-mod.md | 11 | 0 | 0 | 0 | 0 | 28 | 2026-04-25T11:06 |
+| rust/use-usizefrombool-for-bool-to-integer-conversion.md | 9 | 0 | 0 | 0 | 0 | 23 | 2026-04-29T02:48 |
+| rust/prefer-events-over-messages.md | 8 | 0 | 0 | 0 | 0 | 19 | 2026-04-29T02:48 |
+| rust/never-use-pub-mod.md | 11 | 0 | 0 | 0 | 0 | 29 | 2026-04-29T02:48 |
 | rust/never-allowclippytoomanylines.md | 9 | 0 | 0 | 0 | 0 | 9 | 2026-04-18T20:11 |
 | rust/never-allow-clippy-too_many_lines.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-21T08:41 |
 | rust/methods-that-dont-use-self-should-be-associated-functions.md | 11 | 0 | 0 | 0 | 0 | 30 | 2026-04-28T09:25 |
-| rust/messages-are-strongly-discouraged.md | 9 | 0 | 0 | 0 | 0 | 20 | 2026-04-28T09:25 |
 | rust/exception-std-paths-are-allowed-inline.md | 11 | 0 | 0 | 0 | 0 | 31 | 2026-04-28T09:34 |
 | rust/always-use-nextest.md | 11 | 0 | 0 | 0 | 0 | 33 | 2026-04-28T09:25 |
 | docs/style/style-guide-tooling-lines.md | 1 | 0 | 0 | 0 | 0 | 2 | 2026-04-24T09:25 |
@@ -82,17 +80,17 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 61 | 2 | 4 | 2.38 |
-| bevy_catenary | 61 | 4 | 5 | 4.25 |
-| bevy_diegetic | 61 | 0 | 5 | 0.8 |
-| bevy_kana | 61 | 2 | 4 | 3.25 |
-| bevy_lagrange | 61 | 1 | 3 | 1.93 |
-| bevy_liminal | 61 | 1 | 5 | 1.95 |
-| bevy_window_manager | 62 | 1 | 3 | 1.82 |
+| bevy_brp | 59 | 2 | 4 | 2.39 |
+| bevy_catenary | 59 | 4 | 5 | 4.25 |
+| bevy_diegetic | 59 | 0 | 5 | 0.81 |
+| bevy_kana | 59 | 2 | 4 | 3.25 |
+| bevy_lagrange | 59 | 1 | 3 | 1.93 |
+| bevy_liminal | 59 | 1 | 5 | 1.97 |
+| bevy_window_manager | 60 | 1 | 3 | 1.83 |
 | cargo-mend | 58 | 2 | 6 | 2.9 |
 | cargo-port | 57 | 0 | 5 | 0.53 |
-| hana | 61 | 0 | 4 | 1.07 |
-| nateroids | 61 | 2 | 7 | 2.67 |
+| hana | 59 | 0 | 4 | 1.07 |
+| nateroids | 59 | 2 | 7 | 3.1 |
 | obsidian_knife | 54 | 2 | 11 | 6.54 |
 
 ## Blocked Items View
@@ -137,4 +135,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-04-28T09:34:35Z from 124 recorded runs*
+*Generated 2026-04-29T08:41:55Z from 125 recorded runs*
