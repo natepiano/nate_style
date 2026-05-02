@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-04-27]]"
+date_modified: "[[2026-05-02]]"
 tags: [lints, rust]
 mechanism: llm
 ---
@@ -31,3 +31,7 @@ Allows that are explicitly pre-authorized by the style guide — with exact lint
 - **Test module boilerplate** (`test-module-allow-boilerplate.md`): `expect_used`, `unwrap_used`, and `panic` in `#[cfg(test)]` modules — but only the ones actually triggered by code in the module
 
 If the style guide does not explicitly say the agent can apply an allow, the agent must ask.
+
+### Exception: previously reviewed allows
+
+An existing `#[allow(...)]` with a non-empty `reason` field is treated as already reviewed and is not re-flagged by /style_eval or automated fix passes. The prohibition on agents adding new allows or authoring `reason` strings is unchanged.

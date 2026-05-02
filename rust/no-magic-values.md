@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-04-28]]"
+date_modified: "[[2026-05-02]]"
 see_also: "[[constants-file-organization]]"
 tags: [constants, rust]
 mechanism: llm
@@ -19,3 +19,8 @@ pub(super) const DEFAULT_BRP_PORT: u16 = 15702;
 // good — at call site
 if port == DEFAULT_BRP_PORT { ... }
 ```
+
+Exceptions — leave in place:
+
+- `impl Type { const FOO: ... = ...; }` — type-anchored, already named.
+- `const` declared inside the single function that uses it.

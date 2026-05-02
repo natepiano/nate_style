@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-28]]'
+date_modified: '[[2026-05-02]]'
 see_also: "[[leaf-module-visibility]]"
 tags:
 - rust
@@ -11,7 +11,7 @@ lint: forbidden_pub_crate
 ---
 ## No `pub(crate)` in nested modules
 
-`pub(crate)` is acceptable in top-level modules (direct children of `main.rs` or `lib.rs`) where it says exactly what it means. In nested modules, use `pub(super)` or bare `pub` with facade re-exports — `pub(crate)` bypasses module boundaries.
+`pub(crate)` is acceptable at depth ≤ 2 from the crate root (`crate::foo` or `crate::foo::bar` under a private parent) where the surrounding privacy already walls the item off. At depth 3+, use `pub(super)` or bare `pub` with facade re-exports — `pub(crate)` bypasses module boundaries.
 
 ```rust
 // bad — nested module using pub(crate)
