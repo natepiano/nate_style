@@ -5,6 +5,7 @@ tags:
 - patterns
 - rust
 mechanism: llm
+mode: propose
 ---
 ## Fix root causes, never workarounds
 
