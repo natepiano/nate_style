@@ -23,4 +23,5 @@ if port == DEFAULT_BRP_PORT { ... }
 Exceptions — leave in place:
 
 - `impl Type { const FOO: ... = ...; }` — type-anchored, already named.
-- `const` declared inside the single function that uses it.
+- Single-file binary targets (`examples/*.rs`, `benches/*.rs`) — constants at the top of the file, after imports.
+- `#[cfg(test)] mod tests` blocks (inline or as a sibling file) — constants at the top of the test module, after imports.

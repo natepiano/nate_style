@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-04-29]]"
-date_modified: "[[2026-04-29]]"
+date_created: "[[2026-05-02]]"
+date_modified: "[[2026-05-02]]"
 tags:
   - report
   - style
@@ -9,22 +9,22 @@ tags:
 ## Style History
 | Guideline | Projects | Fixed | Partial | Skipped | Fix Failed | No Findings | Last Seen |
 |---|---|---|---|---|---|---|---|
-| rust/no-magic-values.md | 12 | 44 | 1 | 1 | 0 | 6 | 2026-04-22T13:54 |
-| rust/constants-file-organization.md | 12 | 30 | 0 | 0 | 0 | 12 | 2026-04-28T09:34 |
-| rust/spell-out-names.md | 11 | 29 | 0 | 0 | 0 | 5 | 2026-04-25T11:06 |
-| rust/enums-over-bool-for-owned-booleans.md | 12 | 27 | 0 | 0 | 0 | 13 | 2026-04-25T11:01 |
-| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 12 | 2026-04-27T12:56 |
-| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 13 | 2026-04-29T02:48 |
-| rust/when-to-split-a-module.md | 10 | 16 | 0 | 2 | 0 | 8 | 2026-04-29T02:48 |
-| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 15 | 2026-04-28T09:25 |
-| rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 14 | 2026-04-25T11:01 |
-| rust/imports-go-at-the-top-of-the-file.md | 12 | 17 | 0 | 0 | 0 | 18 | 2026-04-28T09:25 |
-| rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 17 | 2026-04-28T09:25 |
+| rust/no-magic-values.md | 12 | 44 | 1 | 1 | 0 | 7 | 2026-05-02T20:35 |
+| rust/constants-file-organization.md | 12 | 30 | 0 | 0 | 0 | 13 | 2026-05-02T20:35 |
+| rust/spell-out-names.md | 11 | 29 | 0 | 0 | 0 | 6 | 2026-05-02T20:35 |
+| rust/enums-over-bool-for-owned-booleans.md | 12 | 27 | 0 | 0 | 0 | 14 | 2026-05-02T20:35 |
+| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 13 | 2026-05-02T20:35 |
+| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 14 | 2026-05-02T20:35 |
+| rust/when-to-split-a-module.md | 10 | 16 | 0 | 2 | 0 | 9 | 2026-05-02T20:35 |
+| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 16 | 2026-05-02T20:35 |
+| rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 15 | 2026-05-02T20:35 |
+| rust/imports-go-at-the-top-of-the-file.md | 12 | 17 | 0 | 0 | 0 | 19 | 2026-05-02T20:35 |
+| rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 18 | 2026-05-02T20:35 |
 | rust/prefer-local-relative-imports.md | 12 | 15 | 0 | 1 | 0 | 16 | 2026-04-29T02:48 |
 | rust/import-types-directly.md | 11 | 15 | 0 | 0 | 1 | 19 | 2026-04-25T11:01 |
-| rust/name-submodules-after-anchor-types.md | 11 | 13 | 0 | 0 | 2 | 15 | 2026-04-28T09:25 |
+| rust/name-submodules-after-anchor-types.md | 11 | 13 | 0 | 0 | 2 | 16 | 2026-05-02T20:35 |
 | rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 15 | 2026-04-29T02:48 |
-| rust/prefer-type-named-fields-and-bindings.md | 10 | 12 | 0 | 0 | 1 | 15 | 2026-04-29T02:48 |
+| rust/prefer-type-named-fields-and-bindings.md | 10 | 12 | 0 | 0 | 1 | 15 | 2026-05-02T20:35 |
 | rust/import-the-module-for-functions-not-the-function-itself.md | 12 | 13 | 0 | 0 | 0 | 20 | 2026-04-28T09:25 |
 | rust/avoid-redundant-closures.md | 12 | 11 | 0 | 2 | 0 | 21 | 2026-04-28T09:25 |
 | rust/no-pubcrate-in-nested-modules.md | 12 | 9 | 1 | 1 | 1 | 20 | 2026-04-29T02:48 |
@@ -82,8 +82,8 @@ tags:
 |---|---|---|---|---|
 | bevy_brp | 48 | 0 | 4 | 2.35 |
 | bevy_catenary | 48 | 0 | 5 | 4.15 |
-| bevy_diegetic | 48 | 0 | 5 | 0.81 |
-| bevy_kana | 48 | 0 | 4 | 3.19 |
+| bevy_diegetic | 49 | 0 | 5 | 0.8 |
+| bevy_kana | 48 | 0 | 5 | 3.46 |
 | bevy_lagrange | 48 | 0 | 3 | 1.9 |
 | bevy_liminal | 48 | 0 | 5 | 1.88 |
 | bevy_window_manager | 49 | 0 | 3 | 1.8 |
@@ -135,4 +135,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-04-29T13:23:18Z from 125 recorded runs*
+*Generated 2026-05-02T21:32:44Z from 126 recorded runs*
