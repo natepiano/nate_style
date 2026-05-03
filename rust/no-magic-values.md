@@ -29,7 +29,7 @@ Exceptions — leave in place:
 
 Group constants into related sections with a `//` comment title for each section. Sort sections alphabetically by section name. Within each section, sort constants alphabetically by name.
 
-Use `//` plain comments for section headers. Use `///` doc comments on individual constants only when the value is not self-evident from the name.
+Use `//` plain comments for section headers. Write headers in lowercase (proper nouns excepted) so they stand out as labels rather than reading like sentences. Use `///` doc comments on individual constants only when the value is not self-evident from the name.
 
 Rustfmt does not reorder constants, so alphabetical order must be maintained manually.
 
