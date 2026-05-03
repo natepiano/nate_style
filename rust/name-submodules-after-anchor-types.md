@@ -1,7 +1,7 @@
 ---
 date_created: "[[2026-04-10]]"
 date_modified: "[[2026-05-03]]"
-see_also: "[[split-by-type-ownership]]"
+see_also: "[[types-live-with-their-behavior]]"
 tags:
   - rust
   - modules
@@ -90,6 +90,8 @@ model.rs
 `types.rs` and `model.rs` describe code shape, not domain — they signal that types were grouped by what they *are* (data definitions) instead of what they *do*. When every submodule has an anchor type, the anchor's name is always more predictive than "types."
 
 Anti-pattern names apply at every level — a parent directory `utils/` (with `utils/mod.rs`) is the same violation as a leaf `utils.rs`. When a tree has multiple violations, rename them all in the same pass; finding several does not exempt any.
+
+Exception: `support/` is whitelisted for cross-cutting helpers that fail every other placement rule — see the `support/` section in `types-live-with-their-behavior.md`. Children inside `support/` still follow this rule (anchor-named, no `support/helpers.rs`).
 
 ### Sweep satellite identifiers
 

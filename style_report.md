@@ -11,7 +11,6 @@ tags:
 |---|---|---|---|---|---|---|---|
 | rust/no-magic-values.md | 12 | 44 | 1 | 1 | 0 | 8 | 2026-05-03T02:55 |
 | rust/spell-out-names.md | 11 | 29 | 0 | 0 | 1 | 8 | 2026-05-03T02:55 |
-| rust/constants-file-organization.md | 12 | 30 | 0 | 0 | 0 | 15 | 2026-05-03T02:55 |
 | rust/enums-over-bool-for-owned-booleans.md | 12 | 27 | 0 | 0 | 1 | 15 | 2026-05-03T02:55 |
 | rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 14 | 2026-05-03T02:32 |
 | rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 15 | 2026-05-03T02:32 |
@@ -50,7 +49,6 @@ tags:
 | rust/dont-create-traits-for-single-implementations.md | 11 | 5 | 0 | 0 | 0 | 28 | 2026-05-03T02:32 |
 | rust/dont-repeat-type-name-in-fields.md | 11 | 3 | 0 | 0 | 1 | 29 | 2026-05-03T02:32 |
 | rust/name-bindings-to-match-parameters.md | 11 | 3 | 0 | 0 | 0 | 27 | 2026-05-03T02:32 |
-| rust/collapse-thin-module.md | 11 | 3 | 0 | 0 | 0 | 24 | 2026-05-03T02:32 |
 | docs/style/frontend-boundaries.md | 1 | 3 | 0 | 0 | 0 | 0 | 2026-04-13T08:31 |
 | rust/used-underscore-binding-module-level-allow-only.md | 10 | 2 | 0 | 0 | 0 | 23 | 2026-05-03T02:32 |
 | rust/bevy-reflection-registration.md | 8 | 2 | 0 | 0 | 0 | 15 | 2026-05-03T02:32 |
@@ -81,18 +79,18 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 48 | 0 | 5 | 2.46 |
-| bevy_catenary | 48 | 0 | 5 | 4.15 |
-| bevy_diegetic | 49 | 0 | 6 | 0.84 |
-| bevy_kana | 48 | 1 | 6 | 4.46 |
-| bevy_lagrange | 49 | 0 | 4 | 1.9 |
-| bevy_liminal | 48 | 0 | 6 | 1.92 |
-| bevy_window_manager | 49 | 0 | 3 | 1.8 |
-| cargo-mend | 47 | 0 | 6 | 2.85 |
-| cargo-port | 46 | 0 | 5 | 0.48 |
-| hana | 48 | 0 | 4 | 1.1 |
-| nateroids | 48 | 0 | 7 | 3.06 |
-| obsidian_knife | 43 | 0 | 11 | 6.47 |
+| bevy_brp | 46 | 0 | 5 | 2.41 |
+| bevy_catenary | 46 | 0 | 5 | 4.11 |
+| bevy_diegetic | 47 | 0 | 6 | 0.83 |
+| bevy_kana | 46 | 1 | 6 | 4.43 |
+| bevy_lagrange | 47 | 0 | 4 | 1.89 |
+| bevy_liminal | 46 | 0 | 6 | 1.91 |
+| bevy_window_manager | 47 | 0 | 3 | 1.79 |
+| cargo-mend | 45 | 0 | 6 | 2.84 |
+| cargo-port | 44 | 0 | 5 | 0.45 |
+| hana | 46 | 0 | 3 | 1.04 |
+| nateroids | 46 | 0 | 7 | 3.02 |
+| obsidian_knife | 41 | 0 | 11 | 6.54 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
@@ -138,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-03T03:27:28Z from 131 recorded runs*
+*Generated 2026-05-03T14:02:35Z from 131 recorded runs*
