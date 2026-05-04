@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-27]]"
+date_modified: "[[2026-05-04]]"
 tags: [naming, rust]
 mechanism: llm
 ---
@@ -23,6 +23,17 @@ struct Summary {
 ```
 
 If wire-format names require repetition, use `#[serde(rename = "...")]` instead of baking it into the Rust API.
+
+### Exception: unit suffixes
+
+Unit suffixes (`_ms`, `_seconds`, `_bytes`) may repeat on raw numeric fields — the suffix carries unit info that would be lost if dropped.
+
+```rust
+struct PerfSnapshot {
+    frame_ms:  f32,
+    update_ms: f32,
+}
+```
 
 ### Sweep satellite identifiers
 
