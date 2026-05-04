@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-05-03]]"
-date_modified: "[[2026-05-03]]"
+date_created: "[[2026-05-04]]"
+date_modified: "[[2026-05-04]]"
 tags:
   - report
   - style
@@ -9,20 +9,20 @@ tags:
 ## Style History
 | Guideline | Projects | Fixed | Partial | Skipped | Fix Failed | No Findings | Last Seen |
 |---|---|---|---|---|---|---|---|
-| rust/no-magic-values.md | 12 | 44 | 1 | 1 | 0 | 8 | 2026-05-03T02:55 |
-| rust/spell-out-names.md | 11 | 29 | 0 | 0 | 1 | 8 | 2026-05-03T02:55 |
-| rust/enums-over-bool-for-owned-booleans.md | 12 | 27 | 0 | 0 | 1 | 15 | 2026-05-03T02:55 |
-| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 14 | 2026-05-03T02:32 |
-| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 15 | 2026-05-03T02:32 |
-| rust/when-to-split-a-module.md | 10 | 16 | 0 | 2 | 0 | 11 | 2026-05-03T02:55 |
-| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 17 | 2026-05-03T02:32 |
-| rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 16 | 2026-05-03T02:32 |
+| rust/no-magic-values.md | 12 | 50 | 1 | 1 | 0 | 8 | 2026-05-04T02:47 |
+| rust/spell-out-names.md | 11 | 32 | 0 | 0 | 1 | 10 | 2026-05-04T02:47 |
+| rust/enums-over-bool-for-owned-booleans.md | 12 | 27 | 0 | 0 | 1 | 17 | 2026-05-04T02:47 |
+| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 16 | 2026-05-04T02:47 |
+| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 16 | 2026-05-04T02:40 |
+| rust/when-to-split-a-module.md | 10 | 17 | 0 | 2 | 0 | 12 | 2026-05-04T02:47 |
+| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 18 | 2026-05-04T02:40 |
+| rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 17 | 2026-05-04T02:40 |
 | rust/imports-go-at-the-top-of-the-file.md | 12 | 17 | 0 | 0 | 0 | 20 | 2026-05-03T02:32 |
-| rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 19 | 2026-05-03T02:32 |
+| rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 20 | 2026-05-04T02:40 |
 | rust/prefer-local-relative-imports.md | 12 | 15 | 0 | 1 | 0 | 16 | 2026-04-29T02:48 |
+| rust/name-submodules-after-anchor-types.md | 11 | 14 | 0 | 0 | 2 | 17 | 2026-05-04T02:40 |
 | rust/import-types-directly.md | 11 | 15 | 0 | 0 | 1 | 19 | 2026-04-25T11:01 |
-| rust/name-submodules-after-anchor-types.md | 11 | 13 | 0 | 0 | 2 | 17 | 2026-05-03T02:32 |
-| rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 15 | 2026-05-03T02:32 |
+| rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 16 | 2026-05-04T02:40 |
 | rust/prefer-type-named-fields-and-bindings.md | 10 | 12 | 0 | 0 | 1 | 16 | 2026-05-03T02:32 |
 | rust/import-the-module-for-functions-not-the-function-itself.md | 12 | 13 | 0 | 0 | 0 | 20 | 2026-04-28T09:25 |
 | rust/avoid-redundant-closures.md | 12 | 11 | 0 | 2 | 0 | 21 | 2026-04-28T09:25 |
@@ -79,16 +79,16 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 46 | 0 | 5 | 2.41 |
-| bevy_catenary | 46 | 0 | 5 | 4.11 |
-| bevy_diegetic | 47 | 0 | 6 | 0.83 |
-| bevy_kana | 46 | 1 | 6 | 4.43 |
-| bevy_lagrange | 47 | 0 | 4 | 1.89 |
-| bevy_liminal | 46 | 0 | 6 | 1.91 |
+| bevy_brp | 46 | 0 | 6 | 2.46 |
+| bevy_catenary | 46 | 0 | 6 | 4.15 |
+| bevy_diegetic | 47 | 0 | 7 | 0.87 |
+| bevy_kana | 46 | 1 | 7 | 4.67 |
+| bevy_lagrange | 47 | 0 | 5 | 1.94 |
+| bevy_liminal | 46 | 0 | 7 | 2.02 |
 | bevy_window_manager | 47 | 0 | 3 | 1.79 |
 | cargo-mend | 45 | 0 | 6 | 2.84 |
 | cargo-port | 44 | 0 | 5 | 0.45 |
-| hana | 46 | 0 | 3 | 1.04 |
+| hana | 46 | 0 | 4 | 1.07 |
 | nateroids | 46 | 0 | 7 | 3.02 |
 | obsidian_knife | 41 | 0 | 11 | 6.54 |
 
@@ -136,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-03T14:02:35Z from 131 recorded runs*
+*Generated 2026-05-04T02:47:24Z from 138 recorded runs*

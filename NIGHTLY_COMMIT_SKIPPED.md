@@ -1,4 +1,4 @@
-# Nightly style commit skipped — 2026-04-29T02:59:32Z
+# Nightly style commit skipped — 2026-05-04T02:47:24Z
 
 **Reason:** unexpected working-tree changes
 
@@ -7,19 +7,7 @@
 Unexpected working-tree entries (only worktree-modified `.history/*.jsonl` and `style_report.md` are permitted):
 
 ```
- D .history/.pending/bevy_lagrange.json
- D .history/.pending/bevy_liminal.json
- D .history/.pending/bevy_window_manager.json
- D .history/.pending/hana.json
  D NIGHTLY_COMMIT_SKIPPED.md
- D rust/messages-are-strongly-discouraged.md
- M rust/omit-return-in-expression-position.md
- M rust/one-use-per-line.md
- M rust/prefer-from-impl-over-named-constructors.md
- M rust/prefer-functional-patterns.md
- M rust/prefer-local-relative-imports.md
- D rust/prefer-observers-over-events.md
-?? rust/prefer-events-over-messages.md
 ```
 
 ---
