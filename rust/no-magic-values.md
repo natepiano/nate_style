@@ -1,6 +1,7 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-05-03]]"
+date_modified: "[[2026-05-05]]"
+see_also: "[[when-to-split-a-module]]"
 tags: [constants, rust]
 mechanism: llm
 ---
@@ -24,6 +25,24 @@ Exceptions — leave in place:
 - `impl Type { const FOO: ... = ...; }` — type-anchored, already named.
 - Single-file binary targets (`examples/*.rs`, `benches/*.rs`, `build.rs`) — constants at the top of the file, after imports.
 - `#[cfg(test)] mod tests` blocks (inline or as a sibling file) — constants at the top of the test module, after imports.
+- Typed `const fn` factory aliases — `const X: T = T::factory_fn();` where the RHS is a self-naming `const fn` call with no literals (e.g. `PlatformShortcutMode::current()`). The factory call is already the name; binding it to a constant adds a layer without adding information. Inline the call at each use site.
+
+### Don't promote a flat module just to add `constants.rs`
+
+A flat `foo.rs` keeps its constants in the parent directory's `constants.rs`, as a peer file. Do not convert `foo.rs` into `foo/mod.rs` + `foo/constants.rs` solely to satisfy the constants-rs rule — promoting a flat file to a directory module requires 2+ of the criteria in [[when-to-split-a-module]], and the constants rule alone is not one of them.
+
+```text
+# bad — split exists only to host the constant
+input/
+  keybindings/
+    mod.rs              # was keybindings.rs
+    constants.rs        # holds the one moved const
+
+# good — peer constants.rs in the existing directory module
+input/
+  constants.rs          # holds keybindings' constant (pub(super))
+  keybindings.rs        # imports from sibling
+```
 
 ## File organization
 
