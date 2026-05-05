@@ -9,7 +9,7 @@ tags:
 ## Style History
 | Guideline | Projects | Fixed | Partial | Skipped | Fix Failed | No Findings | Last Seen |
 |---|---|---|---|---|---|---|---|
-| rust/no-magic-values.md | 12 | 64 | 1 | 1 | 0 | 12 | 2026-05-05T09:26 |
+| rust/no-magic-values.md | 12 | 64 | 1 | 1 | 0 | 12 | 2026-05-05T16:12 |
 | rust/spell-out-names.md | 11 | 41 | 0 | 0 | 1 | 18 | 2026-05-05T09:26 |
 | rust/enums-over-bool-for-owned-booleans.md | 12 | 28 | 0 | 0 | 1 | 23 | 2026-05-05T09:23 |
 | rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 22 | 2026-05-05T09:23 |
@@ -86,7 +86,7 @@ tags:
 | bevy_lagrange | 46 | 0 | 7 | 2.07 |
 | bevy_liminal | 45 | 1 | 9 | 2.98 |
 | bevy_window_manager | 46 | 1 | 4 | 1.91 |
-| cargo-mend | 44 | 2 | 6 | 2.91 |
+| cargo-mend | 44 | 2 | 6 | 2.93 |
 | cargo-port | 43 | 0 | 5 | 0.47 |
 | hana | 45 | 0 | 6 | 1.18 |
 | nateroids | 45 | 2 | 9 | 3.4 |
@@ -136,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-05T15:14:01Z from 158 recorded runs*
+*Generated 2026-05-05T16:13:01Z from 159 recorded runs*
