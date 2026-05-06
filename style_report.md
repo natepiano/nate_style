@@ -9,20 +9,20 @@ tags:
 ## Style History
 | Guideline | Projects | Fixed | Partial | Skipped | Fix Failed | No Findings | Last Seen |
 |---|---|---|---|---|---|---|---|
-| rust/no-magic-values.md | 12 | 64 | 1 | 1 | 0 | 12 | 2026-05-05T16:12 |
-| rust/spell-out-names.md | 11 | 41 | 0 | 0 | 1 | 18 | 2026-05-05T09:26 |
-| rust/enums-over-bool-for-owned-booleans.md | 12 | 28 | 0 | 0 | 1 | 23 | 2026-05-05T09:23 |
-| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 22 | 2026-05-05T09:23 |
-| rust/when-to-split-a-module.md | 11 | 20 | 0 | 2 | 0 | 17 | 2026-05-05T09:23 |
-| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 22 | 2026-05-05T09:23 |
-| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 24 | 2026-05-05T09:23 |
-| rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 23 | 2026-05-05T09:23 |
-| rust/name-submodules-after-anchor-types.md | 11 | 15 | 0 | 0 | 2 | 22 | 2026-05-05T09:23 |
+| rust/no-magic-values.md | 12 | 64 | 1 | 1 | 0 | 13 | 2026-05-05T21:53 |
+| rust/spell-out-names.md | 11 | 41 | 0 | 0 | 1 | 22 | 2026-05-05T21:53 |
+| rust/enums-over-bool-for-owned-booleans.md | 12 | 28 | 0 | 0 | 1 | 25 | 2026-05-05T21:53 |
+| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 24 | 2026-05-05T21:53 |
+| rust/when-to-split-a-module.md | 11 | 20 | 0 | 2 | 0 | 20 | 2026-05-05T21:53 |
+| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 24 | 2026-05-05T21:53 |
+| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 25 | 2026-05-05T21:53 |
+| rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 24 | 2026-05-05T17:06 |
+| rust/name-submodules-after-anchor-types.md | 11 | 15 | 0 | 0 | 2 | 23 | 2026-05-05T17:06 |
 | rust/imports-go-at-the-top-of-the-file.md | 12 | 17 | 0 | 0 | 0 | 23 | 2026-05-05T09:11 |
 | rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 23 | 2026-05-05T09:11 |
 | rust/prefer-local-relative-imports.md | 12 | 15 | 0 | 1 | 0 | 16 | 2026-04-29T02:48 |
 | rust/import-types-directly.md | 11 | 15 | 0 | 0 | 1 | 19 | 2026-04-25T11:01 |
-| rust/prefer-type-named-fields-and-bindings.md | 10 | 14 | 0 | 0 | 1 | 20 | 2026-05-05T09:23 |
+| rust/prefer-type-named-fields-and-bindings.md | 10 | 14 | 0 | 0 | 1 | 21 | 2026-05-05T21:53 |
 | rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 20 | 2026-05-05T09:11 |
 | rust/import-the-module-for-functions-not-the-function-itself.md | 12 | 13 | 0 | 0 | 0 | 20 | 2026-04-28T09:25 |
 | rust/avoid-redundant-closures.md | 12 | 11 | 0 | 2 | 0 | 21 | 2026-04-28T09:25 |
@@ -59,11 +59,11 @@ tags:
 | rust/no-pub-in-path.md | 12 | 0 | 0 | 1 | 0 | 31 | 2026-05-05T09:11 |
 | rust/never-bare-allowdeadcode.md | 11 | 1 | 0 | 0 | 0 | 31 | 2026-05-05T09:11 |
 | rust/never-allow-clippy-too-many-lines.md | 11 | 1 | 0 | 0 | 0 | 28 | 2026-05-05T09:11 |
-| rust/forbidden-words.md | 2 | 1 | 0 | 0 | 0 | 1 | 2026-05-05T09:11 |
+| rust/forbidden-words.md | 3 | 1 | 0 | 0 | 0 | 1 | 2026-05-05T19:13 |
 | rust/dont-repeat-enum-domain-in-variant-names.md | 11 | 0 | 0 | 0 | 1 | 33 | 2026-05-05T09:11 |
 | rust/always-use-cargo-mend.md | 11 | 1 | 0 | 0 | 0 | 34 | 2026-05-05T09:11 |
-| docs/style/stable-toolchain-install.md | 1 | 1 | 0 | 0 | 0 | 1 | 2026-04-24T09:25 |
-| docs/style/diagnostic-lifecycle.md | 1 | 1 | 0 | 0 | 0 | 1 | 2026-04-24T09:25 |
+| docs/style/stable-toolchain-install.md | 1 | 1 | 0 | 0 | 0 | 2 | 2026-05-05T17:06 |
+| docs/style/diagnostic-lifecycle.md | 1 | 1 | 0 | 0 | 0 | 2 | 2026-05-05T17:06 |
 | rust/workspace-dependencies.md | 9 | 0 | 0 | 0 | 0 | 23 | 2026-05-03T02:32 |
 | rust/use-usizefrombool-for-bool-to-integer-conversion.md | 9 | 0 | 0 | 0 | 0 | 23 | 2026-04-29T02:48 |
 | rust/prefer-events-over-messages.md | 8 | 0 | 0 | 0 | 0 | 20 | 2026-05-03T02:32 |
@@ -86,7 +86,7 @@ tags:
 | bevy_lagrange | 46 | 0 | 7 | 2.07 |
 | bevy_liminal | 45 | 1 | 9 | 2.98 |
 | bevy_window_manager | 46 | 1 | 4 | 1.91 |
-| cargo-mend | 44 | 2 | 6 | 2.93 |
+| cargo-mend | 44 | 2 | 10 | 3.55 |
 | cargo-port | 43 | 0 | 5 | 0.47 |
 | hana | 45 | 0 | 6 | 1.18 |
 | nateroids | 45 | 2 | 9 | 3.4 |
@@ -136,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-05T16:13:01Z from 159 recorded runs*
+*Generated 2026-05-05T21:53:25Z from 163 recorded runs*

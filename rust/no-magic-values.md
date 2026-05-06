@@ -20,12 +20,18 @@ pub(super) const DEFAULT_BRP_PORT: u16 = 15702;
 if port == DEFAULT_BRP_PORT { ... }
 ```
 
+### Surface
+
+Applies to numerics, strings naming domain entities (file names like `Cargo.toml` / `mod.rs`, path keywords `crate` / `super` / `self`, cargo target kinds, subcommands, CLI flags), format-spec literals (`{name:<40}`), and meaning-bearing char/byte literals. A familiar word is not exempt — `"Cargo.toml"` belongs in `constants.rs` once, not at every call site.
+
 Exceptions — leave in place:
 
 - `impl Type { const FOO: ... = ...; }` — type-anchored, already named.
 - Single-file binary targets (`examples/*.rs`, `benches/*.rs`, `build.rs`) — constants at the top of the file, after imports.
 - `#[cfg(test)] mod tests` blocks (inline or as a sibling file) — constants at the top of the test module, after imports.
 - Typed `const fn` factory aliases — `const X: T = T::factory_fn();` where the RHS is a self-naming `const fn` call with no literals (e.g. `PlatformShortcutMode::current()`). The factory call is already the name; binding it to a constant adds a layer without adding information. Inline the call at each use site.
+
+Don't lift a literal from an exempt site. If a constant ends up with no caller outside exempt scopes, delete the constant — adding code to keep it referenced is evasion (see `agent-must-review-allows.md`).
 
 ### Don't promote a flat module just to add `constants.rs`
 

@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-05-02]]"
+date_modified: "[[2026-05-05]]"
 tags: [lints, rust]
 mechanism: llm
 ---
@@ -19,6 +19,8 @@ Before adding or keeping any allow, the agent must work through this sequence:
 ### Restructure vs. evasion
 
 If the rewrite produces bit-identical output and exists only to hide the operation from clippy (`value.to_le_bytes()[0]` for `as u8`, `from_ne_bytes(to_ne_bytes())` for sign/width reinterpretation, or the same tucked inside a helper), it is evasion, not restructuring. Test: can you name what it does differently at runtime? If not, go to step 3.
+
+Same applies to keeping an unused constant or import alive: code that exists only to satisfy `dead_code` or `unused_imports` is evasion. Delete the constant or import, not the warning.
 
 ### Why
 
