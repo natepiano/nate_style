@@ -19,13 +19,13 @@ Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, 
 
 **Counters:** increment when the user has to point a word out again. A rising counter means the pre-send check failed.
 
-### "honest" — counter: 13
+### "honest" — counter: 15
 
 Forms: honest, honestly, more/most honest, to be honest, in all honesty, the honest X, an honest Y. Bans apply to *things* (`an honest API`, `the design is more honest`) as well as claims. Smuggles in a virtue claim and implies the alternative is dishonest — both wrong moves.
 
 Substitute: {direct, explicit, one-to-one, single-source-of-truth, simple, accurate} — or delete. **Not** truthfully / frankly / candidly.
 
-### "shape" — counter: 31
+### "shape" — counter: 33
 
 Forms: shape, shaped, shapes, reshape, reshaping. Filler analogy. Name the concrete artifact: function, pattern, struct, enum, function signature, trait, type — and name it.
 
@@ -33,7 +33,7 @@ Forms: shape, shaped, shapes, reshape, reshaping. Filler analogy. Name the concr
 
 **Exception:** `text shaping` / `shaper` (typography pipeline term, e.g. HarfBuzz) is canonical industry vocabulary — keep. The ban targets vague analogies, not domain terms.
 
-### "carve" — counter: 8
+### "carve" — counter: 10
 
 Forms: carve, carving, carved, carve-out, carve out. Metaphor that hides the operation. Pick the verb: **extract** (move body of code into a new home), **split** (one becomes two), **move** (single field relocates), **refactor** (behavior preserved), **introduce** (purely additive).
 
@@ -45,7 +45,7 @@ Forms: gloss, glosses, glossed, glossing, glossary (when it means a short explan
 
 **Not** annotation / summary when the job is *translating jargon into plain words* — name the job.
 
-### "bite" — counter: 8
+### "bite" — counter: 10
 
 Forms: bite, bites, biting, bitten. Metaphor that hides what actually happens. Pick the verb: **affects**, **hits**, **trips**, **trips up**, **fires on**.
 
