@@ -1,17 +1,17 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-05-03]]"
+date_modified: "[[2026-05-06]]"
 see_also:
   - "[[types-live-with-their-behavior]]"
   - "[[no-magic-values]]"
 tags: [modules, rust]
 mechanism: llm
 ---
-## Split along type ownership, not code shape
+## Split modules by type ownership, not code category
 
 When splitting a module into submodules, draw boundaries around **type clusters**, not around code categories. Each submodule should own one type cluster: the primary type, its field types, its `impl` blocks, and the free functions that construct or operate on it.
 
-### Bad: split by code shape
+### Bad: split by code category
 
 Separating types from functions or tests from code produces files that are coupled across every boundary. Every change touches multiple files.
 

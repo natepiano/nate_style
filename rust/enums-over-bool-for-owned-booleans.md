@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-02]]"
+date_modified: "[[2026-05-06]]"
 see_also: "[[dont-repeat-enum-domain-in-variant-names]]"
 tags: [rust, types]
 mechanism: llm
@@ -52,6 +52,11 @@ fn detail_layout_spec(git: GitPresence, targets: TargetPresence) -> DetailLayout
     }
 }
 ```
+
+### Not owned
+
+- **Wire-format single-value field.** A field hard-coded at every construction site (e.g. external spec requires it but the producer only writes one value) is not state — leave it `bool`. Introduce the enum only when both values actually appear.
+- **Parsing scaffolding.** File-private `Raw*` structs that convert to a typed public struct via `impl From<Raw> for Pub` are deserialization-only. Apply the rule to the public type.
 
 ### Local accumulators count as owned
 

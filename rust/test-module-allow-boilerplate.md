@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-29]]'
+date_modified: '[[2026-05-07]]'
 see_also: "[[agent-must-review-allows]]"
 tags:
 - lints
@@ -24,3 +24,7 @@ mod tests {
 ```
 
 These are pre-authorized — the agent may apply the ones that are needed without user review. Do not add allows speculatively; they create cognitive load by implying the keywords are present when they are not.
+
+### Verify before flagging stale
+
+A site is stale only if the allow's lint list contains a lint whose pattern (`.unwrap(`, `.expect(`, `panic!(`) has zero matches in the target scope. Each Locations entry must name the lint to strip — e.g. `src/foo.rs:N — strip clippy::panic` — so a claim that names a lint not in the allow cannot be written.

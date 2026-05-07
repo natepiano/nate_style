@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop'
 ---
 ## Forbidden words
 
@@ -19,37 +19,62 @@ Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, 
 
 **Counters:** increment when the user has to point a word out again. A rising counter means the pre-send check failed.
 
-### "honest" — counter: 16
+### "honest" — counter: 39
 
 Forms: honest, honestly, more/most honest, to be honest, in all honesty, the honest X, an honest Y. Bans apply to *things* (`an honest API`, `the design is more honest`) as well as claims. Smuggles in a virtue claim and implies the alternative is dishonest — both wrong moves.
 
 Substitute: {direct, explicit, one-to-one, single-source-of-truth, simple, accurate} — or delete. **Not** truthfully / frankly / candidly.
 
-### "shape" — counter: 34
+### "shape" — counter: 152
+
+regex: \b(reshaping|reshape|shapes|shaped|shape)\b
+except: text shaping, shaper, text_shaping
 
 Forms: shape, shaped, shapes, reshape, reshaping. Filler analogy. Name the concrete artifact: function, pattern, struct, enum, function signature, trait, type — and name it.
 
 **Not** form / structure (same hedge, different letters).
 
-**Exception:** `text shaping` / `shaper` (typography pipeline term, e.g. HarfBuzz) is canonical industry vocabulary — keep. The ban targets vague analogies, not domain terms.
+**Exception:** `text shaping` / `shaper` (typography pipeline term, e.g. HarfBuzz) is canonical industry vocabulary — keep. The ban targets vague analogies, not domain terms. The `except:` line above is the machine-readable form parsed by the hook.
 
-### "carve" — counter: 11
+### "carve" — counter: 36
 
 Forms: carve, carving, carved, carve-out, carve out. Metaphor that hides the operation. Pick the verb: **extract** (move body of code into a new home), **split** (one becomes two), **move** (single field relocates), **refactor** (behavior preserved), **introduce** (purely additive).
 
 **Not** sculpt / tease apart (same hedge).
 
-### "gloss" — counter: 2
+### "gloss" — counter: 17
 
 Forms: gloss, glosses, glossed, glossing, glossary (when it means a short explanation). Pretentious jargon for plain-English explanation. Substitute: "plain-English explanation", "translation", "what it means in plain words", or "explanation".
 
 **Not** annotation / summary when the job is *translating jargon into plain words* — name the job.
 
-### "bite" — counter: 11
+### "bite" — counter: 28
+
+regex: \bbit(e|es|ing|ten)\b
 
 Forms: bite, bites, biting, bitten. Metaphor that hides what actually happens. Pick the verb: **affects**, **hits**, **trips**, **trips up**, **fires on**.
 
 Substitute: {affects, hits, trips, trips up, fires on} — or delete. **Not** stings / nips (same hedge).
+
+### "plain English" — counter: 5
+
+Forms: plain English. Filler that announces what the next clause already does — pure noise.
+
+Substitute: delete. The sentence following the phrase already speaks plainly; the announcement adds nothing.
+
+### "load-bearing" — counter: 8
+
+regex: \bload-bearing\b
+
+Forms: load-bearing. Metaphor that hides what actually depends on the thing. Name the dependency: which call site, invariant, test, or downstream consumer relies on it.
+
+Substitute: {essential, required, depended-on, critical, relied-on} — or name the actual dependent. **Not** structural / foundational (same hedge).
+
+### "full stop" — counter: 6
+
+Forms: full stop, full-stop. Empty intensifier — adds emphasis without substance and signals the claim can't stand on its own.
+
+Substitute: delete — or state the claim directly without the terminator. **Not** period / end of story / no exceptions (same hedge).
 
 ### Review pass
 

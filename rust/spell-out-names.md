@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-29]]'
+date_modified: '[[2026-05-07]]'
 tags:
 - naming
 - rust
@@ -22,7 +22,11 @@ const A4_HEIGHT_MILLIMETERS: f32 = 297.0;
 let a4_height = A4_HEIGHT_MILLIMETERS * MILLIMETERS_PER_METER;
 ```
 
-Well-known single-word abbreviations (`max`, `min`, `len`, `idx`) are fine — the rule targets multi-abbreviation compounds where every word is shortened (`a4_h_m`, `ctrl_w`, `mm_to_m`).
+Well-known single-word abbreviations (`max`, `min`, `len`, `idx`, `secs`, `ms`) are fine — the rule targets multi-abbreviation compounds where every word is shortened (`a4_h_m`, `ctrl_w`, `mm_to_m`). Match the host crate's spelling for unit suffixes (Bevy uses `delta_secs`, not `delta_seconds`).
+
+Canonical industry acronyms count as single tokens: `Ux`, `Fps`, `Http`, `Url`, `Json`, `Sql`, `Api`, `regex`, `Fov`, `Msaa`, `Smaa`, `Taa`, `Hdr`, `Sdr`, etc. Keep `ProtectedUx`, `ShowFps`, `MsaaHdr`; do not expand.
+
+A binding may also mirror its type's snake_case name when the type abbreviates: `let orbit_cam: OrbitCam = …`, not `orbit_camera`. The type's spelling is canonical; satellite identifiers (params, format tokens) follow the binding.
 
 ### Sweep satellite identifiers
 
