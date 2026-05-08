@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-27]]'
+date_modified: '[[2026-05-08]]'
 tags:
 - constants
 - imports
@@ -9,7 +9,7 @@ mechanism: llm
 ---
 ## Import constants at the top
 
-Constants follow the same rule as types — import at the top, use the bare name inline.
+Module constants are imported at the top and used bare inline; inherent associated constants stay qualified (`Vec3::X`, `f32::EPSILON`).
 
 ```rust
 // bad

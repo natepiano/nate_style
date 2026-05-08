@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-05-07]]"
+date_modified: "[[2026-05-08]]"
 see_also: "[[when-to-split-a-module]]"
 tags: [constants, rust]
 mechanism: llm
@@ -29,6 +29,7 @@ Exceptions — leave in place:
 - `impl Type { const FOO: ... = ...; }` — type-anchored, already named.
 - Single-file binary targets (`examples/*.rs`, `benches/*.rs`, `build.rs`) — constants at the top of the file, after imports.
 - `#[cfg(test)] mod tests` blocks (inline or as a sibling file) — constants at the top of the test module, after imports.
+- `include_str!` / `include_bytes!` path literals, including wrapper macros like Bevy's `embedded_asset!` — Rust requires literal paths; do not duplicate them in `constants.rs`.
 - Typed `const fn` factory aliases — `const X: T = T::factory_fn();` where the RHS is a self-naming `const fn` call with no literals (e.g. `PlatformShortcutMode::current()`). The factory call is already the name; binding it to a constant adds a layer without adding information. Inline the call at each use site.
 - English connectives and pluralization labels used in description-builder chains. Strings like `.text("and")`, `.text("for")`, or a `Phrase::File(1) => "file"` arm returning `"file"` / `"files"` are grammatical glue between domain words, not domain entities — leave inline at the call site.
 - Match arms that pair an enum variant with a short label, where the match is the only consumer of those labels. Example: `impl Phrase { fn pluralize(&self) { match self { Self::File(1) => "file", Self::File(_) => "files", … } } }`. The match is the dictionary for the enum; lifting each label to `constants.rs` creates names with no caller outside the match.

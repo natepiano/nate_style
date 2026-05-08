@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight'
 ---
 ## Forbidden words
 
@@ -19,13 +19,13 @@ Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, 
 
 **Counters:** increment when the user has to point a word out again. A rising counter means the pre-send check failed.
 
-### "honest" — counter: 39
+### "honest" — counter: 42
 
 Forms: honest, honestly, more/most honest, to be honest, in all honesty, the honest X, an honest Y. Bans apply to *things* (`an honest API`, `the design is more honest`) as well as claims. Smuggles in a virtue claim and implies the alternative is dishonest — both wrong moves.
 
 Substitute: {direct, explicit, one-to-one, single-source-of-truth, simple, accurate} — or delete. **Not** truthfully / frankly / candidly.
 
-### "shape" — counter: 152
+### "shape" — counter: 166
 
 regex: \b(reshaping|reshape|shapes|shaped|shape)\b
 except: text shaping, shaper, text_shaping
@@ -62,7 +62,7 @@ Forms: plain English. Filler that announces what the next clause already does �
 
 Substitute: delete. The sentence following the phrase already speaks plainly; the announcement adds nothing.
 
-### "load-bearing" — counter: 8
+### "load-bearing" — counter: 11
 
 regex: \bload-bearing\b
 
@@ -75,6 +75,14 @@ Substitute: {essential, required, depended-on, critical, relied-on} — or name 
 Forms: full stop, full-stop. Empty intensifier — adds emphasis without substance and signals the claim can't stand on its own.
 
 Substitute: delete — or state the claim directly without the terminator. **Not** period / end of story / no exceptions (same hedge).
+
+### "pulling its weight" — counter: 0
+
+regex: \bpull(s|ed|ing)?\s+(its|their|his|her|my|your|our)\s+weight\b
+
+Forms: pulling its weight, pulls its weight, pulled its weight, pull its weight, pulling their weight. Metaphor that hides whether the thing actually does its job. Name the concrete contribution: what function it serves, what it justifies, or what would break without it.
+
+Substitute: {justifies its cost, does the work of X, is needed for Y} — or name the concrete dependent — or delete. **Not** earning its keep / carrying its weight / paying its way (same hedge).
 
 ### Review pass
 

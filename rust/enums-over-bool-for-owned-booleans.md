@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-06]]"
+date_modified: "[[2026-05-07]]"
 see_also: "[[dont-repeat-enum-domain-in-variant-names]]"
 tags: [rust, types]
 mechanism: llm
@@ -60,7 +60,7 @@ fn detail_layout_spec(git: GitPresence, targets: TargetPresence) -> DetailLayout
 
 ### Local accumulators count as owned
 
-A local `let mut x: bool` that folds in a domain signal — `dirty |= ...`, `any_failed |= ...`, `seen_match = seen_match || ...` — is owned the same way a return type or struct field is. Promote it to the enum and give the enum a fold/merge method; do not leave the consumer on `bool` just because the producer was fixed.
+A local `let mut x: bool` that accumulates domain state — `dirty |= ...`, `any_failed |= ...`, `seen_match = seen_match || ...` — is owned the same way a return type or struct field is. Promote it to the enum; add an enum method for updating the accumulated state when the update logic is reused, nontrivial, or likely to gain states.
 
 ```rust
 // bad — producer returns the enum, consumer keeps the bool
@@ -78,7 +78,7 @@ for item in items {
 if dirty.is_changed() { recompute(); }
 ```
 
-Provide a `merge` (or domain-appropriate fold) on the enum so the accumulator can stay typed end-to-end.
+Short one-off updates may stay inline as long as the accumulator itself stays typed end-to-end.
 
 ### Avoid stutter in enum names
 
