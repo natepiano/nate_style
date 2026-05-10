@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-27]]"
+date_modified: "[[2026-05-10]]"
 tags: [naming, rust]
 mechanism: llm
 ---
@@ -21,6 +21,10 @@ enum FluctuationMode {
     Disabled,
 }
 ```
+
+### Exception: fixed compound terms
+
+Keep the domain word when removing it would break an established compound term (`GameState::InGame`, `GameState::GameOver`, `TeleportStatus::JustTeleported`); otherwise keep variants state-only (`UploadStatus::Failed`, not `UploadStatus::UploadFailed`).
 
 ### Sweep satellite identifiers
 

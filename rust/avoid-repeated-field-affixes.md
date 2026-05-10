@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-04]]"
+date_modified: "[[2026-05-09]]"
 tags: [naming, rust]
 mechanism: llm
 ---
@@ -33,6 +33,26 @@ struct PerfSnapshot {
     frame_ms:  f32,
     update_ms: f32,
 }
+```
+
+### Exception: stable config keys
+
+Fields may repeat a prefix when they intentionally mirror stable config keys or diagnostic names, such as `allow_pub_mod` and `allow_pub_items`.
+
+### Exception: type-named fields
+
+Fields may repeat a suffix when the full name is the snake_case form of the stored type and reads naturally, such as `visibility_config: VisibilityConfig`.
+
+### Exception: state-specific value kinds
+
+Fields may repeat a suffix when siblings store the same value kind in different states and trimming the suffix leaves relation-only names (`current`, `previous`, `last_in_window`); prefer renaming the enclosing type before deleting the value kind.
+
+```rust
+// bad
+struct MouseTracker { current: Vec2, previous: Vec2 }
+
+// good
+struct MouseTracker { current_position: Vec2, previous_position: Vec2 }
 ```
 
 ### Sweep satellite identifiers

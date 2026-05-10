@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-27]]"
+date_modified: "[[2026-05-10]]"
 see_also: "[[prefer-type-named-fields-and-bindings]]"
 tags: [naming, rust]
 mechanism: llm
@@ -22,6 +22,12 @@ struct Point {
     y: u32,
 }
 ```
+
+### Exception: transparent collection wrappers
+
+A one-field collection wrapper may use the collection noun when generic names would lose meaning: `struct ImageLinks { links: Vec<ImageLink> }`.
+
+This does not allow repeating the full type name: `image_links`.
 
 ### Sweep satellite identifiers
 

@@ -19,13 +19,13 @@ Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, 
 
 **Counters:** increment when the user has to point a word out again. A rising counter means the pre-send check failed.
 
-### "honest" — counter: 42
+### "honest" — counter: 43
 
 Forms: honest, honestly, more/most honest, to be honest, in all honesty, the honest X, an honest Y. Bans apply to *things* (`an honest API`, `the design is more honest`) as well as claims. Smuggles in a virtue claim and implies the alternative is dishonest — both wrong moves.
 
 Substitute: {direct, explicit, one-to-one, single-source-of-truth, simple, accurate} — or delete. **Not** truthfully / frankly / candidly.
 
-### "shape" — counter: 166
+### "shape" — counter: 178
 
 regex: \b(reshaping|reshape|shapes|shaped|shape)\b
 except: text shaping, shaper, text_shaping
@@ -62,7 +62,7 @@ Forms: plain English. Filler that announces what the next clause already does �
 
 Substitute: delete. The sentence following the phrase already speaks plainly; the announcement adds nothing.
 
-### "load-bearing" — counter: 11
+### "load-bearing" — counter: 14
 
 regex: \bload-bearing\b
 
