@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-09]]"
+date_modified: "[[2026-05-11]]"
 tags: [naming, rust]
 mechanism: llm
 ---
@@ -54,6 +54,10 @@ struct MouseTracker { current: Vec2, previous: Vec2 }
 // good
 struct MouseTracker { current_position: Vec2, previous_position: Vec2 }
 ```
+
+### Exception: context-preserving identifiers
+
+Keep the affix when dropping it leaves a generic field whose meaning is not clear from the enclosing type: `WatchInfo { watch_id }`, not `WatchInfo { id }`, when nearby code also handles entity IDs, task IDs, ports, or log paths.
 
 ### Sweep satellite identifiers
 

@@ -25,7 +25,7 @@ Forms: honest, honestly, more/most honest, to be honest, in all honesty, the hon
 
 Substitute: {direct, explicit, one-to-one, single-source-of-truth, simple, accurate} — or delete. **Not** truthfully / frankly / candidly.
 
-### "shape" — counter: 178
+### "shape" — counter: 179
 
 regex: \b(reshaping|reshape|shapes|shaped|shape)\b
 except: text shaping, shaper, text_shaping
@@ -36,7 +36,7 @@ Forms: shape, shaped, shapes, reshape, reshaping. Filler analogy. Name the concr
 
 **Exception:** `text shaping` / `shaper` (typography pipeline term, e.g. HarfBuzz) is canonical industry vocabulary — keep. The ban targets vague analogies, not domain terms. The `except:` line above is the machine-readable form parsed by the hook.
 
-### "carve" — counter: 36
+### "carve" — counter: 37
 
 Forms: carve, carving, carved, carve-out, carve out. Metaphor that hides the operation. Pick the verb: **extract** (move body of code into a new home), **split** (one becomes two), **move** (single field relocates), **refactor** (behavior preserved), **introduce** (purely additive).
 
@@ -62,7 +62,7 @@ Forms: plain English. Filler that announces what the next clause already does �
 
 Substitute: delete. The sentence following the phrase already speaks plainly; the announcement adds nothing.
 
-### "load-bearing" — counter: 14
+### "load-bearing" — counter: 16
 
 regex: \bload-bearing\b
 
