@@ -62,7 +62,6 @@ tags:
 | rust/forbidden-words.md | 3 | 1 | 0 | 0 | 0 | 1 | 2026-05-05T19:13 |
 | rust/exception-std-paths-are-allowed-inline.md | 11 | 1 | 0 | 0 | 0 | 33 | 2026-05-07T14:05 |
 | rust/dont-repeat-enum-domain-in-variant-names.md | 11 | 0 | 0 | 0 | 1 | 34 | 2026-05-07T14:05 |
-| rust/always-use-cargo-mend.md | 11 | 1 | 0 | 0 | 0 | 36 | 2026-05-07T14:05 |
 | docs/style/stable-toolchain-install.md | 1 | 1 | 0 | 0 | 0 | 3 | 2026-05-07T14:05 |
 | docs/style/diagnostic-lifecycle.md | 1 | 1 | 0 | 0 | 0 | 2 | 2026-05-07T14:05 |
 | rust/workspace-dependencies.md | 9 | 0 | 0 | 0 | 0 | 24 | 2026-05-07T14:05 |
@@ -79,18 +78,18 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 45 | 2 | 10 | 2.71 |
-| bevy_catenary | 45 | 4 | 10 | 4.89 |
-| bevy_diegetic | 46 | 0 | 11 | 1.09 |
-| bevy_kana | 45 | 4 | 11 | 6.53 |
-| bevy_lagrange | 46 | 0 | 9 | 2.15 |
-| bevy_liminal | 45 | 1 | 11 | 3.07 |
-| bevy_window_manager | 46 | 1 | 6 | 2.04 |
-| cargo-mend | 44 | 3 | 12 | 4.61 |
-| cargo-port | 43 | 0 | 5 | 0.47 |
-| hana | 45 | 0 | 8 | 1.27 |
-| nateroids | 45 | 2 | 11 | 3.53 |
-| obsidian_knife | 40 | 3 | 15 | 7.6 |
+| bevy_brp | 44 | 2 | 10 | 2.7 |
+| bevy_catenary | 44 | 4 | 10 | 4.89 |
+| bevy_diegetic | 45 | 0 | 11 | 1.09 |
+| bevy_kana | 44 | 4 | 11 | 6.55 |
+| bevy_lagrange | 45 | 0 | 9 | 2.16 |
+| bevy_liminal | 44 | 1 | 11 | 3.07 |
+| bevy_window_manager | 45 | 1 | 6 | 2.04 |
+| cargo-mend | 43 | 3 | 12 | 4.63 |
+| cargo-port | 42 | 0 | 5 | 0.48 |
+| hana | 44 | 0 | 8 | 1.27 |
+| nateroids | 44 | 2 | 11 | 3.55 |
+| obsidian_knife | 39 | 3 | 15 | 7.62 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
@@ -136,4 +135,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-11T08:41:58Z from 208 recorded runs*
+*Generated 2026-05-11T13:02:03Z from 185 recorded runs*
