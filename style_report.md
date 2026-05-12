@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-05-11]]"
-date_modified: "[[2026-05-11]]"
+date_created: "[[2026-05-12]]"
+date_modified: "[[2026-05-12]]"
 tags:
   - report
   - style
@@ -9,12 +9,12 @@ tags:
 ## Style History
 | Guideline | Projects | Fixed | Partial | Skipped | Fix Failed | No Findings | Last Seen |
 |---|---|---|---|---|---|---|---|
-| rust/no-magic-values.md | 12 | 74 | 1 | 1 | 0 | 17 | 2026-05-07T14:41 |
-| rust/spell-out-names.md | 11 | 48 | 0 | 0 | 1 | 29 | 2026-05-07T14:41 |
-| rust/enums-over-bool-for-owned-booleans.md | 12 | 31 | 0 | 0 | 1 | 30 | 2026-05-07T14:19 |
-| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 29 | 2026-05-07T14:13 |
-| rust/when-to-split-a-module.md | 11 | 20 | 0 | 2 | 0 | 25 | 2026-05-07T14:19 |
-| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 28 | 2026-05-07T14:13 |
+| rust/no-magic-values.md | 12 | 74 | 1 | 1 | 0 | 18 | 2026-05-12T11:33 |
+| rust/spell-out-names.md | 11 | 48 | 0 | 0 | 1 | 30 | 2026-05-12T11:33 |
+| rust/enums-over-bool-for-owned-booleans.md | 12 | 31 | 0 | 0 | 1 | 30 | 2026-05-12T11:33 |
+| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 30 | 2026-05-12T11:33 |
+| rust/when-to-split-a-module.md | 11 | 20 | 0 | 2 | 0 | 26 | 2026-05-12T11:33 |
+| rust/never-prefix-unused-fields-or-variables-with.md | 12 | 17 | 1 | 2 | 1 | 28 | 2026-05-12T11:33 |
 | rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 28 | 2026-05-07T14:05 |
 | rust/leaf-module-visibility.md | 12 | 10 | 3 | 3 | 2 | 27 | 2026-05-07T14:05 |
 | rust/name-submodules-after-anchor-types.md | 11 | 15 | 0 | 0 | 2 | 26 | 2026-05-07T14:05 |
@@ -78,7 +78,7 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 44 | 2 | 10 | 2.7 |
+| bevy_brp | 44 | 2 | 11 | 2.84 |
 | bevy_catenary | 44 | 4 | 10 | 4.89 |
 | bevy_diegetic | 45 | 0 | 11 | 1.09 |
 | bevy_kana | 44 | 4 | 11 | 6.55 |
@@ -135,4 +135,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-11T13:02:03Z from 185 recorded runs*
+*Generated 2026-05-12T11:33:52Z from 193 recorded runs*

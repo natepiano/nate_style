@@ -1,6 +1,7 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-11]]"
+date_modified: "[[2026-05-12]]"
+see_also: "[[prefer-type-named-fields-and-bindings]]"
 tags: [naming, rust]
 mechanism: llm
 ---
@@ -39,9 +40,14 @@ struct PerfSnapshot {
 
 Fields may repeat a prefix when they intentionally mirror stable config keys or diagnostic names, such as `allow_pub_mod` and `allow_pub_items`.
 
+### Exception: counts in mixed structs
+
+A repeated `_count` suffix is information-bearing when the enclosing struct also stores non-count fields and dropping it would make the name read as the items being counted, not the count.
+
 ### Exception: type-named fields
 
 Fields may repeat a suffix when the full name is the snake_case form of the stored type and reads naturally, such as `visibility_config: VisibilityConfig`.
+If removing the shared affix would break a type-named field, keep the type-named field.
 
 ### Exception: state-specific value kinds
 

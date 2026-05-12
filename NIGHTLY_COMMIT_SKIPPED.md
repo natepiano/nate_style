@@ -1,4 +1,4 @@
-# Nightly style commit skipped — 2026-05-11T08:41:58Z
+# Nightly style commit skipped — 2026-05-12T11:33:52Z
 
 **Reason:** unexpected working-tree changes
 
@@ -8,6 +8,7 @@ Unexpected working-tree entries (only worktree-modified `.history/*.jsonl` and `
 
 ```
  D NIGHTLY_COMMIT_SKIPPED.md
+ M rust/avoid-repeated-field-affixes.md
  M rust/forbidden-words.md
 ```
 
