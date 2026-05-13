@@ -17,15 +17,15 @@ Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, 
 
 **Pre-send check:** scan every draft for each banned substring. If present, substitute the precise word. If no precise word fits, the sentence isn't making a claim — delete it. Don't surgically swap one word; rewrite the sentence.
 
-**Counters:** increment when the user has to point a word out again. A rising counter means the pre-send check failed.
+**Counters:** hook hits are tracked in `~/.claude/state/forbidden-word-counts.json`, not in this guide. A rising local counter means the pre-send check failed.
 
-### "honest" — counter: 49
+### "honest"
 
 Forms: honest, honestly, more/most honest, to be honest, in all honesty, the honest X, an honest Y. Bans apply to *things* (`an honest API`, `the design is more honest`) as well as claims. Smuggles in a virtue claim and implies the alternative is dishonest — both wrong moves.
 
 Substitute: {direct, explicit, one-to-one, single-source-of-truth, simple, accurate} — or delete. **Not** truthfully / frankly / candidly.
 
-### "shape" — counter: 196
+### "shape"
 
 regex: \b(reshaping|reshape|shapes|shaped|shape)\b
 except: text shaping, shaper, text_shaping
@@ -36,19 +36,19 @@ Forms: shape, shaped, shapes, reshape, reshaping. Filler analogy. Name the concr
 
 **Exception:** `text shaping` / `shaper` (typography pipeline term, e.g. HarfBuzz) is canonical industry vocabulary — keep. The ban targets vague analogies, not domain terms. The `except:` line above is the machine-readable form parsed by the hook.
 
-### "carve" — counter: 39
+### "carve"
 
 Forms: carve, carving, carved, carve-out, carve out. Metaphor that hides the operation. Pick the verb: **extract** (move body of code into a new home), **split** (one becomes two), **move** (single field relocates), **refactor** (behavior preserved), **introduce** (purely additive).
 
 **Not** sculpt / tease apart (same hedge).
 
-### "gloss" — counter: 18
+### "gloss"
 
 Forms: gloss, glosses, glossed, glossing, glossary (when it means a short explanation). Pretentious jargon for plain-English explanation. Substitute: "plain-English explanation", "translation", "what it means in plain words", or "explanation".
 
 **Not** annotation / summary when the job is *translating jargon into plain words* — name the job.
 
-### "bite" — counter: 29
+### "bite"
 
 regex: \bbit(e|es|ing|ten)\b
 
@@ -56,13 +56,13 @@ Forms: bite, bites, biting, bitten. Metaphor that hides what actually happens. P
 
 Substitute: {affects, hits, trips, trips up, fires on} — or delete. **Not** stings / nips (same hedge).
 
-### "plain English" — counter: 6
+### "plain English"
 
 Forms: plain English. Filler that announces what the next clause already does — pure noise.
 
 Substitute: delete. The sentence following the phrase already speaks plainly; the announcement adds nothing.
 
-### "load-bearing" — counter: 18
+### "load-bearing"
 
 regex: \bload-bearing\b
 
@@ -70,13 +70,13 @@ Forms: load-bearing. Metaphor that hides what actually depends on the thing. Nam
 
 Substitute: {essential, required, depended-on, critical, relied-on} — or name the actual dependent. **Not** structural / foundational (same hedge).
 
-### "full stop" — counter: 7
+### "full stop"
 
 Forms: full stop, full-stop. Empty intensifier — adds emphasis without substance and signals the claim can't stand on its own.
 
 Substitute: delete — or state the claim directly without the terminator. **Not** period / end of story / no exceptions (same hedge).
 
-### "pulling its weight" — counter: 1
+### "pulling its weight"
 
 regex: \bpull(s|ed|ing)?\s+(its|their|his|her|my|your|our)\s+weight\b
 
