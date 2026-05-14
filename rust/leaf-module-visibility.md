@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-04-28]]'
+date_modified: '[[2026-05-14]]'
 tags:
 - rust
 - visibility
@@ -10,17 +10,21 @@ lint: [suspicious_pub, internal_parent_pub_use_facade]
 ---
 ## Leaf module visibility
 
-Items re-exported by the parent facade must be `pub` — Rust requires `pub` at the source for `pub use` to work (`E0364`). Items that are not re-exported should use restricted visibility.
+The visibility modifier at the source must match how the item is actually re-exported. Rust's E0364 caps from below — a re-export cannot be wider than the source — so the parent's re-export form determines the minimum modifier at the source. Pick the narrowest one that still satisfies E0364.
 
-### `pub(super)` in nested modules
+### Picking the modifier
 
-In nested modules (anything deeper than top-level), use `pub(super)` to scope items to the parent module subtree. `pub(crate)` is forbidden here because it bypasses module boundaries.
+| Parent re-export                         | Source modifier |
+| ---------------------------------------- | --------------- |
+| none (not re-exported, siblings only)    | `pub(super)`    |
+| `pub(crate) use`                         | `pub(crate)`    |
+| `pub use` (only if it chains to the crate root) | `pub`    |
 
 ```rust
 // actor/constants.rs (nested under actor/)
 
-// Re-exported by parent with `pub use` → must be `pub`
-pub struct Timer { ... }
+// Re-exported by parent with `pub(crate) use` → modifier must match the cap
+pub(crate) struct Timer { ... }
 
 // NOT re-exported, only used by sibling modules → `pub(super)`
 pub(super) const DUPLICATE_OFFSET: f32 = 0.2;
@@ -28,11 +32,12 @@ pub(super) const DUPLICATE_OFFSET: f32 = 0.2;
 
 ```rust
 // actor/mod.rs
-pub use timer::Timer;
+mod constants;
+pub(crate) use constants::Timer;
 // DUPLICATE_OFFSET is not listed — it stays internal to actor/
 ```
 
-`cargo mend` enforces this distinction. See also: [Use `pub(crate)` in top-level private modules](use-pubcrate-in-top-level-private-modules.md).
+See [[use-narrowest-visibility]] for the full hierarchy and the reasoning behind allowing `pub(crate)` at depth 3+. See also [[use-pubcrate-in-top-level-private-modules]].
 
 ### Structurally-used types
 

@@ -26,7 +26,7 @@ tags:
 | rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 27 | 2026-05-14T09:32 |
 | rust/import-the-module-for-functions-not-the-function-itself.md | 12 | 13 | 0 | 0 | 0 | 20 | 2026-04-28T09:25 |
 | rust/avoid-redundant-closures.md | 12 | 11 | 0 | 2 | 0 | 21 | 2026-04-28T09:25 |
-| rust/no-pubcrate-in-nested-modules.md | 12 | 9 | 1 | 1 | 1 | 30 | 2026-05-14T09:10 |
+| rust/use-narrowest-visibility.md | 12 | 9 | 1 | 1 | 1 | 30 | 2026-05-14T09:10 |
 | rust/test-module-allow-boilerplate.md | 11 | 11 | 0 | 0 | 0 | 26 | 2026-05-14T09:10 |
 | rust/make-functions-const-fn-when-possible.md | 11 | 10 | 0 | 1 | 0 | 29 | 2026-05-14T09:10 |
 | rust/use-a-context-struct-when-arguments-exceed-7.md | 9 | 9 | 1 | 0 | 0 | 26 | 2026-05-14T09:10 |
@@ -78,34 +78,34 @@ tags:
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 44 | 2 | 12 | 2.91 |
-| bevy_catenary | 44 | 5 | 11 | 5.89 |
-| bevy_diegetic | 45 | 0 | 12 | 1.13 |
-| bevy_kana | 44 | 5 | 12 | 7.55 |
-| bevy_lagrange | 45 | 0 | 10 | 2.22 |
-| bevy_liminal | 44 | 2 | 12 | 4.07 |
-| bevy_window_manager | 45 | 1 | 7 | 2.33 |
-| cargo-mend | 43 | 3 | 13 | 4.88 |
-| cargo-port | 42 | 0 | 5 | 0.48 |
-| fairy_dust | 45 | 0 | 1 | 0.07 |
-| hana | 44 | 0 | 9 | 1.41 |
-| nateroids | 44 | 2 | 12 | 3.73 |
-| obsidian_knife | 39 | 3 | 16 | 7.82 |
+| bevy_brp | 43 | 2 | 12 | 2.93 |
+| bevy_catenary | 43 | 5 | 11 | 5.88 |
+| bevy_diegetic | 44 | 0 | 12 | 1.14 |
+| bevy_kana | 43 | 5 | 12 | 7.56 |
+| bevy_lagrange | 44 | 0 | 10 | 2.23 |
+| bevy_liminal | 43 | 2 | 12 | 4.07 |
+| bevy_window_manager | 44 | 1 | 7 | 2.34 |
+| cargo-mend | 42 | 3 | 13 | 4.9 |
+| cargo-port | 41 | 0 | 5 | 0.44 |
+| fairy_dust | 44 | 0 | 1 | 0.07 |
+| hana | 43 | 0 | 9 | 1.42 |
+| nateroids | 43 | 2 | 12 | 3.74 |
+| obsidian_knife | 38 | 3 | 16 | 7.82 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
 |---|---|---|---|---|---|---|
 | obsidian_knife | rust/never-prefix-unused-fields-or-variables-with.md | 3 | 0 | 2 | 0 | Style guide RAII guard exception explicitly endorses _timer naming. |
 | obsidian_knife | rust/leaf-module-visibility.md | 3 | 2 | 0 | 0 | 3 back_populate.rs methods are called from test modules outside obsidian_repository/ and 2 wikilink_types.rs structs are structurally exposed through re-exported function signatures |
-| obsidian_knife | rust/no-pubcrate-in-nested-modules.md | 2 | 1 | 1 | 0 | cargo mend --fix-pub-use failed with compiler errors on test_support facades; only pub(crate) narrowing applied |
+| obsidian_knife | rust/use-narrowest-visibility.md | 2 | 1 | 1 | 0 | cargo mend --fix-pub-use failed with compiler errors on test_support facades; only pub(crate) narrowing applied |
 | obsidian_knife | rust/agent-must-review-allows.md | 6 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
 | bevy_catenary | rust/split-by-type-ownership.md | 5 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
 | bevy_liminal | rust/enums-over-bool-for-owned-booleans.md | 4 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
+| bevy_catenary | rust/use-narrowest-visibility.md | 3 | 0 | 0 | 1 | codex failed after producing output (see /private/tmp/claude/style_fix_bevy_catenary.log) |
 | bevy_diegetic | rust/spell-out-names.md | 3 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
 | bevy_catenary | rust/prefer-type-named-fields-and-bindings.md | 3 | 0 | 0 | 1 | codex failed after producing output (see /private/tmp/claude/style_fix_bevy_catenary.log) |
 | bevy_catenary | rust/prefer-observers-over-polling.md | 3 | 0 | 0 | 1 | codex failed after producing output (see /private/tmp/claude/style_fix_bevy_catenary.log) |
 | bevy_catenary | rust/prefer-from-impl-over-named-constructors.md | 3 | 0 | 0 | 1 | codex failed after producing output (see /private/tmp/claude/style_fix_bevy_catenary.log) |
-| bevy_catenary | rust/no-pubcrate-in-nested-modules.md | 3 | 0 | 0 | 1 | codex failed after producing output (see /private/tmp/claude/style_fix_bevy_catenary.log) |
 | bevy_kana | rust/never-prefix-unused-fields-or-variables-with.md | 3 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
 | bevy_catenary | rust/name-submodules-after-anchor-types.md | 3 | 0 | 0 | 1 | codex failed after producing output (see /private/tmp/claude/style_fix_bevy_catenary.log) |
 | bevy_catenary | rust/module-roots-as-table-of-contents.md | 3 | 0 | 0 | 1 | Missing Fix Summary entry for reviewed guideline. |
@@ -136,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-14T09:34:36Z from 206 recorded runs*
+*Generated 2026-05-14T21:56:09Z from 206 recorded runs*
