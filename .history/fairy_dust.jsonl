@@ -1,0 +1,1 @@
+{"end_time": "2026-05-14T09:20:50Z", "reviewed_units": [{"guideline_id": "rust/no-magic-values.md", "outcome": {"status": "finding"}}, {"guideline_id": "rust/spell-out-names.md", "outcome": {"status": "no_findings"}}, {"guideline_id": "rust/enums-over-bool-for-owned-booleans.md", "outcome": {"status": "finding"}}], "start_time": "2026-05-14T08:16:42Z"}
