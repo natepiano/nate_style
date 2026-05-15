@@ -1,6 +1,7 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-04-29]]"
+date_modified: "[[2026-05-15]]"
+see_also: "[[dont-repeat-type-name-in-fields]]"
 tags: [naming, rust]
 mechanism: llm
 ---
@@ -23,6 +24,8 @@ struct SomeStruct {
 
 let validated_config = ValidatedConfig::default();
 ```
+
+When the snake_case form would restate the enclosing struct's name, the don't-restate rule wins — see [[dont-repeat-type-name-in-fields]].
 
 ### Sweep satellite identifiers
 
