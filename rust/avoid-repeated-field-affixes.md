@@ -63,7 +63,10 @@ struct MouseTracker { current_position: Vec2, previous_position: Vec2 }
 
 ### Exception: context-preserving identifiers
 
-Keep the affix when dropping it leaves a generic field whose meaning is not clear from the enclosing type: `WatchInfo { watch_id }`, not `WatchInfo { id }`, when nearby code also handles entity IDs, task IDs, ports, or log paths.
+Keep the affix when dropping it leaves a generic field whose meaning is not clear from the enclosing type. Two patterns:
+
+- **Disambiguating from sibling concerns:** `WatchInfo { watch_id }`, not `WatchInfo { id }`, when nearby code also handles entity IDs, task IDs, ports, or log paths.
+- **Preserving value-kind on typed wrappers:** `FrameMetrics { frame_elapsed: Duration }`, not `FrameMetrics { frame: Duration }`, when the bare noun reads as the thing measured rather than the measurement of it. Same applies to `_at` / `_deadline` on `Instant`/`SystemTime` fields.
 
 ### Sweep satellite identifiers
 
