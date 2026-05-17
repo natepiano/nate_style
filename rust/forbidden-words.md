@@ -84,6 +84,12 @@ Forms: pulling its weight, pulls its weight, pulled its weight, pull its weight,
 
 Substitute: {justifies its cost, does the work of X, is needed for Y} — or name the concrete dependent — or delete. **Not** earning its keep / carrying its weight / paying its way (same hedge).
 
+### "dissolve"
+
+Forms: dissolve, dissolves, dissolved, dissolving. Metaphor that hides what actually happens to the code — was the file deleted? Were its contents split out, moved, or inlined? Name the operation.
+
+Substitute: {delete, remove, split, extract, inline, move} — or name the concrete operation. **Not** melt / evaporate / vanish (same hedge).
+
 ### Review pass
 
 Flag every occurrence in identifiers, comments, and prose. Propose renames and rewrites — don't leave them in place.
