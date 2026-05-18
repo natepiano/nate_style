@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-05-17]]"
-date_modified: "[[2026-05-17]]"
+date_created: "[[2026-05-18]]"
+date_modified: "[[2026-05-18]]"
 tags:
   - report
   - style
@@ -9,88 +9,88 @@ tags:
 ## Style History
 | Guideline | Projects | Fixed | Partial | Skipped | Fix Failed | No Findings | Last Seen |
 |---|---|---|---|---|---|---|---|
-| rust/no-magic-values.md | 13 | 74 | 1 | 1 | 0 | 38 | 2026-05-17T16:16 |
-| rust/spell-out-names.md | 12 | 48 | 0 | 0 | 1 | 72 | 2026-05-17T16:16 |
-| rust/enums-over-bool-for-owned-booleans.md | 13 | 31 | 0 | 0 | 1 | 67 | 2026-05-17T16:16 |
-| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 51 | 2026-05-17T16:02 |
-| rust/when-to-split-a-module.md | 12 | 20 | 0 | 2 | 0 | 48 | 2026-05-17T16:02 |
-| rust/never-prefix-unused-fields-or-variables-with.md | 13 | 17 | 1 | 2 | 1 | 50 | 2026-05-17T16:16 |
-| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 44 | 2026-05-17T16:02 |
-| rust/leaf-module-visibility.md | 13 | 10 | 3 | 3 | 2 | 42 | 2026-05-17T16:16 |
-| rust/name-submodules-after-anchor-types.md | 12 | 15 | 0 | 0 | 2 | 42 | 2026-05-17T16:16 |
+| rust/no-magic-values.md | 13 | 74 | 1 | 1 | 0 | 46 | 2026-05-18T03:05 |
+| rust/spell-out-names.md | 12 | 48 | 0 | 0 | 1 | 85 | 2026-05-18T03:05 |
+| rust/enums-over-bool-for-owned-booleans.md | 13 | 31 | 0 | 0 | 1 | 77 | 2026-05-18T03:05 |
+| rust/backtick-names-in-comments.md | 11 | 25 | 0 | 0 | 0 | 59 | 2026-05-18T03:05 |
+| rust/when-to-split-a-module.md | 12 | 20 | 0 | 2 | 0 | 56 | 2026-05-18T03:05 |
+| rust/never-prefix-unused-fields-or-variables-with.md | 13 | 17 | 1 | 2 | 1 | 59 | 2026-05-18T03:05 |
+| rust/module-roots-as-table-of-contents.md | 11 | 17 | 0 | 0 | 1 | 52 | 2026-05-18T03:05 |
+| rust/leaf-module-visibility.md | 13 | 10 | 3 | 3 | 2 | 52 | 2026-05-18T03:05 |
+| rust/name-submodules-after-anchor-types.md | 12 | 15 | 0 | 0 | 2 | 49 | 2026-05-18T03:05 |
 | rust/imports-go-at-the-top-of-the-file.md | 12 | 17 | 0 | 0 | 0 | 41 | 2026-05-17T16:02 |
-| rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 40 | 2026-05-17T16:02 |
-| rust/prefer-type-named-fields-and-bindings.md | 11 | 15 | 0 | 0 | 1 | 45 | 2026-05-17T16:16 |
+| rust/avoid-repeated-field-affixes.md | 11 | 17 | 0 | 0 | 0 | 48 | 2026-05-18T03:05 |
+| rust/prefer-type-named-fields-and-bindings.md | 11 | 15 | 0 | 0 | 1 | 55 | 2026-05-18T03:05 |
 | rust/prefer-local-relative-imports.md | 12 | 15 | 0 | 1 | 0 | 16 | 2026-04-29T02:48 |
 | rust/import-types-directly.md | 11 | 15 | 0 | 0 | 1 | 19 | 2026-04-25T11:01 |
-| rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 39 | 2026-05-17T16:02 |
+| rust/split-by-type-ownership.md | 10 | 11 | 0 | 0 | 2 | 47 | 2026-05-18T03:05 |
 | rust/import-the-module-for-functions-not-the-function-itself.md | 12 | 13 | 0 | 0 | 0 | 20 | 2026-04-28T09:25 |
 | rust/avoid-redundant-closures.md | 12 | 11 | 0 | 2 | 0 | 21 | 2026-04-28T09:25 |
 | rust/use-narrowest-visibility.md | 12 | 9 | 1 | 1 | 1 | 30 | 2026-05-14T09:10 |
-| rust/test-module-allow-boilerplate.md | 11 | 11 | 0 | 0 | 0 | 36 | 2026-05-17T16:02 |
-| rust/make-functions-const-fn-when-possible.md | 11 | 10 | 0 | 1 | 0 | 38 | 2026-05-17T16:02 |
-| rust/use-a-context-struct-when-arguments-exceed-7.md | 10 | 9 | 1 | 0 | 0 | 36 | 2026-05-17T16:02 |
-| rust/prefer-from-impl-over-named-constructors.md | 10 | 9 | 0 | 0 | 1 | 32 | 2026-05-17T16:02 |
-| rust/derive-test-values-from-production-constants.md | 11 | 10 | 0 | 0 | 0 | 39 | 2026-05-17T16:02 |
+| rust/test-module-allow-boilerplate.md | 11 | 11 | 0 | 0 | 0 | 44 | 2026-05-18T03:05 |
+| rust/make-functions-const-fn-when-possible.md | 11 | 10 | 0 | 1 | 0 | 46 | 2026-05-18T03:05 |
+| rust/use-a-context-struct-when-arguments-exceed-7.md | 10 | 9 | 1 | 0 | 0 | 44 | 2026-05-18T03:05 |
+| rust/prefer-from-impl-over-named-constructors.md | 10 | 9 | 0 | 0 | 1 | 40 | 2026-05-18T03:05 |
+| rust/derive-test-values-from-production-constants.md | 11 | 10 | 0 | 0 | 0 | 47 | 2026-05-18T03:05 |
 | rust/collapse-if-let-with-inner-conditions.md | 11 | 10 | 0 | 0 | 0 | 23 | 2026-04-28T09:25 |
 | rust/inline-variables-in-format-strings.md | 11 | 8 | 0 | 0 | 1 | 21 | 2026-04-28T09:25 |
 | rust/use-pubcrate-in-top-level-private-modules.md | 10 | 7 | 1 | 0 | 0 | 17 | 2026-04-29T02:48 |
-| rust/prefer-functional-patterns.md | 11 | 8 | 0 | 0 | 0 | 36 | 2026-05-17T16:02 |
-| rust/if-else-chains-signal-missing-types.md | 11 | 7 | 0 | 0 | 1 | 36 | 2026-05-17T16:02 |
-| rust/types-live-with-their-behavior.md | 10 | 7 | 0 | 0 | 0 | 29 | 2026-05-17T16:02 |
-| rust/prefer-observers-over-polling.md | 8 | 6 | 0 | 0 | 1 | 27 | 2026-05-17T16:02 |
-| rust/fix-root-causes-never-workarounds.md | 11 | 7 | 0 | 0 | 0 | 38 | 2026-05-17T16:02 |
-| rust/bevy-plugin-ownership.md | 9 | 6 | 0 | 0 | 1 | 30 | 2026-05-17T16:02 |
-| rust/agent-must-review-allows.md | 11 | 6 | 0 | 0 | 1 | 39 | 2026-05-17T16:02 |
+| rust/prefer-functional-patterns.md | 11 | 8 | 0 | 0 | 0 | 43 | 2026-05-18T03:05 |
+| rust/if-else-chains-signal-missing-types.md | 11 | 7 | 0 | 0 | 1 | 43 | 2026-05-18T03:05 |
+| rust/types-live-with-their-behavior.md | 10 | 7 | 0 | 0 | 0 | 37 | 2026-05-18T03:05 |
+| rust/prefer-observers-over-polling.md | 8 | 6 | 0 | 0 | 1 | 34 | 2026-05-18T03:05 |
+| rust/fix-root-causes-never-workarounds.md | 11 | 7 | 0 | 0 | 0 | 45 | 2026-05-18T03:05 |
+| rust/bevy-plugin-ownership.md | 9 | 6 | 0 | 0 | 1 | 36 | 2026-05-18T03:05 |
+| rust/agent-must-review-allows.md | 11 | 6 | 0 | 0 | 1 | 46 | 2026-05-18T03:05 |
 | rust/omit-return-in-expression-position.md | 10 | 6 | 0 | 0 | 0 | 22 | 2026-04-29T02:48 |
-| rust/import-constants-at-the-top.md | 11 | 6 | 0 | 0 | 0 | 38 | 2026-05-17T16:02 |
+| rust/import-constants-at-the-top.md | 11 | 6 | 0 | 0 | 0 | 44 | 2026-05-18T03:05 |
 | rust/borrow-the-slice-not-the-container.md | 12 | 6 | 0 | 0 | 0 | 30 | 2026-04-28T09:25 |
-| rust/use-bevy_kana-in-all-bevy-crates.md | 8 | 5 | 0 | 0 | 0 | 25 | 2026-05-17T16:02 |
-| rust/dont-create-traits-for-single-implementations.md | 11 | 5 | 0 | 0 | 0 | 41 | 2026-05-17T16:02 |
-| rust/dont-repeat-type-name-in-fields.md | 11 | 3 | 0 | 0 | 1 | 40 | 2026-05-17T16:02 |
-| rust/name-bindings-to-match-parameters.md | 11 | 3 | 0 | 0 | 0 | 37 | 2026-05-17T15:22 |
+| rust/use-bevy_kana-in-all-bevy-crates.md | 8 | 5 | 0 | 0 | 0 | 31 | 2026-05-18T03:05 |
+| rust/dont-create-traits-for-single-implementations.md | 11 | 5 | 0 | 0 | 0 | 47 | 2026-05-18T03:05 |
+| rust/dont-repeat-type-name-in-fields.md | 11 | 3 | 0 | 0 | 1 | 45 | 2026-05-18T03:05 |
+| rust/name-bindings-to-match-parameters.md | 11 | 3 | 0 | 0 | 0 | 43 | 2026-05-18T03:05 |
 | docs/style/frontend-boundaries.md | 1 | 3 | 0 | 0 | 0 | 0 | 2026-05-17T15:59 |
-| rust/used-underscore-binding-module-level-allow-only.md | 10 | 2 | 0 | 0 | 0 | 33 | 2026-05-17T15:22 |
-| rust/bevy-reflection-registration.md | 8 | 2 | 0 | 0 | 0 | 27 | 2026-05-17T16:02 |
+| rust/used-underscore-binding-module-level-allow-only.md | 10 | 2 | 0 | 0 | 0 | 39 | 2026-05-18T03:05 |
+| rust/bevy-reflection-registration.md | 8 | 2 | 0 | 0 | 0 | 33 | 2026-05-18T03:05 |
 | docs/style/pixel-units-in-names.md | 1 | 2 | 0 | 0 | 0 | 4 | 2026-05-16T09:46 |
 | rust/one-use-per-line.md | 10 | 1 | 0 | 0 | 0 | 28 | 2026-04-28T09:13 |
-| rust/no-wildcard-reexports.md | 10 | 1 | 0 | 0 | 0 | 38 | 2026-05-17T15:22 |
+| rust/no-wildcard-reexports.md | 10 | 1 | 0 | 0 | 0 | 44 | 2026-05-18T03:05 |
 | rust/no-single-component-use-imports.md | 11 | 1 | 0 | 0 | 0 | 23 | 2026-04-29T02:48 |
-| rust/no-pub-in-path.md | 12 | 0 | 0 | 1 | 0 | 40 | 2026-05-17T15:22 |
-| rust/never-bare-allowdeadcode.md | 11 | 1 | 0 | 0 | 0 | 40 | 2026-05-17T15:22 |
-| rust/never-allow-clippy-too-many-lines.md | 11 | 1 | 0 | 0 | 0 | 37 | 2026-05-17T15:22 |
+| rust/no-pub-in-path.md | 12 | 0 | 0 | 1 | 0 | 46 | 2026-05-18T03:05 |
+| rust/never-bare-allowdeadcode.md | 11 | 1 | 0 | 0 | 0 | 46 | 2026-05-18T03:05 |
+| rust/never-allow-clippy-too-many-lines.md | 11 | 1 | 0 | 0 | 0 | 43 | 2026-05-18T03:05 |
 | rust/forbidden-words.md | 3 | 1 | 0 | 0 | 0 | 1 | 2026-05-05T19:13 |
-| rust/exception-std-paths-are-allowed-inline.md | 11 | 1 | 0 | 0 | 0 | 40 | 2026-05-17T15:22 |
-| rust/dont-repeat-enum-domain-in-variant-names.md | 11 | 0 | 0 | 0 | 1 | 41 | 2026-05-17T15:22 |
+| rust/exception-std-paths-are-allowed-inline.md | 11 | 1 | 0 | 0 | 0 | 46 | 2026-05-18T03:05 |
+| rust/dont-repeat-enum-domain-in-variant-names.md | 11 | 0 | 0 | 0 | 1 | 47 | 2026-05-18T03:05 |
 | docs/style/stable-toolchain-install.md | 1 | 1 | 0 | 0 | 0 | 3 | 2026-05-07T14:05 |
-| docs/style/diagnostic-lifecycle.md | 1 | 1 | 0 | 0 | 0 | 4 | 2026-05-17T15:54 |
-| rust/workspace-dependencies.md | 10 | 0 | 0 | 0 | 0 | 31 | 2026-05-17T15:22 |
+| docs/style/diagnostic-lifecycle.md | 1 | 1 | 0 | 0 | 0 | 5 | 2026-05-17T23:28 |
+| rust/workspace-dependencies.md | 10 | 0 | 0 | 0 | 0 | 37 | 2026-05-18T03:05 |
 | rust/use-usizefrombool-for-bool-to-integer-conversion.md | 9 | 0 | 0 | 0 | 0 | 23 | 2026-04-29T02:48 |
-| rust/prefer-events-over-messages.md | 8 | 0 | 0 | 0 | 0 | 27 | 2026-05-17T15:22 |
-| rust/never-use-pub-mod.md | 11 | 0 | 0 | 0 | 0 | 38 | 2026-05-17T15:22 |
+| rust/prefer-events-over-messages.md | 8 | 0 | 0 | 0 | 0 | 33 | 2026-05-18T03:05 |
+| rust/never-use-pub-mod.md | 11 | 0 | 0 | 0 | 0 | 44 | 2026-05-18T03:05 |
 | rust/never-allowclippytoomanylines.md | 9 | 0 | 0 | 0 | 0 | 9 | 2026-04-18T20:11 |
 | rust/never-allow-clippy-too_many_lines.md | 1 | 0 | 0 | 0 | 0 | 1 | 2026-04-21T08:41 |
-| rust/methods-that-dont-use-self-should-be-associated-functions.md | 11 | 0 | 0 | 0 | 0 | 39 | 2026-05-17T15:22 |
-| rust/always-use-nextest.md | 11 | 0 | 0 | 0 | 0 | 42 | 2026-05-17T15:22 |
+| rust/methods-that-dont-use-self-should-be-associated-functions.md | 11 | 0 | 0 | 0 | 0 | 45 | 2026-05-18T03:05 |
+| rust/always-use-nextest.md | 11 | 0 | 0 | 0 | 0 | 48 | 2026-05-18T03:05 |
 | docs/style/style-guide-tooling-lines.md | 1 | 0 | 0 | 0 | 0 | 3 | 2026-05-07T14:05 |
 | docs/style/readme-diagnostic-section.md | 1 | 0 | 0 | 0 | 0 | 3 | 2026-05-07T14:05 |
 
 ## Review Coverage
 | Project | Guideline Units | Min Count | Max Count | Avg Count |
 |---|---|---|---|---|
-| bevy_brp | 43 | 2 | 15 | 3.23 |
-| bevy_catenary | 43 | 5 | 14 | 6.84 |
-| bevy_diegetic | 44 | 0 | 14 | 1.25 |
-| bevy_kana | 43 | 8 | 15 | 10.56 |
-| bevy_lagrange | 44 | 0 | 13 | 3.3 |
-| bevy_liminal | 43 | 2 | 15 | 4.95 |
-| bevy_window_manager | 44 | 1 | 10 | 3.25 |
-| cargo-mend | 42 | 3 | 15 | 5.19 |
-| cargo-port | 42 | 0 | 5 | 0.45 |
-| fairy_dust | 44 | 0 | 3 | 0.34 |
-| hana | 43 | 1 | 12 | 2.58 |
-| nateroids | 43 | 2 | 15 | 4.26 |
-| obsidian_knife | 38 | 5 | 19 | 8.87 |
+| bevy_brp | 42 | 2 | 16 | 3.4 |
+| bevy_catenary | 42 | 5 | 15 | 7.31 |
+| bevy_diegetic | 43 | 0 | 14 | 1.26 |
+| bevy_kana | 42 | 11 | 18 | 13.55 |
+| bevy_lagrange | 43 | 0 | 14 | 3.47 |
+| bevy_liminal | 42 | 3 | 17 | 6.02 |
+| bevy_window_manager | 43 | 1 | 11 | 3.35 |
+| cargo-mend | 41 | 3 | 15 | 5.32 |
+| cargo-port | 41 | 0 | 4 | 0.34 |
+| fairy_dust | 43 | 0 | 3 | 0.35 |
+| hana | 42 | 1 | 12 | 2.6 |
+| nateroids | 42 | 4 | 17 | 6.29 |
+| obsidian_knife | 37 | 6 | 20 | 9.46 |
 
 ## Blocked Items View
 | Project | Guideline | Review Count | Partial | Skipped | Fix Failed | Latest Reason |
@@ -136,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-17T16:16:45Z from 241 recorded runs*
+*Generated 2026-05-18T03:05:47Z from 254 recorded runs*
