@@ -1,6 +1,6 @@
 ---
-date_created: "[[2026-05-18]]"
-date_modified: "[[2026-05-18]]"
+date_created: "[[2026-05-19]]"
+date_modified: "[[2026-05-19]]"
 tags:
   - report
   - style
@@ -136,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-18T18:03:29Z from 262 recorded runs*
+*Generated 2026-05-19T05:42:37Z from 269 recorded runs*
