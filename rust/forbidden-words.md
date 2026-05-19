@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-05]]'
+date_modified: '[[2026-05-18]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius'
 ---
 ## Forbidden words
 
@@ -89,6 +89,12 @@ Substitute: {justifies its cost, does the work of X, is needed for Y} — or nam
 Forms: dissolve, dissolves, dissolved, dissolving. Metaphor that hides what actually happens to the code — was the file deleted? Were its contents split out, moved, or inlined? Name the operation.
 
 Substitute: {delete, remove, split, extract, inline, move} — or name the concrete operation. **Not** melt / evaporate / vanish (same hedge).
+
+### "blast radius"
+
+Forms: blast radius. Metaphor that hides what is actually affected. Name the concrete surface: which files, call sites, modules, or behaviors the change touches.
+
+Substitute: {scope of change, affected call sites, files touched, surface area, what breaks} — or name the concrete dependents — or delete. **Not** footprint / impact (same hedge).
 
 ### Review pass
 
