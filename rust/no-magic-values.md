@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-05-08]]"
+date_modified: "[[2026-05-20]]"
 see_also: "[[when-to-split-a-module]]"
 tags: [constants, rust]
 mechanism: llm
@@ -22,10 +22,13 @@ if port == DEFAULT_BRP_PORT { ... }
 
 ### Surface
 
-Applies to numerics, strings naming domain entities (file names like `Cargo.toml` / `mod.rs`, path keywords `crate` / `super` / `self`, cargo target kinds, subcommands, CLI flags), format-spec literals (`{name:<40}`), and meaning-bearing char/byte literals. A familiar word is not exempt — `"Cargo.toml"` belongs in `constants.rs` once, not at every call site.
+Applies to numerics, project/domain strings, cargo target kinds, subcommands, CLI flags, format-spec literals (`{name:<40}`), and meaning-bearing char/byte literals — **in expression position only**.
+
+Numerics in **type position** — `[T; N]` array dimensions, `T<N>` const generics — are out of scope: they are structural facts about another type (`Vec3` → `[_; 3]`, `Mat4` → `[_; 16]`, `[u8; 32]` from `Sha256::Output`), not domain values. Leave them inline.
 
 Exceptions — leave in place:
 
+- Fixed Rust/tooling syntax spellings that cannot vary — `"Cargo.toml"`, `"mod.rs"`, `"crate"`, `"super"`, `"self"` — stay inline. A constant only helps when the value can change, is project-specific, or carries non-obvious policy.
 - `impl Type { const FOO: ... = ...; }` — type-anchored, already named.
 - Single-file binary targets (`examples/*.rs`, `benches/*.rs`, `build.rs`) — constants at the top of the file, after imports.
 - `#[cfg(test)] mod tests` blocks (inline or as a sibling file) — constants at the top of the test module, after imports.
