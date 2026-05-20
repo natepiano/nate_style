@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-05-04]]'
+date_modified: '[[2026-05-20]]'
 tags:
 - imports
 - rust
@@ -26,6 +26,8 @@ fn count(m: &HashMap<String, i32>) -> usize { m.len() }
 
 Skipped when the import would shadow a name already in use (e.g. `Result::ok`
 on prelude `Result` blocks `use io::Result;`).
+
+Macro bodies may use full external paths when the path is emitted into caller code.
 
 **Tooling:** `cargo mend` detects this as `inline_path_qualified_type` (warning).
 Run `cargo mend --fix` to auto-fix.

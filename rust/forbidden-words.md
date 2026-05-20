@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist'
 ---
 ## Forbidden words
 
@@ -95,6 +95,12 @@ Substitute: {delete, remove, split, extract, inline, move} — or name the concr
 Forms: blast radius. Metaphor that hides what is actually affected. Name the concrete surface: which files, call sites, modules, or behaviors the change touches.
 
 Substitute: {scope of change, affected call sites, files touched, surface area, what breaks} — or name the concrete dependents — or delete. **Not** footprint / impact (same hedge).
+
+### "hoist"
+
+Forms: hoist, hoists, hoisted, hoisting. Metaphor that hides the operation. Name what actually moves and where: a declaration lifted out of a loop, a binding moved to an outer scope, an item promoted to a parent module, a check pulled before a branch.
+
+Substitute: {lift, move up, move out, promote, extract, pull up, declare before use} — or name the concrete operation — or delete. **Not** elevate / raise / float up (same hedge).
 
 ### Review pass
 
