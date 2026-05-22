@@ -136,4 +136,4 @@ tags:
 | bevy_brp | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Duration methods take &self but map passes ownership, so method references produce a type mismatch. |
 | cargo-port | rust/avoid-redundant-closures.md | 1 | 0 | 1 | 0 | Metadata::len takes &self but closures receive owned values; method reference is not valid here. |
 
-*Generated 2026-05-22T00:06:55Z from 278 recorded runs*
+*Generated 2026-05-22T14:33:14Z from 278 recorded runs*
