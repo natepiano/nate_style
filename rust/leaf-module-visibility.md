@@ -1,12 +1,12 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-05-18]]'
+date_modified: '[[2026-05-25]]'
 tags:
 - rust
 - visibility
 mechanism: mend
 mode: flag
-lint: [suspicious_pub, internal_parent_pub_use_facade]
+lint: [suspicious_pub, unused_pub, internal_parent_pub_use_facade]
 ---
 ## Leaf module visibility
 
