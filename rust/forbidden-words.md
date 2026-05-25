@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-24]]'
+date_modified: '[[2026-05-25]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?'
 ---
 ## Forbidden words
 
@@ -115,6 +115,14 @@ regex: \bpaper(s|ed|ing)?\s+over\b
 Forms: paper over, papers over, papered over, papering over. Metaphor that hides what the code actually does to compensate — name the concrete mechanism (a filter, a guard, a fallback) and where it runs.
 
 Substitute: {compensates for, masks, works around, guards against} — or name the concrete mechanism — or delete. **Not** gloss over / cover up / patch over (same hedge).
+
+### "pressure-test"
+
+regex: \bpressure[\s-]+test(s|ed|ing)?\b
+
+Forms: pressure test, pressure-test, pressure tested, pressure testing. Metaphor that hides what the check actually is — name the concrete test: which inputs, which failure modes, which edge cases the plan is run against.
+
+Substitute: {test, stress, challenge, scrutinize, probe, validate} — or name the concrete check — or delete. **Not** stress-test / battle-test / kick the tires (same hedge).
 
 ### Review pass
 
