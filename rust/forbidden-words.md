@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-18]]'
+date_modified: '[[2026-05-24]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over'
 ---
 ## Forbidden words
 
@@ -101,6 +101,20 @@ Substitute: {scope of change, affected call sites, files touched, surface area, 
 Forms: hoist, hoists, hoisted, hoisting. Metaphor that hides the operation. Name what actually moves and where: a declaration lifted out of a loop, a binding moved to an outer scope, an item promoted to a parent module, a check pulled before a branch.
 
 Substitute: {lift, move up, move out, promote, extract, pull up, declare before use} — or name the concrete operation — or delete. **Not** elevate / raise / float up (same hedge).
+
+### "in one breath"
+
+Forms: in one breath. Filler that announces brevity instead of delivering it — the summary that follows already stands on its own.
+
+Substitute: delete — or lead straight into the summary. **Not** in short / in a word / to put it simply (same hedge).
+
+### "paper over"
+
+regex: \bpaper(s|ed|ing)?\s+over\b
+
+Forms: paper over, papers over, papered over, papering over. Metaphor that hides what the code actually does to compensate — name the concrete mechanism (a filter, a guard, a fallback) and where it runs.
+
+Substitute: {compensates for, masks, works around, guards against} — or name the concrete mechanism — or delete. **Not** gloss over / cover up / patch over (same hedge).
 
 ### Review pass
 
