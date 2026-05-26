@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-25]]'
+date_modified: '[[2026-05-26]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber'
 ---
 ## Forbidden words
 
@@ -123,6 +123,36 @@ regex: \bpressure[\s-]+test(s|ed|ing)?\b
 Forms: pressure test, pressure-test, pressure tested, pressure testing. Metaphor that hides what the check actually is — name the concrete test: which inputs, which failure modes, which edge cases the plan is run against.
 
 Substitute: {test, stress, challenge, scrutinize, probe, validate} — or name the concrete check — or delete. **Not** stress-test / battle-test / kick the tires (same hedge).
+
+### "you're-right-to-be-suspicious"
+
+regex: \byou(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious\b
+
+Forms: you're right to be suspicious, you are right to be suspicious. Sycophantic validation opener that flatters the reader before answering and adds no information.
+
+Substitute: delete — answer the question or state the finding directly. **Not** good catch / great question / you're absolutely right / good instinct (same flattery).
+
+### "sharp-point"
+
+regex: \bsharp[\s-]+point\b
+
+Forms: sharp point, sharp-point. Sycophantic validation that praises the reader's point as incisive instead of engaging with it.
+
+Substitute: delete — address the point directly. **Not** good point / great point / astute observation (same flattery).
+
+### "fair"
+
+regex: \bfair\b
+
+Forms: fair. Sycophantic validation that concedes or praises ("that's a fair point", "fair enough") instead of engaging with the argument.
+
+Substitute: delete — address the point directly. **Not** good point / valid point / reasonable (same flattery).
+
+### "clobber"
+
+Forms: clobber, clobbers, clobbered, clobbering. Anachronistic, overly-familiar slang for overwriting a value — name the precise operation.
+
+Substitute: {overwrite, replace} — or delete. **Not** trample / smash / blow away (same slang).
 
 ### Review pass
 
