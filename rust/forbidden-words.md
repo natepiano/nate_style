@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?'
 ---
 ## Forbidden words
 
@@ -153,6 +153,30 @@ Substitute: delete — address the point directly. **Not** good point / valid po
 Forms: clobber, clobbers, clobbered, clobbering. Anachronistic, overly-familiar slang for overwriting a value — name the precise operation.
 
 Substitute: {overwrite, replace} — or delete. **Not** trample / smash / blow away (same slang).
+
+### "this-one-is-on-me"
+
+regex: \bthis[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me\b
+
+Forms: this one is on me, this one's on me. Performative self-blame that gestures at accountability instead of stating the error and the fix.
+
+Substitute: delete — or state the error and the fix directly. **Not** my bad / my fault / mea culpa (same performative blame).
+
+### "rather-than-vibes"
+
+regex: \brather[\s-]+than[\s-]+vibes?\b
+
+Forms: rather than vibes, rather-than-vibes, rather than vibe. Superfluous filler — it can be removed from any sentence with no loss of meaning.
+
+Substitute: delete. **Not** instead of vibes / not just vibes / over vibes (same filler).
+
+### "seam"
+
+regex: \bseam(s|ed|ing)?\b
+
+Forms: seam, seams, seamed, seaming. Metaphor that hides the concrete boundary — name the actual interface, module boundary, API edge, or join point between the two pieces.
+
+Substitute: {interface, boundary, module boundary, API edge, join point, junction} — or name the concrete edge — or delete. **Not** fault line / fissure / crack (same metaphor).
 
 ### Review pass
 
