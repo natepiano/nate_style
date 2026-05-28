@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-26]]'
+date_modified: '[[2026-05-27]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?'
 ---
 ## Forbidden words
 
@@ -177,6 +177,14 @@ regex: \bseam(s|ed|ing)?\b
 Forms: seam, seams, seamed, seaming. Metaphor that hides the concrete boundary — name the actual interface, module boundary, API edge, or join point between the two pieces.
 
 Substitute: {interface, boundary, module boundary, API edge, join point, junction} — or name the concrete edge — or delete. **Not** fault line / fissure / crack (same metaphor).
+
+### "runnable-instrument"
+
+regex: \brunnable[\s-]+instruments?\b
+
+Forms: runnable instrument, runnable-instrument, runnable instruments. Vague pairing that names neither what runs nor what it measures — name the concrete artifact.
+
+Substitute: {test, example, binary, demo} — or name the concrete artifact. **Not** executable instrument / runnable tool (same vague pairing).
 
 ### Review pass
 
