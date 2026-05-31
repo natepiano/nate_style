@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-30]]'
+date_modified: '[[2026-05-31]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?'
 ---
 ## Forbidden words
 
@@ -193,6 +193,50 @@ regex: \bthroat[\s-]+clearing\b
 Forms: throat clearing, throat-clearing. Filler that labels a preamble as throat-clearing instead of just deleting the preamble and stating the point.
 
 Substitute: delete — lead with the point. **Not** preamble / hedging / to be clear (same filler).
+
+### "sharp-edge"
+
+regex: \bsharp[\s-]+edge(s)?\b
+
+Forms: sharp edge, sharp-edge, sharp edges. Metaphor that hides the concrete failure mode — name what actually goes wrong: the API that panics on empty input, the field that silently drops data, the call that's easy to misorder.
+
+Substitute: {pitfall, hazard, easy-to-misuse API, the failure mode} — or name the concrete failure mode — or delete. **Not** rough edge / gotcha / rough spot (same metaphor).
+
+### "drive-by"
+
+regex: \bdrive[\s-]+by(s)?\b
+
+Forms: drive-by, drive by, drive-bys. Metaphor that hides what actually happened — a contribution or change made without context or follow-through. Name the concrete action: an unsolicited edit, a one-off comment, a quick fix with no test.
+
+Substitute: {unsolicited, one-off, quick, ad-hoc, unrequested} — or name the concrete action — or delete. **Not** hit-and-run / fly-by / drive-thru (same metaphor).
+
+### "stated-plainly"
+
+regex: \bstat(e|es|ed|ing)[\s-]+plainly\b
+
+Forms: stated plainly, stated-plainly, state plainly, states plainly, stating plainly. Superfluous filler — it announces directness instead of delivering it, and can be removed from any sentence with no loss of meaning.
+
+Substitute: delete — lead straight into the claim. **Not** put plainly / simply put / to put it plainly (same filler).
+
+### "wrinkle"
+
+Forms: wrinkle, wrinkles, wrinkled, wrinkling, a real wrinkle. Filler metaphor that hides the actual complication — name the concrete issue: the edge case, the caveat, the dependency that breaks the simple version.
+
+Substitute: {complication, snag, edge case, caveat, catch} — or name the concrete issue — or delete. **Not** quirk / kink / twist (same metaphor).
+
+### "plain-version"
+
+regex: \bplain[\s-]+versions?\b
+
+Forms: the plain version, plain version, plain-version, plain versions. Filler that announces a simpler restatement instead of delivering it — name the concrete thing being simplified, or just give the simpler statement.
+
+Substitute: {the simple case, the base case, the unadorned form, without X} — or name the concrete thing — or delete. **Not** the simpler version / the basic version / the stripped-down version (same filler).
+
+### "payoff"
+
+Forms: payoff, payoffs, the payoff, here's the payoff. Filler that announces a reward or result is coming instead of just stating the result — name the concrete benefit or outcome.
+
+Substitute: {the result, the benefit, what you get, the outcome} — or name the concrete outcome — or delete. **Not** the upshot / the win / the reward (same filler).
 
 ### Review pass
 
