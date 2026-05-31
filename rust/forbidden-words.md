@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-27]]'
+date_modified: '[[2026-05-30]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing'
 ---
 ## Forbidden words
 
@@ -185,6 +185,14 @@ regex: \brunnable[\s-]+instruments?\b
 Forms: runnable instrument, runnable-instrument, runnable instruments. Vague pairing that names neither what runs nor what it measures — name the concrete artifact.
 
 Substitute: {test, example, binary, demo} — or name the concrete artifact. **Not** executable instrument / runnable tool (same vague pairing).
+
+### "throat-clearing"
+
+regex: \bthroat[\s-]+clearing\b
+
+Forms: throat clearing, throat-clearing. Filler that labels a preamble as throat-clearing instead of just deleting the preamble and stating the point.
+
+Substitute: delete — lead with the point. **Not** preamble / hedging / to be clear (same filler).
 
 ### Review pass
 
