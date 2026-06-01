@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-05-31]]'
+date_modified: '[[2026-06-01]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)'
 ---
 ## Forbidden words
 
@@ -237,6 +237,28 @@ Substitute: {the simple case, the base case, the unadorned form, without X} — 
 Forms: payoff, payoffs, the payoff, here's the payoff. Filler that announces a reward or result is coming instead of just stating the result — name the concrete benefit or outcome.
 
 Substitute: {the result, the benefit, what you get, the outcome} — or name the concrete outcome — or delete. **Not** the upshot / the win / the reward (same filler).
+
+### "spelunking"
+
+Forms: spelunk, spelunks, spelunked, spelunking. Metaphor that hides what the search actually is — name the concrete action: reading a file, tracing a call chain, grepping for a symbol, walking a module tree.
+
+Substitute: {read, trace, search, grep, explore, walk through, dig into} — or name the concrete action — or delete. **Not** caving / burrowing / poking around (same metaphor).
+
+### "clear-eyed"
+
+regex: \bclear[\s-]+eyed\b
+
+Forms: clear-eyed, clear eyed. Self-congratulatory framing that announces an unsentimental, sees-it-truly stance instead of delivering the assessment — name the concrete judgment and its basis.
+
+Substitute: {clear, direct, unsentimental, realistic} — or state the assessment directly — or delete. **Not** clear-sighted / level-headed / hard-nosed (same self-congratulation).
+
+### "hand-waving"
+
+regex: \bhand[\s-]*wav(e|es|ed|ing)\b
+
+Forms: hand-waving, hand-wave, hand-waves, hand-waved, handwaving, hand waving. Dismissive filler that asserts a conclusion while hiding the missing argument — name the specific step that's skipped or unproven.
+
+Substitute: {vague, unsupported, unproven, asserted without proof} — or name the skipped step — or delete. **Not** arm-waving / waffling / fudging (same metaphor).
 
 ### Review pass
 
