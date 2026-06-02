@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?'
 ---
 ## Forbidden words
 
@@ -259,6 +259,30 @@ regex: \bhand[\s-]*wav(e|es|ed|ing)\b
 Forms: hand-waving, hand-wave, hand-waves, hand-waved, handwaving, hand waving. Dismissive filler that asserts a conclusion while hiding the missing argument — name the specific step that's skipped or unproven.
 
 Substitute: {vague, unsupported, unproven, asserted without proof} — or name the skipped step — or delete. **Not** arm-waving / waffling / fudging (same metaphor).
+
+### "worth-naming-precisely"
+
+regex: \bworth[\s-]+naming[\s-]+precisely\b
+
+Forms: worth naming precisely, worth-naming-precisely, and it's worth naming precisely, it's worth naming precisely. Filler that announces a precise name is coming instead of delivering it — name the concrete artifact (function, field, invariant) and be done.
+
+Substitute: delete — name the thing directly. **Not** worth calling out / worth flagging / worth highlighting (same filler).
+
+### "let-me-ground"
+
+regex: \blet[\s-]+me[\s-]+ground\b
+
+Forms: let me ground, let-me-ground. Filler opener that announces an intent to be concrete instead of just being concrete — the sentence that follows already does the grounding, so the announcement is noise.
+
+Substitute: delete — lead straight into the concrete reference (the file, the function, the data). **Not** to ground this / grounding this / let me anchor (same filler).
+
+### "no-metaphors"
+
+regex: \bno[\s-]+metaphors?\b
+
+Forms: no metaphors, no-metaphors, no metaphor. Filler opener that announces the absence of metaphor instead of just writing concretely — the concrete sentence that follows already proves it, so the announcement is noise.
+
+Substitute: delete — lead straight into the concrete statement. **Not** without metaphor / literally speaking / plainly (same filler).
 
 ### Review pass
 
