@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-06-01]]'
+date_modified: '[[2026-06-03]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging'
 ---
 ## Forbidden words
 
@@ -283,6 +283,54 @@ regex: \bno[\s-]+metaphors?\b
 Forms: no metaphors, no-metaphors, no metaphor. Filler opener that announces the absence of metaphor instead of just writing concretely — the concrete sentence that follows already proves it, so the announcement is noise.
 
 Substitute: delete — lead straight into the concrete statement. **Not** without metaphor / literally speaking / plainly (same filler).
+
+### "worth-getting-exact"
+
+regex: \bworth[\s-]+getting[\s-]+exact\b
+
+Forms: worth getting exact, worth-getting-exact. Filler that announces a detail deserves precision instead of just delivering the precise statement — the exact value, name, or definition that should follow makes the announcement noise.
+
+Substitute: delete — give the exact detail directly. **Not** worth nailing down / the important part / worth getting right (same filler).
+
+### "rather-than-guess"
+
+regex: \brather[\s-]+than[\s-]+guess(es|ing|ed)?\b
+
+Forms: rather than guess, rather-than-guess, rather than guesses, rather than guessing, rather than guessed. Superfluous filler — it announces that a finding came from checking instead of guessing and can be removed from any sentence with no loss of meaning.
+
+Substitute: delete — state the finding directly. **Not** instead of guessing / not just guessing / over guessing (same filler).
+
+### "grounded"
+
+regex: \bground(ed|ing)\b
+
+Forms: grounded, grounding. Metaphor that hides what a claim actually rests on — name the concrete evidence, source, or data the claim is based on.
+
+Substitute: {based on, supported by, derived from, rests on, backed by} — or name the concrete basis — or delete. **Not** rooted / anchored / founded (same metaphor).
+
+### "the-tell"
+
+regex: \bthe[\s-]+tells?\b
+
+Forms: the tell, the-tell, the tells. Poker metaphor that hides the concrete signal — name the actual cue: which detail, behavior, or piece of evidence reveals the thing.
+
+Substitute: {the sign, the signal, the indicator, the cue, what reveals it} — or name the concrete signal — or delete. **Not** the giveaway / the tipoff / the dead giveaway (same metaphor).
+
+### "the-clean-model"
+
+regex: \bthe[\s-]+clean[\s-]+models?\b
+
+Forms: the clean model, the-clean-model, the clean models. Vague jargon that announces an idealized, purified version without naming the concrete artifact or what makes it clean — name the actual thing and the specific difference.
+
+Substitute: {the simplified design, the reference implementation, the idealized case, the version without X} — or name the concrete artifact — or delete. **Not** the pristine model / the pure model / the ideal model (same jargon).
+
+### "worth-flagging"
+
+regex: \bworth[\s-]+flagging\b
+
+Forms: worth flagging, worth-flagging. Filler that announces a detail deserves attention instead of just stating the detail — name the concrete issue (the edge case, the bug, the caveat) and be done.
+
+Substitute: delete — state the thing directly. **Not** worth noting / worth mentioning / worth calling out (same filler).
 
 ### Review pass
 
