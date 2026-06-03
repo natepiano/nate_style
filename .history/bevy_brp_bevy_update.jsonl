@@ -1,0 +1,1 @@
+{"end_time": "2026-06-03T13:17:49Z", "reviewed_units": [{"guideline_id": "rust/no-magic-values.md", "outcome": {"status": "finding"}}, {"guideline_id": "rust/prefer-type-named-fields-and-bindings.md", "outcome": {"status": "finding"}}], "start_time": "2026-06-03T00:14:53Z"}
