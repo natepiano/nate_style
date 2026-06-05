@@ -1,0 +1,7 @@
+# Transient clean-fix pipeline state — runtime scratch, never history.
+# .pending/ holds per-project mid-pipeline JSON (eval done, fix not yet run)
+# plus heartbeat .json.lock flock files; .failures/ holds retry-diagnostic
+# dumps. Both are produced and consumed by ~/.claude/scripts/clean-fix/.
+.history/.pending/
+.history/.failures/
+.DS_Store
