@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-06-04]]'
+date_modified: '[[2026-06-05]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode|that(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|it(?:[\s-]+is|\x27?s)[\s-]+worth|let[\s-]+me[\s-]+be[\s-]+exact'
 ---
 ## Forbidden words
 
@@ -353,6 +353,30 @@ regex: \brid(e|es|ing|den)\b|\brode\b
 Forms: ride, rides, riding, ridden, rode. Metaphor that personifies data as a passenger ("runs ride in GPU record tables"), hiding where the thing actually is or how it moves — name the concrete mechanism: stored in, carried in, passed through, indexed by.
 
 Substitute: {is stored in, is carried in, is included in, is passed through} — or name the concrete mechanism — or delete. **Not** piggyback / hitch / tag along (same metaphor).
+
+### "that's-on-me"
+
+regex: \bthat(?:[\s-]+is|'?s)[\s-]+on[\s-]+me\b
+
+Forms: that's on me, thats on me, that is on me, that's-on-me. Performative self-blame that gestures at accountability instead of stating the error and the fix.
+
+Substitute: delete — or state the error and the fix directly. **Not** my bad / my fault / mea culpa (same performative blame).
+
+### "it's-worth"
+
+regex: \bit(?:[\s-]+is|'?s)[\s-]+worth\b
+
+Forms: it's worth, it is worth, its worth, it's-worth. Filler opener that announces the next clause has value instead of just delivering it — "it's worth noting X" carries nothing X doesn't already say.
+
+Substitute: delete — state the thing directly. **Not** it bears noting / it merits mention / notably (same filler).
+
+### "let-me-be-exact"
+
+regex: \blet[\s-]+me[\s-]+be[\s-]+exact\b
+
+Forms: let me be exact, let-me-be-exact. Filler opener that announces precision instead of delivering it — the exact statement that follows already does the work, so the announcement is noise.
+
+Substitute: delete — lead straight into the exact value, name, or definition. **Not** to be exact / to be precise / let me be precise (same filler).
 
 ### Review pass
 
