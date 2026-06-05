@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-06-03]]'
+date_modified: '[[2026-06-04]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode'
 ---
 ## Forbidden words
 
@@ -331,6 +331,28 @@ regex: \bworth[\s-]+flagging\b
 Forms: worth flagging, worth-flagging. Filler that announces a detail deserves attention instead of just stating the detail — name the concrete issue (the edge case, the bug, the caveat) and be done.
 
 Substitute: delete — state the thing directly. **Not** worth noting / worth mentioning / worth calling out (same filler).
+
+### "evaporate"
+
+Forms: evaporate, evaporates, evaporated, evaporating, evaporation. Metaphor that hides what actually happened to the thing — name the concrete event: the gain was lost, the entity was despawned, the cache was invalidated, the budget was spent.
+
+Substitute: {disappears, is lost, is removed, drops to zero, is consumed} — or name the concrete event — or delete. **Not** melt / vanish / dissipate (same metaphor).
+
+### "conspiracy"
+
+regex: \bconspir(e|es|ed|ing|acy|acies|ator|ators|atorial|atorially)\b
+
+Forms: conspiracy, conspiracies, conspire, conspires, conspired, conspiring, conspirator, conspirators, conspiratorial. Metaphor that personifies code or conditions as plotting together ("the cache and the resize conspire to corrupt the buffer"), hiding the concrete interaction — name the actual mechanism: which conditions combine, which code paths interact, what triggers what.
+
+Substitute: {combine, interact, compound, coincide, together cause} — or name the concrete interaction — or delete. **Not** collude / gang up / team up (same metaphor).
+
+### "ride"
+
+regex: \brid(e|es|ing|den)\b|\brode\b
+
+Forms: ride, rides, riding, ridden, rode. Metaphor that personifies data as a passenger ("runs ride in GPU record tables"), hiding where the thing actually is or how it moves — name the concrete mechanism: stored in, carried in, passed through, indexed by.
+
+Substitute: {is stored in, is carried in, is included in, is passed through} — or name the concrete mechanism — or delete. **Not** piggyback / hitch / tag along (same metaphor).
 
 ### Review pass
 
