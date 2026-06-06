@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-06-05]]'
+date_modified: '[[2026-06-06]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode|that(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|it(?:[\s-]+is|\x27?s)[\s-]+worth|let[\s-]+me[\s-]+be[\s-]+exact'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode|that(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|it(?:[\s-]+is|\x27?s)[\s-]+worth|let[\s-]+me[\s-]+be[\s-]+exact|one[\s-]+decisive[\s-]+run(s)?|then[\s-]+a[\s-]+real[\s-]+fork(s)?|not[\s-]+another[\s-]+guess(es)?|guess|measur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?'
 ---
 ## Forbidden words
 
@@ -18,6 +18,20 @@ Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, 
 **Pre-send check:** scan every draft for each banned substring. If present, substitute the precise word. If no precise word fits, the sentence isn't making a claim — delete it. Don't surgically swap one word; rewrite the sentence.
 
 **Counters:** hook hits are tracked in `~/.claude/state/forbidden-word-counts.json`, not in this guide. A rising local counter means the pre-send check failed.
+
+### Register — sentence-level rule
+
+Applies to all prose, ahead of the word list. The word entries below are instances; this is the class. Two tests, every sentence:
+
+1. **Deletion test.** If the sentence can be removed with no information loss, remove it. This kills the four commentary patterns:
+   - Trailer sentences — announcing that the next action will settle, decide, or prove something, or contrasting it with prior failed attempts ("One decisive run, not another guess:").
+   - Review sentences — adjective fragments grading the preceding content ("Rigorous, no luck required.").
+   - Journey narration — recapping what should have been done, held to, or listened to; performative self-correction.
+   - Stakes-building before a command or result.
+
+2. **Literal-mechanism test.** If a sentence describes a technical situation through imagery (gambling, cooking, levers, ingredients), rewrite it to name the mechanism: the cause, the measurement, the call site, the data. "can't win the memory-layout luck, no matter what I stack on it" → "the standalone's allocator layout differs from the full app's, so it doesn't reproduce the bug." Rhetorical punchlines ("which is exactly what guessing feels like, because it is") get the same rewrite: state the fact once, without the flourish.
+
+Target register: lab notebook — causes, mechanisms, measurements, findings. A sentence is either content or it is cut.
 
 ### "honest"
 
@@ -377,6 +391,44 @@ regex: \blet[\s-]+me[\s-]+be[\s-]+exact\b
 Forms: let me be exact, let-me-be-exact. Filler opener that announces precision instead of delivering it — the exact statement that follows already does the work, so the announcement is noise.
 
 Substitute: delete — lead straight into the exact value, name, or definition. **Not** to be exact / to be precise / let me be precise (same filler).
+
+### "one-decisive-run"
+
+regex: \bone[\s-]+decisive[\s-]+run(s)?\b
+
+Forms: one decisive run, one-decisive-run, one decisive runs. Filler that promises a single conclusive action instead of delivering it — name the concrete command, test, or experiment and what it will settle.
+
+Substitute: delete — name the actual command and what it verifies. **Not** one definitive run / a single conclusive run / one clean run (same filler).
+
+### "then-a-real-fork"
+
+regex: \bthen[\s-]+a[\s-]+real[\s-]+fork(s)?\b
+
+Forms: then a real fork, then-a-real-fork, then a real forks. Filler that dramatizes a decision point instead of naming it — state the two options and the criterion that selects between them.
+
+Substitute: delete — name the options and the deciding criterion directly. **Not** then a true fork / then a genuine fork / a real branching point (same filler).
+
+### "not-another-guess"
+
+regex: \bnot[\s-]+another[\s-]+guess(es)?\b
+
+Forms: not another guess, not-another-guess, not another guesses. Filler that claims verification by disclaiming guesswork instead of citing the check — name the test, command, or evidence that confirmed it.
+
+Substitute: delete — cite the check or evidence directly. **Not** not just a guess / not a shot in the dark / no more guessing (same filler).
+
+### "guess"
+
+Forms: guess, guesses, guessed, guessing, guesswork, guesstimate, second-guess, second-guessing. Hedge that announces uncertainty instead of naming the claim's basis — state the hypothesis, the estimate and what it rests on, or run the check and cite the result.
+
+Substitute: {hypothesis, assumption, estimate, expect, predict} — or cite the check that confirms it — or delete. **Not** hunch / shot in the dark / gut feeling / speculation (same hedge).
+
+### "measure-not-infer"
+
+regex: \bmeasur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?\b
+
+Forms: measure, not infer; measure not infer; measure-not-infer; measures, not infers; measured, not inferred; measuring, not inferring. Trailer slogan that contrasts the next action with a disclaimed weaker method instead of citing the measurement — name the concrete check: the command, the profile, the number it produced.
+
+Substitute: delete — cite the measurement and its result directly. **Not** test, not assume / verify, not speculate / data, not intuition (same slogan).
 
 ### Review pass
 
