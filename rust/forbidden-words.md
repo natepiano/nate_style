@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode|that(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|it(?:[\s-]+is|\x27?s)[\s-]+worth|let[\s-]+me[\s-]+be[\s-]+exact|one[\s-]+decisive[\s-]+run(s)?|then[\s-]+a[\s-]+real[\s-]+fork(s)?|not[\s-]+another[\s-]+guess(es)?|guess|measur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode|that(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|it(?:[\s-]+is|\x27?s)[\s-]+worth|let[\s-]+me[\s-]+be[\s-]+exact|one[\s-]+decisive[\s-]+run(s)?|then[\s-]+a[\s-]+real[\s-]+fork(s)?|not[\s-]+another[\s-]+guess(es)?|guess|measur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?|worth[\s-]+anything|direct[\s-]+answer(s)?|truthful'
 ---
 ## Forbidden words
 
@@ -429,6 +429,28 @@ regex: \bmeasur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?\b
 Forms: measure, not infer; measure not infer; measure-not-infer; measures, not infers; measured, not inferred; measuring, not inferring. Trailer slogan that contrasts the next action with a disclaimed weaker method instead of citing the measurement — name the concrete check: the command, the profile, the number it produced.
 
 Substitute: delete — cite the measurement and its result directly. **Not** test, not assume / verify, not speculate / data, not intuition (same slogan).
+
+### "worth-anything"
+
+regex: \bworth[\s-]+anything\b
+
+Forms: worth anything, worth-anything. Hedge that questions whether a thing has value instead of naming the criterion — state what it must satisfy (the test it must pass, the question it must answer) for the result to count.
+
+Substitute: {valid, usable, conclusive, meaningful} — or name the criterion it must satisfy — or delete. **Not** worth something / worth much / of any value (same hedge).
+
+### "direct-answer"
+
+regex: \bdirect[\s-]+answer(s)?\b
+
+Forms: direct answer, direct-answer, direct answers. Filler that announces the next clause answers directly instead of just answering — the answer that follows already stands on its own.
+
+Substitute: delete — lead with the answer. **Not** straight answer / plain answer / short answer (same filler).
+
+### "truthful"
+
+Forms: truthful, truthfully, truthfulness, untruthful. Same virtue-claim smuggle as the honest family — grades a statement as virtuous instead of stating the fact, and implies the alternative is a lie.
+
+Substitute: {accurate, correct, exact, faithful} — or delete. **Not** frank / candid / sincere / veracious (same virtue claim).
 
 ### Review pass
 
