@@ -1,6 +1,7 @@
 ---
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-04-28]]'
+date_modified: '[[2026-06-08]]'
+see_also: '[[module-structure]]'
 tags:
 - rust
 - types
