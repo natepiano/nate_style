@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-06-08]]'
+date_modified: '[[2026-06-10]]'
 see_also: '[[module-structure]]'
 tags:
 - rust
@@ -62,4 +62,4 @@ pub struct DimensionLock {
 
 **Delegation functions:** A `mod.rs` may contain thin forwarding functions (single-expression body that calls into a child module) when the alternative would require `pub(in crate::...)` visibility on the inner items. Delegation functions are the facade — they keep inner items at `pub(super)` while exposing them one level higher. If you find yourself writing more than a few delegation functions, consider whether the module nesting depth is justified.
 
-**Bevy plugin:** See `bevy-plugin-ownership.md` for where plugin definitions belong. In Bevy projects, `impl Plugin` is allowed in module roots after the table of contents.
+**Bevy app/plugin roots:** In Bevy `main.rs` or plugin roots, `App::new()`, plugin registration, startup systems, and `impl Plugin` may live after the `mod` block. Do not extract that wiring into `app.rs` or builder functions just to satisfy this rule; see `bevy-plugin-ownership.md`.
