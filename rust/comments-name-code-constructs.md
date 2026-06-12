@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-06-04]]'
-date_modified: '[[2026-06-04]]'
+date_modified: '[[2026-06-11]]'
 tags:
 - comments
 - rust
@@ -11,6 +11,7 @@ mode: flag
 ## Comments name code constructs
 
 Review comments for vague verbs and metaphors. When code has names, the comment must name the concrete type, field, enum variant, resource, component, buffer, or table.
+Keep those names inside a readable sentence that states the relationship, consumer, or role; do not replace vague prose with label lists.
 
 ```rust
 // bad
