@@ -1,5 +1,4 @@
 # Transient clean-fix pipeline state, produced and consumed by
 # ~/.claude/scripts/clean-fix/.
 .history/
-style_report.md
 .DS_Store
