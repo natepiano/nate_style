@@ -1,11 +1,13 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-29]]'
+date_modified: '[[2026-06-12]]'
 tags:
 - bevy
 - rust
 mechanism: llm
-pre_filter: '\.register_type::<'
+candidates:
+  kind: regex
+  pattern: '\.register_type::<'
 ---
 ## Bevy reflection registration
 

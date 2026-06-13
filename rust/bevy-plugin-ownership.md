@@ -1,12 +1,15 @@
 ---
 date_created: '[[2026-04-11]]'
-date_modified: '[[2026-04-27]]'
+date_modified: '[[2026-06-12]]'
 see_also: "[[module-roots-as-table-of-contents]]"
 tags:
 - rust
 - bevy
 - modules
 mechanism: llm
+candidates:
+  kind: regex
+  pattern: 'impl Plugin for'
 ---
 ## Bevy plugin definitions live with their struct
 

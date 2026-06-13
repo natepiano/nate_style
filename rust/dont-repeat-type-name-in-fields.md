@@ -1,10 +1,12 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-20]]"
+date_modified: '[[2026-06-12]]'
 trigger_test: "field name begins with snake_case of struct name, not merely a shared domain word"
 see_also: "[[prefer-type-named-fields-and-bindings]]"
 tags: [naming, rust]
 mechanism: llm
+candidates:
+  kind: field_type_stutter
 ---
 ## Don't repeat the type name in fields
 

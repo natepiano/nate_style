@@ -1,7 +1,7 @@
 ---
 date_created: '[[2026-04-10]]'
 date_modified: '[[2026-05-14]]'
-see_also: "[[leaf-module-visibility]], [[use-narrowest-visibility]]"
+see_also: "leaf-module-visibility, [[use-narrowest-visibility]]"
 tags:
 - rust
 - visibility

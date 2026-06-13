@@ -1,11 +1,13 @@
 ---
 date_created: '[[2026-06-01]]'
-date_modified: '[[2026-06-01]]'
+date_modified: '[[2026-06-12]]'
 tags:
 - bevy
 - rust
 mechanism: llm
 mode: propose
+candidates:
+  kind: observer_guards
 ---
 ## Extract observer guards into run conditions
 

@@ -1,12 +1,14 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-05-07]]'
+date_modified: '[[2026-06-12]]'
 see_also: "[[agent-must-review-allows]]"
 tags:
 - lints
 - rust
 - tests
 mechanism: llm
+candidates:
+  kind: test_allow_boilerplate
 ---
 ## Test module allow boilerplate
 

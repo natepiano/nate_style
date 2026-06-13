@@ -1,10 +1,12 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-27]]'
+date_modified: '[[2026-06-12]]'
 tags:
 - patterns
 - rust
 mechanism: llm
+candidates:
+  kind: single_impl_traits
 ---
 ## Don't create traits for single implementations
 

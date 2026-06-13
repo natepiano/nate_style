@@ -1,11 +1,15 @@
 ---
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-05-08]]'
+date_modified: '[[2026-06-12]]'
 tags:
 - constants
 - imports
 - rust
 mechanism: llm
+candidates:
+  kind: regex
+  pattern: '\b[a-z_][a-z0-9_]*::[A-Z][A-Z0-9_]{2,}\b'
+  exclude_pattern: '^\s*(pub(\([^)]*\))?\s+)?use\s|\b(f32|f64|i8|i16|i32|i64|i128|isize|u8|u16|u32|u64|u128|usize|char|str|bool)::'
 ---
 ## Import constants at the top
 

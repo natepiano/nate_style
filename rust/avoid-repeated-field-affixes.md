@@ -1,9 +1,11 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-12]]"
+date_modified: '[[2026-06-12]]'
 see_also: "[[prefer-type-named-fields-and-bindings]]"
 tags: [naming, rust]
 mechanism: llm
+candidates:
+  kind: field_affixes
 ---
 ## Avoid repeated field affixes
 

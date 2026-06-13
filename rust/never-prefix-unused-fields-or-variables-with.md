@@ -1,10 +1,13 @@
 ---
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-04-28]]'
+date_modified: '[[2026-06-12]]'
 tags:
 - rust
 - style
 mechanism: llm
+candidates:
+  kind: regex
+  pattern: '\blet\s+(mut\s+)?_[a-z]|(^|[\s(,&])_[a-z][a-z0-9_]*\s*:'
 ---
 ## Never prefix unused fields or variables with `_`
 

@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-15]]"
+date_modified: '[[2026-06-12]]'
 see_also: "[[dont-repeat-type-name-in-fields]]"
 tags: [naming, rust]
 mechanism: llm

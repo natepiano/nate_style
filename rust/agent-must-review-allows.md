@@ -1,8 +1,10 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-05-05]]"
+date_modified: '[[2026-06-12]]'
 tags: [lints, rust]
 mechanism: llm
+candidates:
+  kind: allows_without_reason
 ---
 ## Agent must review all `#[allow]` with the user
 

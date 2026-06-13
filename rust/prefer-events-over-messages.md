@@ -1,12 +1,14 @@
 ---
 date_created: '[[2026-03-30]]'
-date_modified: '[[2026-04-28]]'
+date_modified: '[[2026-06-12]]'
 tags:
 - bevy
 - rust
 mechanism: llm
 mode: propose
-pre_filter: '\bMessage(Reader|Writer)<'
+candidates:
+  kind: regex
+  pattern: '\bMessage(Reader|Writer)<'
 ---
 ## Prefer events over messages
 

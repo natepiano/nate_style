@@ -1,8 +1,11 @@
 ---
 date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-28]]"
+date_modified: '[[2026-06-12]]'
 tags: [rust, patterns]
 mechanism: llm
+candidates:
+  kind: regex
+  pattern: '\bfn from_\w+\s*\('
 ---
 ## Prefer `From`/`Into` impls over named constructor methods
 

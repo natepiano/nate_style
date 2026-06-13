@@ -1,12 +1,14 @@
 ---
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-06-10]]'
+date_modified: '[[2026-06-12]]'
 see_also: '[[module-structure]]'
 tags:
 - rust
 - types
 - visibility
 mechanism: llm
+candidates:
+  kind: module_root_items
 ---
 ## Module roots as table of contents
 

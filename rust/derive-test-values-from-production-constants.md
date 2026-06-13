@@ -1,10 +1,12 @@
 ---
 date_created: '[[2026-04-06]]'
-date_modified: '[[2026-04-27]]'
+date_modified: '[[2026-06-12]]'
 tags:
 - tests
 - rust
 mechanism: llm
+candidates:
+  kind: test_literals
 ---
 ## Derive test values from production constants
 

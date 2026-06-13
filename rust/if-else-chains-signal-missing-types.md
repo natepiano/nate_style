@@ -1,11 +1,14 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-05-20]]'
+date_modified: '[[2026-06-12]]'
 see_also: "[[prefer-from-impl-over-named-constructors]]"
 tags:
 - patterns
 - rust
 mechanism: llm
+candidates:
+  kind: regex
+  pattern: '\belse if\b'
 ---
 ## If/else chains signal missing types
 

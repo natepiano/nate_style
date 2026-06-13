@@ -1,11 +1,13 @@
 ---
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-05-03]]"
+date_modified: '[[2026-06-12]]'
 see_also: "[[types-live-with-their-behavior]]"
 tags:
   - rust
   - modules
 mechanism: llm
+candidates:
+  kind: submodule_names
 ---
 ## Anchor types drive submodule boundaries and names
 

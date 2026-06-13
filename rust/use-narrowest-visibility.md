@@ -1,7 +1,6 @@
 ---
 date_created: '[[2026-04-10]]'
 date_modified: '[[2026-05-14]]'
-see_also: "[[leaf-module-visibility]]"
 tags:
 - rust
 - visibility
@@ -22,7 +21,7 @@ The rule for picking is mechanical: choose the narrowest modifier that still com
 
 ### Why `pub(crate)` at depth 3+ when the parent re-exports it that way
 
-When the immediate parent module is declared `mod foo;` (private) — and it always is, because `pub mod` is forbidden by [[never-use-pub-mod]] — the long path `crate::foo::child::Item` is unreachable from outside `foo`'s subtree regardless of whether `Item` is `pub` or `pub(crate)`. The private `mod child;` declaration gates the path. So at depth 3+, `pub(crate)` and `pub` at the source site have identical effective reach. The difference is what the modifier communicates: `pub(crate)` says "at most crate-internal, definitely," while bare `pub` requires the reader to walk back up the module tree to learn the answer. The narrower modifier wins.
+When the immediate parent module is declared `mod foo;` (private) — and it always is, because `pub mod` is forbidden by never-use-pub-mod — the long path `crate::foo::child::Item` is unreachable from outside `foo`'s subtree regardless of whether `Item` is `pub` or `pub(crate)`. The private `mod child;` declaration gates the path. So at depth 3+, `pub(crate)` and `pub` at the source site have identical effective reach. The difference is what the modifier communicates: `pub(crate)` says "at most crate-internal, definitely," while bare `pub` requires the reader to walk back up the module tree to learn the answer. The narrower modifier wins.
 
 ```rust
 // keyboard/keys.rs — re-exported by mod.rs as `pub(crate) use`

@@ -1,9 +1,12 @@
 ---
 date_created: "[[2026-04-17]]"
-date_modified: "[[2026-05-07]]"
+date_modified: '[[2026-06-12]]'
 see_also: "[[dont-repeat-enum-domain-in-variant-names]]"
 tags: [rust, types]
 mechanism: llm
+candidates:
+  kind: struct_fields
+  field_type_pattern: '^bool$'
 ---
 ## Enums over `bool` for owned booleans
 

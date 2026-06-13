@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-05-20]]"
+date_modified: '[[2026-06-12]]'
 see_also: "[[when-to-split-a-module]]"
 tags: [constants, rust]
 mechanism: llm
