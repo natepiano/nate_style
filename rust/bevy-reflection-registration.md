@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-06-12]]'
+date_modified: '[[2026-06-23]]'
 tags:
 - bevy
 - rust
@@ -11,35 +11,20 @@ candidates:
 ---
 ## Bevy reflection registration
 
-For non-generic types, deriving `Reflect` plus a reflection-kind attribute (`#[reflect(Component)]`, `#[reflect(Resource)]`, etc.) is sufficient. Bevy auto-registers them at startup. **Do not call `app.register_type::<X>()` manually for non-generic types.**
+For non-generic types, `#[derive(Reflect)]` plus a reflection-kind attribute (`#[reflect(Component)]`, `#[reflect(Resource)]`, …) is enough — Bevy auto-registers them at startup (`reflect_auto_register`, a default feature). **Never call `app.register_type::<X>()` for a non-generic type.** `#[reflect(Component)]` alone also satisfies BRP component mutation; add nothing beyond it.
 
 ```rust
-// good — derive + reflect-kind attribute is enough; auto-registration covers it
 #[derive(Component, Reflect)]
 #[reflect(Component)]
-struct Health(f32);
+struct Health(f32);          // registered automatically
 
-// bad — redundant, auto-registration already handled it
-app.register_type::<Health>();
+app.register_type::<Health>(); // bad — redundant
 ```
 
-### Components for BRP mutation
+### Generic types — the only exception
 
-`#[reflect(Component)]` is all that is needed for BRP component mutation. It both marks the type as a Component for reflection and triggers auto-registration. Do not add ceremony beyond it.
-
-### Generic types — the exception
-
-Bevy cannot auto-register generic types because there is no concrete instantiation to register at startup. Manually register the concrete monomorphizations you actually use:
+Auto-registration cannot see generic types; register each concrete monomorphization you use:
 
 ```rust
-// good — concrete monomorphization, manual registration is required
-app.register_type::<MyGenericComponent<f32>>();
-app.register_type::<MyGenericComponent<u32>>();
+app.register_type::<MyComponent<f32>>();
 ```
-
-### What the agent must not do
-
-- Add `app.register_type::<MyComponent>()` for any non-generic type that derives `Reflect` — auto-registration covers it.
-- Add additional registration calls or trait derivations beyond `#[reflect(Component)]` for BRP mutation.
-
-See the `bevy_reflect` docs on auto-registration: https://docs.rs/bevy/latest/bevy/reflect/index.html

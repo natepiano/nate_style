@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-06-06]]'
+date_modified: '[[2026-06-23]]'
 exceptions: text shaping
 tags:
 - rust
@@ -13,445 +13,210 @@ pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-
 ---
 ## Forbidden words
 
-Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, non-negotiable.**
+Banned everywhere — prose, code, identifiers, comments, commits. **Permanent, non-negotiable.** For each match: delete the word, or name the concrete thing (function, type, mechanism, cause, measurement). Never swap in a near-synonym.
 
-**Pre-send check:** scan every draft for each banned substring. If present, substitute the precise word. If no precise word fits, the sentence isn't making a claim — delete it. Don't surgically swap one word; rewrite the sentence.
+### Register — the generative rule
 
-**Counters:** hook hits are tracked in `~/.claude/state/forbidden-word-counts.json`, not in this guide. A rising local counter means the pre-send check failed.
+Two tests, every sentence:
 
-### Register — sentence-level rule
+1. **Deletion test** — if the sentence survives removal with no loss of information, cut it. Kills trailers, self-grading, journey narration, stakes-building.
+2. **Literal-mechanism test** — replace imagery (gambling, cooking, levers) with the cause, measurement, call site, or data. "The honest answer" → "The answer".
 
-Applies to all prose, ahead of the word list. The word entries below are instances; this is the class. Two tests, every sentence:
+Target register: lab notebook.
 
-1. **Deletion test.** If the sentence can be removed with no information loss, remove it. This kills the four commentary patterns:
-   - Trailer sentences — announcing that the next action will settle, decide, or prove something, or contrasting it with prior failed attempts ("One decisive run, not another guess:").
-   - Review sentences — adjective fragments grading the preceding content ("Rigorous, no luck required.").
-   - Journey narration — recapping what should have been done, held to, or listened to; performative self-correction.
-   - Stakes-building before a command or result.
+### Banned terms
 
-2. **Literal-mechanism test.** If a sentence describes a technical situation through imagery (gambling, cooking, levers, ingredients), rewrite it to name the mechanism: the cause, the measurement, the call site, the data. "can't win the memory-layout luck, no matter what I stack on it" → "the standalone's allocator layout differs from the full app's, so it doesn't reproduce the bug." Rhetorical punchlines ("which is exactly what guessing feels like, because it is") get the same rewrite: state the fact once, without the flourish.
-
-Target register: lab notebook — causes, mechanisms, measurements, findings. A sentence is either content or it is cut.
+The list below is the source the matcher parses. Each `### "stem"` is one banned term; an optional `regex:` line overrides the default matcher and an optional `except:` line carves out domain-legitimate uses.
 
 ### "honest"
-
-Forms: honest, honestly, more/most honest, to be honest, in all honesty, the honest X, an honest Y. Bans apply to *things* (`an honest API`, `the design is more honest`) as well as claims. Smuggles in a virtue claim and implies the alternative is dishonest — both wrong moves.
-
-Substitute: {direct, explicit, one-to-one, single-source-of-truth, simple, accurate} — preferably you should just delete. **Not** truthfully / frankly / candidly. E.g. instead of "The honest result" just say "The result".
 
 ### "shape"
 
 regex: \b(reshaping|reshape|shapes|shaped|shape)\b
 except: text shaping, shaper, text_shaping
 
-Forms: shape, shaped, shapes, reshape, reshaping. Filler analogy. Name the concrete artifact: function, pattern, struct, enum, function signature, trait, type — and name it.
-
-**Not** form / structure (same hedge, different letters).
-
-**Exception:** `text shaping` / `shaper` (typography pipeline term, e.g. HarfBuzz) is canonical industry vocabulary — keep. The ban targets vague analogies, not domain terms. The `except:` line above is the machine-readable form parsed by the hook.
-
 ### "carve"
 
-Forms: carve, carving, carved, carve-out, carve out. Metaphor that hides the operation. Pick the verb: **extract** (move body of code into a new home), **split** (one becomes two), **move** (single field relocates), **refactor** (behavior preserved), **introduce** (purely additive).
-
-**Not** sculpt / tease apart (same hedge).
-
 ### "gloss"
-
-Forms: gloss, glosses, glossed, glossing, glossary (when it means a short explanation). Pretentious jargon for plain-English explanation. Substitute: "plain-English explanation", "translation", "what it means in plain words", or "explanation".
-
-**Not** annotation / summary when the job is *translating jargon into plain words* — name the job.
 
 ### "bite"
 
 regex: \bbit(e|es|ing|ten)\b
 
-Forms: bite, bites, biting, bitten. Metaphor that hides what actually happens. Pick the verb: **affects**, **hits**, **trips**, **trips up**, **fires on**.
-
-Substitute: {affects, hits, trips, trips up, fires on} — or delete. **Not** stings / nips (same hedge).
-
 ### "plain English"
-
-Forms: plain English. Filler that announces what the next clause already does — pure noise.
-
-Substitute: delete. The sentence following the phrase already speaks plainly; the announcement adds nothing.
 
 ### "load-bearing"
 
 regex: \bload-bearing\b
 
-Forms: load-bearing. Metaphor that hides what actually depends on the thing. Name the dependency: which call site, invariant, test, or downstream consumer relies on it.
-
-Substitute: {essential, required, depended-on, critical, relied-on} — or name the actual dependent. **Not** structural / foundational (same hedge).
-
 ### "full stop"
-
-Forms: full stop, full-stop. Empty intensifier — adds emphasis without substance and signals the claim can't stand on its own.
-
-Substitute: delete — or state the claim directly without the terminator. **Not** period / end of story / no exceptions (same hedge).
 
 ### "pulling its weight"
 
 regex: \bpull(s|ed|ing)?\s+(its|their|his|her|my|your|our)\s+weight\b
 
-Forms: pulling its weight, pulls its weight, pulled its weight, pull its weight, pulling their weight. Metaphor that hides whether the thing actually does its job. Name the concrete contribution: what function it serves, what it justifies, or what would break without it.
-
-Substitute: {justifies its cost, does the work of X, is needed for Y} — or name the concrete dependent — or delete. **Not** earning its keep / carrying its weight / paying its way (same hedge).
-
 ### "dissolve"
-
-Forms: dissolve, dissolves, dissolved, dissolving. Metaphor that hides what actually happens to the code — was the file deleted? Were its contents split out, moved, or inlined? Name the operation.
-
-Substitute: {delete, remove, split, extract, inline, move} — or name the concrete operation. **Not** melt / evaporate / vanish (same hedge).
 
 ### "blast radius"
 
-Forms: blast radius. Metaphor that hides what is actually affected. Name the concrete surface: which files, call sites, modules, or behaviors the change touches.
-
-Substitute: {scope of change, affected call sites, files touched, surface area, what breaks} — or name the concrete dependents — or delete. **Not** footprint / impact (same hedge).
-
 ### "hoist"
 
-Forms: hoist, hoists, hoisted, hoisting. Metaphor that hides the operation. Name what actually moves and where: a declaration lifted out of a loop, a binding moved to an outer scope, an item promoted to a parent module, a check pulled before a branch.
-
-Substitute: {lift, move up, move out, promote, extract, pull up, declare before use} — or name the concrete operation — or delete. **Not** elevate / raise / float up (same hedge).
-
 ### "in one breath"
-
-Forms: in one breath. Filler that announces brevity instead of delivering it — the summary that follows already stands on its own.
-
-Substitute: delete — or lead straight into the summary. **Not** in short / in a word / to put it simply (same hedge).
 
 ### "paper over"
 
 regex: \bpaper(s|ed|ing)?\s+over\b
 
-Forms: paper over, papers over, papered over, papering over. Metaphor that hides what the code actually does to compensate — name the concrete mechanism (a filter, a guard, a fallback) and where it runs.
-
-Substitute: {compensates for, masks, works around, guards against} — or name the concrete mechanism — or delete. **Not** gloss over / cover up / patch over (same hedge).
-
 ### "pressure-test"
 
 regex: \bpressure[\s-]+test(s|ed|ing)?\b
-
-Forms: pressure test, pressure-test, pressure tested, pressure testing. Metaphor that hides what the check actually is — name the concrete test: which inputs, which failure modes, which edge cases the plan is run against.
-
-Substitute: {test, stress, challenge, scrutinize, probe, validate} — or name the concrete check — or delete. **Not** stress-test / battle-test / kick the tires (same hedge).
 
 ### "you're-right-to-be-suspicious"
 
 regex: \byou(?:['']re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious\b
 
-Forms: you're right to be suspicious, you are right to be suspicious. Sycophantic validation opener that flatters the reader before answering and adds no information.
-
-Substitute: delete — answer the question or state the finding directly. **Not** good catch / great question / you're absolutely right / good instinct (same flattery).
-
 ### "sharp-point"
 
 regex: \bsharp[\s-]+point\b
-
-Forms: sharp point, sharp-point. Sycophantic validation that praises the reader's point as incisive instead of engaging with it.
-
-Substitute: delete — address the point directly. **Not** good point / great point / astute observation (same flattery).
 
 ### "fair"
 
 regex: \bfair\b
 
-Forms: fair. Sycophantic validation that concedes or praises ("that's a fair point", "fair enough") instead of engaging with the argument.
-
-Substitute: delete — address the point directly. **Not** good point / valid point / reasonable (same flattery).
-
 ### "clobber"
-
-Forms: clobber, clobbers, clobbered, clobbering. Anachronistic, overly-familiar slang for overwriting a value — name the precise operation.
-
-Substitute: {overwrite, replace} — or delete. **Not** trample / smash / blow away (same slang).
 
 ### "this-one-is-on-me"
 
 regex: \bthis[\s-]+one(?:[\s-]+is|'?s)[\s-]+on[\s-]+me\b
 
-Forms: this one is on me, this one's on me. Performative self-blame that gestures at accountability instead of stating the error and the fix.
-
-Substitute: delete — or state the error and the fix directly. **Not** my bad / my fault / mea culpa (same performative blame).
-
 ### "rather-than-vibes"
 
 regex: \brather[\s-]+than[\s-]+vibes?\b
-
-Forms: rather than vibes, rather-than-vibes, rather than vibe. Superfluous filler — it can be removed from any sentence with no loss of meaning.
-
-Substitute: delete. **Not** instead of vibes / not just vibes / over vibes (same filler).
 
 ### "seam"
 
 regex: \bseam(s|ed|ing)?\b
 
-Forms: seam, seams, seamed, seaming. Metaphor that hides the concrete boundary — name the actual interface, module boundary, API edge, or join point between the two pieces.
-
-Substitute: {interface, boundary, module boundary, API edge, join point, junction} — or name the concrete edge — or delete. **Not** fault line / fissure / crack (same metaphor).
-
 ### "runnable-instrument"
 
 regex: \brunnable[\s-]+instruments?\b
-
-Forms: runnable instrument, runnable-instrument, runnable instruments. Vague pairing that names neither what runs nor what it measures — name the concrete artifact.
-
-Substitute: {test, example, binary, demo} — or name the concrete artifact. **Not** executable instrument / runnable tool (same vague pairing).
 
 ### "throat-clearing"
 
 regex: \bthroat[\s-]+clearing\b
 
-Forms: throat clearing, throat-clearing. Filler that labels a preamble as throat-clearing instead of just deleting the preamble and stating the point.
-
-Substitute: delete — lead with the point. **Not** preamble / hedging / to be clear (same filler).
-
 ### "sharp-edge"
 
 regex: \bsharp[\s-]+edge(s)?\b
-
-Forms: sharp edge, sharp-edge, sharp edges. Metaphor that hides the concrete failure mode — name what actually goes wrong: the API that panics on empty input, the field that silently drops data, the call that's easy to misorder.
-
-Substitute: {pitfall, hazard, easy-to-misuse API, the failure mode} — or name the concrete failure mode — or delete. **Not** rough edge / gotcha / rough spot (same metaphor).
 
 ### "drive-by"
 
 regex: \bdrive[\s-]+by(s)?\b
 
-Forms: drive-by, drive by, drive-bys. Metaphor that hides what actually happened — a contribution or change made without context or follow-through. Name the concrete action: an unsolicited edit, a one-off comment, a quick fix with no test.
-
-Substitute: {unsolicited, one-off, quick, ad-hoc, unrequested} — or name the concrete action — or delete. **Not** hit-and-run / fly-by / drive-thru (same metaphor).
-
 ### "stated-plainly"
 
 regex: \bstat(e|es|ed|ing)[\s-]+plainly\b
 
-Forms: stated plainly, stated-plainly, state plainly, states plainly, stating plainly. Superfluous filler — it announces directness instead of delivering it, and can be removed from any sentence with no loss of meaning.
-
-Substitute: delete — lead straight into the claim. **Not** put plainly / simply put / to put it plainly (same filler).
-
 ### "wrinkle"
-
-Forms: wrinkle, wrinkles, wrinkled, wrinkling, a real wrinkle. Filler metaphor that hides the actual complication — name the concrete issue: the edge case, the caveat, the dependency that breaks the simple version.
-
-Substitute: {complication, snag, edge case, caveat, catch} — or name the concrete issue — or delete. **Not** quirk / kink / twist (same metaphor).
 
 ### "plain-version"
 
 regex: \bplain[\s-]+versions?\b
 
-Forms: the plain version, plain version, plain-version, plain versions. Filler that announces a simpler restatement instead of delivering it — name the concrete thing being simplified, or just give the simpler statement.
-
-Substitute: {the simple case, the base case, the unadorned form, without X} — or name the concrete thing — or delete. **Not** the simpler version / the basic version / the stripped-down version (same filler).
-
 ### "payoff"
 
-Forms: payoff, payoffs, the payoff, here's the payoff. Filler that announces a reward or result is coming instead of just stating the result — name the concrete benefit or outcome.
-
-Substitute: {the result, the benefit, what you get, the outcome} — or name the concrete outcome — or delete. **Not** the upshot / the win / the reward (same filler).
-
 ### "spelunking"
-
-Forms: spelunk, spelunks, spelunked, spelunking. Metaphor that hides what the search actually is — name the concrete action: reading a file, tracing a call chain, grepping for a symbol, walking a module tree.
-
-Substitute: {read, trace, search, grep, explore, walk through, dig into} — or name the concrete action — or delete. **Not** caving / burrowing / poking around (same metaphor).
 
 ### "clear-eyed"
 
 regex: \bclear[\s-]+eyed\b
 
-Forms: clear-eyed, clear eyed. Self-congratulatory framing that announces an unsentimental, sees-it-truly stance instead of delivering the assessment — name the concrete judgment and its basis.
-
-Substitute: {clear, direct, unsentimental, realistic} — or state the assessment directly — or delete. **Not** clear-sighted / level-headed / hard-nosed (same self-congratulation).
-
 ### "hand-waving"
 
 regex: \bhand[\s-]*wav(e|es|ed|ing)\b
-
-Forms: hand-waving, hand-wave, hand-waves, hand-waved, handwaving, hand waving. Dismissive filler that asserts a conclusion while hiding the missing argument — name the specific step that's skipped or unproven.
-
-Substitute: {vague, unsupported, unproven, asserted without proof} — or name the skipped step — or delete. **Not** arm-waving / waffling / fudging (same metaphor).
 
 ### "worth-naming-precisely"
 
 regex: \bworth[\s-]+naming[\s-]+precisely\b
 
-Forms: worth naming precisely, worth-naming-precisely, and it's worth naming precisely, it's worth naming precisely. Filler that announces a precise name is coming instead of delivering it — name the concrete artifact (function, field, invariant) and be done.
-
-Substitute: delete — name the thing directly. **Not** worth calling out / worth flagging / worth highlighting (same filler).
-
 ### "let-me-ground"
 
 regex: \blet[\s-]+me[\s-]+ground\b
-
-Forms: let me ground, let-me-ground. Filler opener that announces an intent to be concrete instead of just being concrete — the sentence that follows already does the grounding, so the announcement is noise.
-
-Substitute: delete — lead straight into the concrete reference (the file, the function, the data). **Not** to ground this / grounding this / let me anchor (same filler).
 
 ### "no-metaphors"
 
 regex: \bno[\s-]+metaphors?\b
 
-Forms: no metaphors, no-metaphors, no metaphor. Filler opener that announces the absence of metaphor instead of just writing concretely — the concrete sentence that follows already proves it, so the announcement is noise.
-
-Substitute: delete — lead straight into the concrete statement. **Not** without metaphor / literally speaking / plainly (same filler).
-
 ### "worth-getting-exact"
 
 regex: \bworth[\s-]+getting[\s-]+exact\b
-
-Forms: worth getting exact, worth-getting-exact. Filler that announces a detail deserves precision instead of just delivering the precise statement — the exact value, name, or definition that should follow makes the announcement noise.
-
-Substitute: delete — give the exact detail directly. **Not** worth nailing down / the important part / worth getting right (same filler).
 
 ### "rather-than-guess"
 
 regex: \brather[\s-]+than[\s-]+guess(es|ing|ed)?\b
 
-Forms: rather than guess, rather-than-guess, rather than guesses, rather than guessing, rather than guessed. Superfluous filler — it announces that a finding came from checking instead of guessing and can be removed from any sentence with no loss of meaning.
-
-Substitute: delete — state the finding directly. **Not** instead of guessing / not just guessing / over guessing (same filler).
-
 ### "grounded"
 
 regex: \bground(ed|ing)\b
-
-Forms: grounded, grounding. Metaphor that hides what a claim actually rests on — name the concrete evidence, source, or data the claim is based on.
-
-Substitute: {based on, supported by, derived from, rests on, backed by} — or name the concrete basis — or delete. **Not** rooted / anchored / founded (same metaphor).
 
 ### "the-tell"
 
 regex: \bthe[\s-]+tells?\b
 
-Forms: the tell, the-tell, the tells. Poker metaphor that hides the concrete signal — name the actual cue: which detail, behavior, or piece of evidence reveals the thing.
-
-Substitute: {the sign, the signal, the indicator, the cue, what reveals it} — or name the concrete signal — or delete. **Not** the giveaway / the tipoff / the dead giveaway (same metaphor).
-
 ### "the-clean-model"
 
 regex: \bthe[\s-]+clean[\s-]+models?\b
-
-Forms: the clean model, the-clean-model, the clean models. Vague jargon that announces an idealized, purified version without naming the concrete artifact or what makes it clean — name the actual thing and the specific difference.
-
-Substitute: {the simplified design, the reference implementation, the idealized case, the version without X} — or name the concrete artifact — or delete. **Not** the pristine model / the pure model / the ideal model (same jargon).
 
 ### "worth-flagging"
 
 regex: \bworth[\s-]+flagging\b
 
-Forms: worth flagging, worth-flagging. Filler that announces a detail deserves attention instead of just stating the detail — name the concrete issue (the edge case, the bug, the caveat) and be done.
-
-Substitute: delete — state the thing directly. **Not** worth noting / worth mentioning / worth calling out (same filler).
-
 ### "evaporate"
-
-Forms: evaporate, evaporates, evaporated, evaporating, evaporation. Metaphor that hides what actually happened to the thing — name the concrete event: the gain was lost, the entity was despawned, the cache was invalidated, the budget was spent.
-
-Substitute: {disappears, is lost, is removed, drops to zero, is consumed} — or name the concrete event — or delete. **Not** melt / vanish / dissipate (same metaphor).
 
 ### "conspiracy"
 
 regex: \bconspir(e|es|ed|ing|acy|acies|ator|ators|atorial|atorially)\b
 
-Forms: conspiracy, conspiracies, conspire, conspires, conspired, conspiring, conspirator, conspirators, conspiratorial. Metaphor that personifies code or conditions as plotting together ("the cache and the resize conspire to corrupt the buffer"), hiding the concrete interaction — name the actual mechanism: which conditions combine, which code paths interact, what triggers what.
-
-Substitute: {combine, interact, compound, coincide, together cause} — or name the concrete interaction — or delete. **Not** collude / gang up / team up (same metaphor).
-
 ### "ride"
 
 regex: \brid(e|es|ing|den)\b|\brode\b
-
-Forms: ride, rides, riding, ridden, rode. Metaphor that personifies data as a passenger ("runs ride in GPU record tables"), hiding where the thing actually is or how it moves — name the concrete mechanism: stored in, carried in, passed through, indexed by.
-
-Substitute: {is stored in, is carried in, is included in, is passed through} — or name the concrete mechanism — or delete. **Not** piggyback / hitch / tag along (same metaphor).
 
 ### "that's-on-me"
 
 regex: \bthat(?:[\s-]+is|'?s)[\s-]+on[\s-]+me\b
 
-Forms: that's on me, thats on me, that is on me, that's-on-me. Performative self-blame that gestures at accountability instead of stating the error and the fix.
-
-Substitute: delete — or state the error and the fix directly. **Not** my bad / my fault / mea culpa (same performative blame).
-
 ### "it's-worth"
 
 regex: \bit(?:[\s-]+is|'?s)[\s-]+worth\b
-
-Forms: it's worth, it is worth, its worth, it's-worth. Filler opener that announces the next clause has value instead of just delivering it — "it's worth noting X" carries nothing X doesn't already say.
-
-Substitute: delete — state the thing directly. **Not** it bears noting / it merits mention / notably (same filler).
 
 ### "let-me-be-exact"
 
 regex: \blet[\s-]+me[\s-]+be[\s-]+exact\b
 
-Forms: let me be exact, let-me-be-exact. Filler opener that announces precision instead of delivering it — the exact statement that follows already does the work, so the announcement is noise.
-
-Substitute: delete — lead straight into the exact value, name, or definition. **Not** to be exact / to be precise / let me be precise (same filler).
-
 ### "one-decisive-run"
 
 regex: \bone[\s-]+decisive[\s-]+run(s)?\b
-
-Forms: one decisive run, one-decisive-run, one decisive runs. Filler that promises a single conclusive action instead of delivering it — name the concrete command, test, or experiment and what it will settle.
-
-Substitute: delete — name the actual command and what it verifies. **Not** one definitive run / a single conclusive run / one clean run (same filler).
 
 ### "then-a-real-fork"
 
 regex: \bthen[\s-]+a[\s-]+real[\s-]+fork(s)?\b
 
-Forms: then a real fork, then-a-real-fork, then a real forks. Filler that dramatizes a decision point instead of naming it — state the two options and the criterion that selects between them.
-
-Substitute: delete — name the options and the deciding criterion directly. **Not** then a true fork / then a genuine fork / a real branching point (same filler).
-
 ### "not-another-guess"
 
 regex: \bnot[\s-]+another[\s-]+guess(es)?\b
 
-Forms: not another guess, not-another-guess, not another guesses. Filler that claims verification by disclaiming guesswork instead of citing the check — name the test, command, or evidence that confirmed it.
-
-Substitute: delete — cite the check or evidence directly. **Not** not just a guess / not a shot in the dark / no more guessing (same filler).
-
 ### "guess"
-
-Forms: guess, guesses, guessed, guessing, guesswork, guesstimate, second-guess, second-guessing. Hedge that announces uncertainty instead of naming the claim's basis — state the hypothesis, the estimate and what it rests on, or run the check and cite the result.
-
-Substitute: {hypothesis, assumption, estimate, expect, predict} — or cite the check that confirms it — or delete. **Not** hunch / shot in the dark / gut feeling / speculation (same hedge).
 
 ### "measure-not-infer"
 
 regex: \bmeasur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?\b
 
-Forms: measure, not infer; measure not infer; measure-not-infer; measures, not infers; measured, not inferred; measuring, not inferring. Trailer slogan that contrasts the next action with a disclaimed weaker method instead of citing the measurement — name the concrete check: the command, the profile, the number it produced.
-
-Substitute: delete — cite the measurement and its result directly. **Not** test, not assume / verify, not speculate / data, not intuition (same slogan).
-
 ### "worth-anything"
 
 regex: \bworth[\s-]+anything\b
-
-Forms: worth anything, worth-anything. Hedge that questions whether a thing has value instead of naming the criterion — state what it must satisfy (the test it must pass, the question it must answer) for the result to count.
-
-Substitute: {valid, usable, conclusive, meaningful} — or name the criterion it must satisfy — or delete. **Not** worth something / worth much / of any value (same hedge).
 
 ### "direct-answer"
 
 regex: \bdirect[\s-]+answer(s)?\b
 
-Forms: direct answer, direct-answer, direct answers. Filler that announces the next clause answers directly instead of just answering — the answer that follows already stands on its own.
-
-Substitute: delete — lead with the answer. **Not** straight answer / plain answer / short answer (same filler).
-
 ### "truthful"
-
-Forms: truthful, truthfully, truthfulness, untruthful. Same virtue-claim smuggle as the honest family — grades a statement as virtuous instead of stating the fact, and implies the alternative is a lie.
-
-Substitute: {accurate, correct, exact, faithful} — or delete. **Not** frank / candid / sincere / veracious (same virtue claim).
-
-### Review pass
-
-Flag every occurrence in identifiers, comments, and prose. Propose renames and rewrites — don't leave them in place.
