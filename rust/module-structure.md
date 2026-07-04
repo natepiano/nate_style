@@ -1,6 +1,6 @@
 ---
 date_created: "[[2026-06-08]]"
-date_modified: "[[2026-06-08]]"
+date_modified: "[[2026-06-30]]"
 see_also: "[[module-roots-as-table-of-contents]]"
 tags:
   - rust
@@ -19,6 +19,8 @@ A content file is organized around its anchor type — the type that anchors the
 6. `#[cfg(test)] mod tests`.
 
 A supporting type with a long `impl` is its own anchor: give it its own module rather than inlining it (`when-to-split-a-module.md`). Inlined field types stay short by that test. In a `mod.rs`, the table of contents comes first, then this order.
+
+Bevy plugin files are the exception: if the file defines `impl Plugin for`, put the plugin struct and its impl immediately after imports/constants. Other components, resources, events, and helpers follow the plugin block.
 
 ```rust
 enum Extension { Png, Jpg }     // short field type — vocabulary first
