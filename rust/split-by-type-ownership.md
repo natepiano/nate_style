@@ -1,6 +1,7 @@
 ---
 date_created: "[[2026-04-10]]"
 date_modified: "[[2026-05-06]]"
+scope: review
 see_also:
   - "[[types-live-with-their-behavior]]"
   - "[[no-magic-values]]"

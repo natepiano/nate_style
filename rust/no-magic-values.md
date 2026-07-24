@@ -1,13 +1,15 @@
 ---
 date_created: "[[2026-04-06]]"
-date_modified: '[[2026-06-12]]'
-see_also: "[[when-to-split-a-module]]"
+date_modified: "[[2026-07-24]]"
+see_also:
+  - "[[when-to-split-a-module]]"
+  - "[[constants-file-organization]]"
 tags: [constants, rust]
 mechanism: llm
 ---
 ## No magic values
 
-Place all constants in `constants.rs` with descriptive names. When a module is a directory (e.g., `toasts/`), its constants belong in its own `constants.rs`, not in the parent's.
+Place all constants in `constants.rs` with descriptive names. When a module is a directory (e.g., `toasts/`), its constants belong in its own `constants.rs`, not in the parent's. For how to lay that file out, see [[constants-file-organization]].
 
 ```rust
 // bad
@@ -20,27 +22,30 @@ pub(super) const DEFAULT_BRP_PORT: u16 = 15702;
 if port == DEFAULT_BRP_PORT { ... }
 ```
 
+### The test
+
+**Would changing the value change intent, or just break the math?** Intent → name it. Math → leave it inline.
+
+That settles most literals that look magic and are not: counter starts (`0`), single steps (`+= 1`, `len - 1`), origins (`Vec3::new(0.0, y, 0.0)`), percentage divisors (`pct / 100.0`), range starts (`0..n`), and array dimensions or const generics in **type position** — `[u8; 32]` from `Sha256::Output`, `Vec3` → `[_; 3]`, `Mat4` → `[_; 16]`. Those last are structural facts about another type, not domain values.
+
+Never invent a name to dodge a literal: no `FRAME_COUNTER_START = 0`, no `ONE_HUNDRED_PERCENT = 100.0`, and no `u32::MIN..rows` standing in for `0..rows` — that substitution is a longer way to write `0`.
+
 ### Surface
 
 Applies to numerics, project/domain strings, cargo target kinds, subcommands, CLI flags, format-spec literals (`{name:<40}`), and meaning-bearing char/byte literals — **in expression position only**.
 
-Numerics in **type position** — `[T; N]` array dimensions, `T<N>` const generics — are out of scope: they are structural facts about another type (`Vec3` → `[_; 3]`, `Mat4` → `[_; 16]`, `[u8; 32]` from `Sha256::Output`), not domain values. Leave them inline.
+Exempt sites — leave the literal in place:
 
-Exceptions — leave in place:
+- **Fixed syntax spellings** that cannot vary — `"Cargo.toml"`, `"mod.rs"`, `"crate"`, `"super"`, `"self"`. A constant helps only when the value can change, is project-specific, or carries non-obvious policy.
+- **`impl Type { const FOO: ... = ...; }`** — type-anchored, already named.
+- **`#[cfg(test)] mod tests`** blocks, inline or as a sibling file — constants at the top of the test module, after imports.
+- **Single-file binary targets** (`examples/*.rs`, `benches/*.rs`, `build.rs`) — constants at the top of the file, after imports. If the file is divided into banner-delimited subsystem sections (CAMERA / GROUND / GIZMO), each section's constants go at the top of the section that owns them instead, just above that section's types: a reader meeting `AXIS_LABEL_OFFSET` wants the gizmo context first. Constants-at-top stays the rule for genuinely single-subsystem files.
+- **`include_str!` / `include_bytes!` path literals**, including wrapper macros like Bevy's `embedded_asset!` — Rust requires literal paths; do not duplicate them in `constants.rs`.
+- **Typed `const fn` factory aliases** — `const X: T = T::factory_fn();` where the RHS is a self-naming `const fn` call with no literals (e.g. `PlatformShortcutMode::current()`). The call is already the name; inline it at each use site.
+- **Grammatical glue** — English connectives and pluralization labels in description-builder chains (`.text("and")`, `.text("for")`, a `Phrase::File(1) => "file"` arm). This extends to any match arm pairing an enum variant with a short label where the match is that label's only consumer: the match is the dictionary for the enum, and lifting each arm to `constants.rs` creates names with no caller outside the match.
+- **Format strings** — keep `format!("...{x:.1}")` inline. Do not lift to `const FMT: &str` and rewrite the call site as `FMT.replace("{x}", &format!("{:.1}", x))` — slower, less type-safe, no clearer.
 
-- Fixed Rust/tooling syntax spellings that cannot vary — `"Cargo.toml"`, `"mod.rs"`, `"crate"`, `"super"`, `"self"` — stay inline. A constant only helps when the value can change, is project-specific, or carries non-obvious policy.
-- `impl Type { const FOO: ... = ...; }` — type-anchored, already named.
-- Single-file binary targets (`examples/*.rs`, `benches/*.rs`, `build.rs`) — constants at the top of the file, after imports. **Exception within the exception:** if the example is split into banner-delimited subsystem sections (e.g. CAMERA / GROUND / GIZMO), constants live at the top of the section that owns them, just above that section's types — not in one block above `main()`. A reader hitting `AXIS_LABEL_OFFSET` for the first time wants the gizmo context first; a flat list of every const across every subsystem above `main()` forces an internal table of contents and pushes values away from the code that gives them meaning. Constants-at-top stays the rule for genuinely single-subsystem examples (one camera / one target / a few tunables) where there is nothing to localize them to.
-- `#[cfg(test)] mod tests` blocks (inline or as a sibling file) — constants at the top of the test module, after imports.
-- `include_str!` / `include_bytes!` path literals, including wrapper macros like Bevy's `embedded_asset!` — Rust requires literal paths; do not duplicate them in `constants.rs`.
-- Typed `const fn` factory aliases — `const X: T = T::factory_fn();` where the RHS is a self-naming `const fn` call with no literals (e.g. `PlatformShortcutMode::current()`). The factory call is already the name; binding it to a constant adds a layer without adding information. Inline the call at each use site.
-- English connectives and pluralization labels used in description-builder chains. Strings like `.text("and")`, `.text("for")`, or a `Phrase::File(1) => "file"` arm returning `"file"` / `"files"` are grammatical glue between domain words, not domain entities — leave inline at the call site.
-- Match arms that pair an enum variant with a short label, where the match is the only consumer of those labels. Example: `impl Phrase { fn pluralize(&self) { match self { Self::File(1) => "file", Self::File(_) => "files", … } } }`. The match is the dictionary for the enum; lifting each label to `constants.rs` creates names with no caller outside the match.
-- Init/identity literals — values dictated by the operation, not the domain: counter starts (`0`), single steps (`+= 1`, `- 1`, `+ 1`), origins (`Vec3::new(0.0, y, 0.0)`), arithmetic identities (`len - 1`, `pct / 100.0`). Test: would changing the value change *intent*, or just break the math? If the latter, leave inline. Do not lift to `FRAME_COUNTER_START = 0`, `COUNT_INCREMENT = 1`, `ZERO_F64 = 0.0`, `ORIGIN_X = 0.0`, `ONE_HUNDRED_PERCENT = 100.0`, `SAMPLE_INDEX_OFFSET = 1`.
-- Range start of `0` — `0..n` stays inline. Do not write `T::MIN..n` (e.g. `u32::MIN..rows`) to dodge the literal; the substitution is a longer way to write `0`.
-- Format strings — keep inline as `format!("...{x:.1}")`. Do not lift to `const FMT: &str = "...{x}"` and rewrite the call site as `FMT.replace("{x}", &format!("{:.1}", x))` — slower, less type-safe, no clearer.
-
-Don't lift a literal from an exempt site. If a constant ends up with no caller outside exempt scopes, delete the constant — adding code to keep it referenced is evasion (see `agent-must-review-allows.md`).
+Don't lift a literal out of an exempt site. If a constant ends up with no caller outside exempt scopes, delete it — adding code to keep it referenced is evasion (see `agent-must-review-allows.md`).
 
 ### One value per meaning, one constant
 
@@ -54,7 +59,7 @@ Don't add `_TEXT` / `_SINGULAR` / `_VALUE` to manufacture a second name for an e
 
 ### Don't promote a flat module just to add `constants.rs`
 
-A flat `foo.rs` keeps its constants in the parent directory's `constants.rs`, as a peer file. Do not convert `foo.rs` into `foo/mod.rs` + `foo/constants.rs` solely to satisfy the constants-rs rule — promoting a flat file to a directory module requires 2+ of the criteria in [[when-to-split-a-module]], and the constants rule alone is not one of them.
+A flat `foo.rs` keeps its constants in the parent directory's `constants.rs`, as a peer file. Converting `foo.rs` into `foo/mod.rs` + `foo/constants.rs` requires 2+ of the criteria in [[when-to-split-a-module]], and the constants rule alone is not one of them.
 
 ```text
 # bad — split exists only to host the constant
@@ -67,38 +72,4 @@ input/
 input/
   constants.rs          # holds keybindings' constant (pub(super))
   keybindings.rs        # imports from sibling
-```
-
-## File organization
-
-Group constants into related sections with a `//` comment title for each section. Sort sections alphabetically by section name. Within each section, sort constants alphabetically by name.
-
-Use `//` plain comments for section headers. Write headers in lowercase (proper nouns excepted; acronyms are also lowercased — e.g. `// rtt`, `// sdf rendering`, `// msdf rasterization`) so they stand out as labels rather than reading like sentences. Use `///` doc comments on individual constants only when the value is not self-evident from the name.
-
-Rustfmt does not reorder constants. On insert, re-verify the section is alphabetical end-to-end — do not trust visual placement near similar prefixes.
-
-Cross-cutting sections (e.g., "Actor physics velocity limits" spanning multiple entity types) are fine when the grouping adds clarity.
-
-```rust
-// bad -- unsorted sections, mixed concerns
-pub(super) const SPACESHIP_MASS: f32 = 10.0;
-pub(super) const MISSILE_SCALE: f32 = 2.5;
-pub(super) const SPACESHIP_HEALTH: f32 = 5000.0;
-pub(super) const MISSILE_MASS: f32 = 0.1;
-
-// good -- sections with comment titles, sorted alphabetically
-// Missile constants
-pub(super) const MISSILE_MASS: f32 = 0.1;
-pub(super) const MISSILE_SCALE: f32 = 2.5;
-
-// Spaceship constants
-pub(super) const SPACESHIP_HEALTH: f32 = 5000.0;
-pub(super) const SPACESHIP_MASS: f32 = 10.0;
-
-// good -- doc comment on a non-obvious value
-// Nateroid constants
-pub(super) const NATEROID_COLLIDER_MARGIN: f32 = 1.0 / 3.0;
-/// Vertical vibration runs 30% faster than lateral, creating non-repeating
-/// patterns.
-pub(super) const NATEROID_VIBRATION_SPEED_MULT: f32 = 1.3;
 ```
