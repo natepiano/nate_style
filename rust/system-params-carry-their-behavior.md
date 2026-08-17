@@ -34,6 +34,7 @@ impl PanelAnchorParticipation<'_, '_> {
 
 - A helper already takes the params by reference — whoever wrote that signature already found the
   bundle. Strongest signal, and the only one that fires when no two systems share a param block.
+  Drop `Commands` from that signature first; fewer than two params left and it stays a helper.
 - Two or more systems running the same call sequence on the same params.
 - One system past roughly eight params, where some subset of them is a coherent concept.
 
