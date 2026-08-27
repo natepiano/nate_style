@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-05-05]]'
-date_modified: '[[2026-06-23]]'
+date_modified: '[[2026-08-27]]'
 exceptions: text shaping
 tags:
 - rust
@@ -9,7 +9,7 @@ tags:
 - comments
 - non-negotiable
 mechanism: llm
-pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode|that(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|it(?:[\s-]+is|\x27?s)[\s-]+worth|let[\s-]+me[\s-]+be[\s-]+exact|one[\s-]+decisive[\s-]+run(s)?|then[\s-]+a[\s-]+real[\s-]+fork(s)?|not[\s-]+another[\s-]+guess(es)?|guess|measur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?|worth[\s-]+anything|direct[\s-]+answer(s)?|truthful'
+pre_filter: '(?i)shape|honest|carve|gloss|bite|biting|bitten|plain English|load-bearing|full stop|pull\w*\s+\w+\s+weight|blast\s+radius|hoist|in one breath|paper(s|ed|ing)?\s+over|pressure[\s-]+test(s|ed|ing)?|you(?:[\x27]re|\s+are)[\s-]+right[\s-]+to[\s-]+be[\s-]+suspicious|sharp[\s-]+point|fair|clobber|this[\s-]+one(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|rather[\s-]+than[\s-]+vibes?|seam(s|ed|ing)?|runnable[\s-]+instruments?|throat[\s-]+clearing|sharp[\s-]+edge(s)?|drive[\s-]+by(s)?|stat(e|es|ed|ing)[\s-]+plainly|wrinkl\w*|plain[\s-]+versions?|payoffs?|spelunk\w*|clear[\s-]+eyed|hand[\s-]*wav(e|es|ed|ing)|worth[\s-]+naming[\s-]+precisely|let[\s-]+me[\s-]+ground|no[\s-]+metaphors?|worth[\s-]+getting[\s-]+exact|rather[\s-]+than[\s-]+guess(es|ing|ed)?|ground(ed|ing)|the[\s-]+tells?|the[\s-]+clean[\s-]+models?|worth[\s-]+flagging|evaporat\w*|conspir\w*|rid(e|es|ing|den)|rode|that(?:[\s-]+is|\x27?s)[\s-]+on[\s-]+me|it(?:[\s-]+is|\x27?s)[\s-]+worth|let[\s-]+me[\s-]+be[\s-]+exact|one[\s-]+decisive[\s-]+run(s)?|then[\s-]+a[\s-]+real[\s-]+fork(s)?|not[\s-]+another[\s-]+guess(es)?|guess|measur(e|es|ed|ing),?[\s-]+not[\s-]+infer(s|red|ring)?|worth[\s-]+anything|direct[\s-]+answer(s)?|truthful|mint(s|ed|ing)?'
 ---
 ## Forbidden words
 
@@ -220,3 +220,7 @@ regex: \bworth[\s-]+anything\b
 regex: \bdirect[\s-]+answer(s)?\b
 
 ### "truthful"
+
+### "mint"
+
+regex: \bmint(s|ed|ing)?\b
