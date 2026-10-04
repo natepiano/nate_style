@@ -1,6 +1,6 @@
 ---
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-04-29]]'
+date_modified: '[[2026-10-04]]'
 tags:
 - bevy
 - rust
@@ -10,6 +10,31 @@ mode: propose
 ## Prefer observers over polling
 
 Use event-driven patterns instead of per-frame polling.
+
+### Trigger at the authoritative source
+
+Trigger the event once, in the deepest code that decides the state, and only
+for the entities whose state changed. That emitter is the one authoritative
+signal: no downstream system notices the change and triggers it again, and no
+observer turns it into a second event for the same fact. Both directions are
+events (off and on, dim and undim), each started by its own observer, and an
+observer that often has nothing to do carries a run condition
+(`extract-observer-run-conditions.md`).
+
+```rust
+// bad — a chain: a later system re-detects the change and re-emits it
+fn read_switches(mut graph: ResMut<Graph>, ...) { graph.set_switched_off(off); }
+fn notice_switches(graph: Res<Graph>, mut commands: Commands) {
+    if graph.is_changed() { for tool in graph.switched_off() { commands.trigger(Dim(tool)); } }
+}
+
+// good — the code that decides the state emits it, once per changed tool
+fn read_switches(mut graph: ResMut<Graph>, mut commands: Commands, ...) {
+    for change in graph.set_switched_off(off) {
+        commands.trigger(ToolSwitchChanged { tool: change.tool, state: change.state });
+    }
+}
+```
 
 ```rust
 // bad — runs every frame checking for changes
