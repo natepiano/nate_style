@@ -1,7 +1,7 @@
 ---
 date_created: "[[2026-10-13]]"
 date_modified: "[[2026-10-13]]"
-tags: [question]
+tags: [push, question]
 mechanism: llm
 test: "Does each option say what choosing it does, with exactly one recommendation and its reason?"
 source: "~/.claude/docs/user_facing_explanation.md, the user's rule, in the doc since 2026-08-01: \"exactly one recommendation, with its reason\"; \"what each choice makes the system do\""
