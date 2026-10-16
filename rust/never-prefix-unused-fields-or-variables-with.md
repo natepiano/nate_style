@@ -1,11 +1,16 @@
 ---
+tier: B
+family: values
+input_scope: crate
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 tags:
 - rust
 - style
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'destructured bindings and underscore names outside the regex forms'
   kind: regex
   pattern: '\blet\s+(mut\s+)?_[a-z]|(^|[\s(,&])_[a-z][a-z0-9_]*\s*:'
 ---

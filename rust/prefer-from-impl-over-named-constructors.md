@@ -1,9 +1,14 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: "[[2026-04-19]]"
-date_modified: '[[2026-07-30]]'
+date_modified: "[[2026-10-16]]"
 tags: [rust, patterns]
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'single-input conversions named without from_ and generic from_ constructors'
   kind: regex
   pattern: '\bfn from_\w+\s*\('
 ---

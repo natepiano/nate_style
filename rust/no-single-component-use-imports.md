@@ -1,6 +1,8 @@
 ---
+tier: A
+input_scope: crate
 date_created: "[[2026-04-19]]"
-date_modified: "[[2026-04-28]]"
+date_modified: "[[2026-10-16]]"
 see_also: "[[import-the-module-for-functions-not-the-function-itself]]"
 tags: [imports, rust]
 mechanism: clippy

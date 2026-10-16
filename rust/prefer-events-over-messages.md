@@ -1,12 +1,17 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: '[[2026-03-30]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 tags:
 - bevy
 - rust
 mechanism: llm
 mode: propose
 candidates:
+  surface: partial
+  uncovered: 'message declarations and registration without MessageReader or MessageWriter sites'
   kind: regex
   pattern: '\bMessage(Reader|Writer)<'
 ---

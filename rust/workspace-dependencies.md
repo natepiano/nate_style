@@ -1,12 +1,17 @@
 ---
+tier: D
+family: modules
+input_scope: manifest
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 scope: review
 tags:
 - cargo
 - rust
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'target-specific dependencies, unversioned member dependencies, workspace default-features policy'
   kind: workspace_deps
 ---
 ## Workspace dependencies

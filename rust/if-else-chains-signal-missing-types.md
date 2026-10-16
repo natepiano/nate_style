@@ -1,12 +1,17 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 see_also: "[[prefer-from-impl-over-named-constructors]]"
 tags:
 - patterns
 - rust
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'repeated conditions in separate binary branches without else-if chains'
   kind: regex
   pattern: '\belse if\b'
 ---

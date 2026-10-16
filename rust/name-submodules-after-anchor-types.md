@@ -1,6 +1,9 @@
 ---
+tier: D
+family: modules
+input_scope: crate
 date_created: "[[2026-04-10]]"
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 scope: review
 see_also: "[[types-live-with-their-behavior]]"
 tags:
@@ -8,6 +11,8 @@ tags:
   - modules
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'anchor-type fit, domain cohorts, parent domain names, and stale references after renames'
   kind: submodule_names
 ---
 ## Anchor types drive submodule boundaries and names

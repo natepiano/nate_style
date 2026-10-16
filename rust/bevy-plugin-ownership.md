@@ -1,6 +1,9 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: '[[2026-04-11]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 see_also: "[[module-roots-as-table-of-contents]]"
 tags:
 - rust
@@ -8,6 +11,8 @@ tags:
 - modules
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'modules missing a plugin, standalone builder functions, plugin struct placement and visibility'
   kind: regex
   pattern: 'impl Plugin for'
 ---

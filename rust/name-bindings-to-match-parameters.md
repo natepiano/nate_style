@@ -1,6 +1,9 @@
 ---
+tier: C
+family: names
+input_scope: crate
 date_created: "[[2026-04-05]]"
-date_modified: "[[2026-04-28]]"
+date_modified: "[[2026-10-16]]"
 tags: [naming, rust]
 mechanism: llm
 ---

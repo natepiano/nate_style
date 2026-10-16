@@ -1,12 +1,17 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: '[[2026-06-01]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 tags:
 - bevy
 - rust
 mechanism: llm
 mode: propose
 candidates:
+  surface: partial
+  uncovered: 'observer closures and opening guards extending beyond the six-line scan window'
   kind: observer_guards
 ---
 ## Extract observer guards into run conditions

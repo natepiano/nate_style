@@ -1,9 +1,14 @@
 ---
+tier: B
+family: names
+input_scope: crate
 date_created: "[[2026-04-17]]"
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 tags: [naming, rust]
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'stale bindings, field names, and helpers after an enum rename'
   kind: enum_variant_stutter
 ---
 ## Don't repeat the enum domain in variant names

@@ -1,9 +1,14 @@
 ---
+tier: B
+family: values
+input_scope: crate
 date_created: "[[2026-04-10]]"
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 tags: [lints, rust]
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'inner allow attributes and cfg_attr-wrapped allows'
   kind: allows_without_reason
 ---
 ## Agent must review all `#[allow]` with the user

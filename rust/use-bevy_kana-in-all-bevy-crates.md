@@ -1,11 +1,16 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 tags:
 - bevy
 - rust
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'bevy_kana dependency keys, multiline public signatures, public Vec3 conversions, internal math newtypes, numeric casts, input macros'
   kind: bevy_kana_usage
 ---
 ## Use `bevy_kana` in all Bevy crates

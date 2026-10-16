@@ -1,6 +1,9 @@
 ---
+tier: C
+family: values
+input_scope: crate
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-10-04]]'
+date_modified: "[[2026-10-16]]"
 tags:
 - bevy
 - rust

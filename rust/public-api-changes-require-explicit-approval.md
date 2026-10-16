@@ -1,6 +1,8 @@
 ---
+tier: E
+input_scope: crate
 date_created: '[[2026-04-15]]'
-date_modified: '[[2026-04-29]]'
+date_modified: "[[2026-10-16]]"
 tags:
 - rust
 - api

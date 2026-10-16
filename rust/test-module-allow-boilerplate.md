@@ -1,6 +1,9 @@
 ---
+tier: B
+family: values
+input_scope: crate
 date_created: '[[2026-04-10]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 see_also: "[[agent-must-review-allows]]"
 tags:
 - lints
@@ -8,6 +11,8 @@ tags:
 - tests
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'inner allow attributes and cfg_attr-wrapped allows'
   kind: test_allow_boilerplate
 ---
 ## Test module allow boilerplate

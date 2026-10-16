@@ -1,10 +1,15 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: "[[2026-04-17]]"
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 see_also: "[[dont-repeat-enum-domain-in-variant-names]]"
 tags: [rust, types]
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'function arguments, return types, local accumulators'
   kind: struct_fields
   field_type_pattern: '^bool$'
 ---

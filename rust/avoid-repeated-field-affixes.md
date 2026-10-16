@@ -1,10 +1,15 @@
 ---
+tier: B
+family: names
+input_scope: crate
 date_created: "[[2026-04-17]]"
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 see_also: "[[prefer-type-named-fields-and-bindings]]"
 tags: [naming, rust]
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'stale helper names, constructor parameters, and format tokens after a field rename'
   kind: field_affixes
 ---
 ## Avoid repeated field affixes

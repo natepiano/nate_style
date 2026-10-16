@@ -1,6 +1,9 @@
 ---
+tier: D
+family: modules
+input_scope: crate
 date_created: '[[2026-04-07]]'
-date_modified: '[[2026-06-12]]'
+date_modified: "[[2026-10-16]]"
 scope: review
 see_also: '[[module-structure]]'
 tags:
@@ -9,6 +12,8 @@ tags:
 - visibility
 mechanism: llm
 candidates:
+  surface: partial
+  uncovered: 'mod declaration ordering, directory form, and logic inside main functions'
   kind: module_root_items
 ---
 ## Module roots as table of contents

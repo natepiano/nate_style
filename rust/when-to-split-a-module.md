@@ -1,6 +1,9 @@
 ---
+tier: D
+family: modules
+input_scope: crate
 date_created: "[[2026-04-10]]"
-date_modified: "[[2026-05-03]]"
+date_modified: "[[2026-10-16]]"
 scope: review
 tags:
   - rust

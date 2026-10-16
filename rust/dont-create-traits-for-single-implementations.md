@@ -1,11 +1,15 @@
 ---
+tier: B
+family: types
+input_scope: crate
 date_created: '[[2026-03-29]]'
-date_modified: '[[2026-07-07]]'
+date_modified: "[[2026-10-16]]"
 tags:
 - patterns
 - rust
 mechanism: llm
 candidates:
+  surface: whole
   kind: single_impl_traits
 ---
 ## Don't create traits for single implementations
