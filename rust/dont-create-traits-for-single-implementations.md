@@ -9,7 +9,8 @@ tags:
 - rust
 mechanism: llm
 candidates:
-  surface: whole
+  surface: partial
+  uncovered: 'same-named traits in separate modules, mutually exclusive implementations for one type'
   kind: single_impl_traits
 ---
 ## Don't create traits for single implementations

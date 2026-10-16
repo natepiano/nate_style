@@ -9,7 +9,8 @@ tags:
 - rust
 mechanism: llm
 candidates:
-  surface: whole
+  surface: partial
+  uncovered: 'generic monomorphizations with no registration call'
   kind: regex
   pattern: '\.register_type::<'
 ---
