@@ -1,7 +1,7 @@
 ---
 tier: B
 family: names
-input_scope: crate
+input_scope: file
 date_created: "[[2026-08-27]]"
 date_modified: "[[2026-10-16]]"
 exceptions: text shaping

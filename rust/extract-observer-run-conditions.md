@@ -1,7 +1,7 @@
 ---
 tier: B
 family: types
-input_scope: crate
+input_scope: file
 date_created: '[[2026-06-01]]'
 date_modified: "[[2026-10-16]]"
 tags:

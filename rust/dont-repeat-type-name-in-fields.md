@@ -1,7 +1,7 @@
 ---
 tier: B
 family: names
-input_scope: crate
+input_scope: file
 date_created: "[[2026-04-17]]"
 date_modified: "[[2026-10-16]]"
 trigger_test: "field name begins with snake_case of struct name, not merely a shared domain word"
