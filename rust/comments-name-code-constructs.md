@@ -3,7 +3,7 @@ tier: C
 family: names
 input_scope: file
 date_created: '[[2026-06-04]]'
-date_modified: "[[2026-10-16]]"
+date_modified: "[[2026-10-18]]"
 tags:
 - comments
 - rust
@@ -15,6 +15,7 @@ mode: flag
 
 Review comments for vague verbs and metaphors. When code has names, the comment must name the concrete type, field, enum variant, resource, component, buffer, or table.
 Keep those names inside a readable sentence that states the relationship, consumer, or role; do not replace vague prose with label lists.
+Keep every reason a comment states; name the constructs in addition to it, never in its place.
 
 ```rust
 // bad
