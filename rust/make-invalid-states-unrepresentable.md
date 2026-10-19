@@ -3,10 +3,13 @@ tier: C
 family: types
 input_scope: file
 date_created: "[[2026-10-18]]"
-date_modified: "[[2026-10-18]]"
+date_modified: "[[2026-10-19]]"
 tags: [rust, types, patterns]
 mechanism: llm
 mode: propose
+see_also:
+  - "[[enums-over-bool-for-owned-booleans]]"
+  - "[[if-else-chains-signal-missing-types]]"
 ---
 ## Make invalid states unrepresentable
 
