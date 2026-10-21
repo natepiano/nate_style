@@ -1,0 +1,17 @@
+views:
+  - type: table
+    name: events
+    filters:
+      and:
+        - file.hasTag("guild-event")
+        - or:
+            - file.hasTag("guild/showrunners")
+            - file.hasTag("guild/common")
+    order:
+      - file.name
+      - tags
+      - date_created
+      - date_modified
+    sort:
+      - property: file.name
+        direction: ASC

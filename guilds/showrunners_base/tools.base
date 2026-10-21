@@ -1,0 +1,17 @@
+views:
+  - type: table
+    name: tools
+    filters:
+      and:
+        - file.hasTag("guild-tool")
+        - or:
+            - file.hasTag("guild/showrunners")
+            - file.hasTag("guild/common")
+    order:
+      - file.name
+      - tags
+      - date_created
+      - date_modified
+    sort:
+      - property: file.name
+        direction: ASC
