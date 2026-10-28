@@ -2,6 +2,7 @@
 tier: C
 family: names
 input_scope: file
+approval: always
 date_created: '[[2026-06-04]]'
 date_modified: "[[2026-10-18]]"
 tags:

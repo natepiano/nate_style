@@ -2,6 +2,7 @@
 tier: D
 family: modules
 input_scope: manifest
+approval: always
 date_created: '[[2026-03-29]]'
 date_modified: "[[2026-10-16]]"
 scope: review

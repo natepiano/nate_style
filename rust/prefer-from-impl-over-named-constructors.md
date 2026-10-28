@@ -2,6 +2,7 @@
 tier: B
 family: types
 input_scope: file
+approval: always
 date_created: "[[2026-04-19]]"
 date_modified: "[[2026-10-16]]"
 tags: [rust, patterns]

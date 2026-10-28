@@ -2,6 +2,7 @@
 tier: B
 family: types
 input_scope: crate
+approval: always
 date_created: '[[2026-04-11]]'
 date_modified: "[[2026-10-16]]"
 see_also: "[[module-roots-as-table-of-contents]]"

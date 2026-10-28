@@ -2,6 +2,7 @@
 tier: C
 family: values
 input_scope: crate
+approval: always
 date_created: "[[2026-07-24]]"
 date_modified: "[[2026-10-16]]"
 see_also: "[[no-magic-values]]"

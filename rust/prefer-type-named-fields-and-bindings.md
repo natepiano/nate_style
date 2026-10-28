@@ -2,6 +2,7 @@
 tier: C
 family: names
 input_scope: file
+approval: always
 date_created: "[[2026-04-17]]"
 date_modified: "[[2026-10-16]]"
 see_also: "[[dont-repeat-type-name-in-fields]]"

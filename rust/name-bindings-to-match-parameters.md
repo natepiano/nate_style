@@ -2,6 +2,7 @@
 tier: C
 family: names
 input_scope: file
+approval: always
 date_created: "[[2026-04-05]]"
 date_modified: "[[2026-10-16]]"
 tags: [naming, rust]

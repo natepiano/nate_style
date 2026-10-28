@@ -2,6 +2,7 @@
 tier: B
 family: names
 input_scope: file
+approval: always
 date_created: "[[2026-08-27]]"
 date_modified: "[[2026-10-18]]"
 exceptions: text shaping
