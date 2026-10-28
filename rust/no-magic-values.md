@@ -3,7 +3,7 @@ tier: C
 family: values
 input_scope: crate
 date_created: "[[2026-04-06]]"
-date_modified: "[[2026-10-16]]"
+date_modified: "[[2026-10-27]]"
 see_also:
   - "[[when-to-split-a-module]]"
   - "[[constants-file-organization]]"
@@ -41,7 +41,7 @@ Exempt sites — leave the literal in place:
 
 - **Fixed syntax spellings** that cannot vary — `"Cargo.toml"`, `"mod.rs"`, `"crate"`, `"super"`, `"self"`. A constant helps only when the value can change, is project-specific, or carries non-obvious policy.
 - **`impl Type { const FOO: ... = ...; }`** — type-anchored, already named.
-- **`#[cfg(test)] mod tests`** blocks, inline or as a sibling file — constants at the top of the test module, after imports.
+- **`#[cfg(test)] mod tests`** blocks, inline or as a sibling file — constants at the top of the test module, after imports. When a test needs a value the code already names, it imports and uses that production constant. It never declares a second constant with the same value. A test-only constant is correct only for a value that the code under test does not name.
 - **Single-file binary targets** (`examples/*.rs`, `benches/*.rs`, `build.rs`) — constants at the top of the file, after imports. If the file is divided into banner-delimited subsystem sections (CAMERA / GROUND / GIZMO), each section's constants go at the top of the section that owns them instead, just above that section's types: a reader meeting `AXIS_LABEL_OFFSET` wants the gizmo context first. Constants-at-top stays the rule for genuinely single-subsystem files.
 - **`include_str!` / `include_bytes!` path literals**, including wrapper macros like Bevy's `embedded_asset!` — Rust requires literal paths; do not duplicate them in `constants.rs`.
 - **Typed `const fn` factory aliases** — `const X: T = T::factory_fn();` where the RHS is a self-naming `const fn` call with no literals (e.g. `PlatformShortcutMode::current()`). The call is already the name; inline it at each use site.
