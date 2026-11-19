@@ -31,5 +31,7 @@ fn load_scene(path: &Path) -> anyhow::Result<Scene> {
 
 For a fallible Bevy system, return `bevy::ecs::error::Result` and use `?` to convert `anyhow::Error` to `BevyError`.
 Call `App::set_error_handler` once in the app to report unhandled system failures.
-Log the error with `{:?}` in that handler to include the cause chain.
+A system panic also reaches that handler: if `error.take_payload()` returns a payload, call `std::panic::resume_unwind(payload)`.
+Otherwise log the error with `{:?}` to include the cause chain, at the level of `error.severity()`.
+Log `Severity::Panic` with `error!`: an error converted by `?` has that severity unless `with_severity` sets another.
 Do not end propagation with `.ok()` or a `warn!` or `error!` call that prints only the outer message.
