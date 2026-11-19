@@ -44,6 +44,13 @@ fn report_system_error(mut error: BevyError, context: ErrorContext) {
     if let Some(payload) = error.take_payload() {
         std::panic::resume_unwind(payload);
     }
-    error!("{context}: {error:?}");
+    match error.severity() {
+        Severity::Ignore => {}
+        Severity::Trace => trace!("{context}: {error:?}"),
+        Severity::Debug => debug!("{context}: {error:?}"),
+        Severity::Info => info!("{context}: {error:?}"),
+        Severity::Warning => warn!("{context}: {error:?}"),
+        Severity::Error | Severity::Panic => error!("{context}: {error:?}"),
+    }
 }
 ```
