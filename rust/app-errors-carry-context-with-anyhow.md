@@ -29,9 +29,21 @@ fn load_scene(path: &Path) -> anyhow::Result<Scene> {
 }
 ```
 
+This part applies to Bevy 0.20.1; in 0.19.1 a panic does not reach the error handler.
 For a fallible Bevy system, return `bevy::ecs::error::Result` and use `?` to convert `anyhow::Error` to `BevyError`.
-Call `App::set_error_handler` once in the app to report unhandled system failures.
-A system panic also reaches that handler: if `error.take_payload()` returns a payload, call `std::panic::resume_unwind(payload)`.
+Call `App::set_error_handler` once in the app to report unhandled system failures; a second call panics.
+A system panic also reaches that handler: if `error.take_payload()` returns a payload, call `std::panic::resume_unwind(payload)` first.
+A handler that only logs hides each system panic.
 Otherwise log the error with `{:?}` to include the cause chain, at the level of `error.severity()`.
 Log `Severity::Panic` with `error!`: an error converted by `?` has that severity unless `with_severity` sets another.
+With this handler, a system that returns an error is logged and the app continues; only a real panic stops the app.
 Do not end propagation with `.ok()` or a `warn!` or `error!` call that prints only the outer message.
+
+```rust
+fn report_system_error(mut error: BevyError, context: ErrorContext) {
+    if let Some(payload) = error.take_payload() {
+        std::panic::resume_unwind(payload);
+    }
+    error!("{context}: {error:?}");
+}
+```
