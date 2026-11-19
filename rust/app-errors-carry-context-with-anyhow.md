@@ -13,7 +13,7 @@ date_modified: "[[2026-11-19]]"
 
 Use `anyhow::Result` in the app crate to propagate crate failures to the report.
 At each level, add `.context(...)` or `.with_context(...)` to identify the operation that failed.
-For library errors, see [[public-failures-return-named-errors]].
+For library errors, see [[public-failures-return-named-errors]]. An error enum in the app crate takes the same name form: it ends in `Error`.
 
 ```rust
 // Bad

@@ -4,7 +4,7 @@ family: types
 input_scope: crate
 approval: always
 date_created: "[[2026-10-03]]"
-date_modified: "[[2026-10-16]]"
+date_modified: "[[2026-11-19]]"
 see_also: "[[enums-over-bool-for-owned-booleans]]"
 tags: [rust, types, patterns]
 mechanism: llm
@@ -18,6 +18,8 @@ candidates:
 
 A public function that can fail returns `Result<T, E>`, where `E` is a public error enum that names each way it fails. When `None` could mean "the bytes did not parse", "the asset did not load" or "that ID was never registered", the caller cannot tell which one happened. It cannot report the failure, so it falls back quietly.
 
+- End the enum name in `Error`, never `Failure`. Name it after the type or operation that fails: `UnfoldError`, `FontLookupError`.
+- Add a word between the two only to tell apart two error enums of one type (`FontParseError`, `FontRegistrationError`). With one error enum, write `UnfoldError`, not `UnfoldBuildError`.
 - Each variant names one failure and carries the value that identifies it: the name, the ID, the path.
 - Derive `thiserror::Error`. Wrap a lower-level error with `#[from]` or `#[source]` so the cause chain survives.
 - Export the error beside the type whose functions return it.
