@@ -17,7 +17,7 @@ Tie-breaks: caller-side simplicity beats internal elegance; a real performance n
 
 ## Hard rules
 
-- Rust subject → load the style guide first: `zsh ~/.claude/scripts/rust_style/load-rust-style.sh` (Read the saved file if a path is printed). Its rules — including `forbidden-words.md` and `dont-create-traits-for-single-implementations.md` — bind every word of every finding. No trait or generic recommendation may violate them.
+- Rust subject → load the style guide first: `zsh ~/.claude/scripts/rust_style/load-rust-style.sh` (Read the saved file if a path is printed). Its rules — including `dont-create-traits-for-single-implementations.md` — bind every word of every finding. No trait or generic recommendation may violate them.
 - "The current design is right" and "reject" are valid verdicts. Ask of each recommendation: does it make the common call site simpler, or just different?
 - allowlist/denylist, never the alternatives.
 
