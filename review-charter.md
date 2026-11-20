@@ -1,19 +1,22 @@
 ---
 date_created: '[[2026-07-07]]'
-date_modified: '[[2026-07-07]]'
+date_modified: '[[2026-10-01]]'
 ---
 # Review charter
 
 Shared value system for multi-agent review commands (`/api_review`, `/team_review`). Every review agent judges by these values and reports findings in this schema.
 
-## Values (ranked — earlier wins a conflict)
+## Values
 
-1. **Ergonomics** — a caller guesses the right call from names alone; minimal steps, imports, type annotations.
-2. **Uncompromising speed and performance** — never trade hot-path cost for surface sugar. A recommendation that adds runtime cost (allocation, clone, dynamic dispatch, copies at boundaries) must name that cost.
-3. **Type-system leverage** — types encode invariants the compiler enforces; readability and changeability over cleverness.
-4. **Simplicity** — fewer concepts, fewer entry points, less surface.
+The three gods (`<ThreeGods>` in `~/.claude/docs/decision_criteria.md`, user rule 2026-10-01), above a floor of correctness. We believe in them; kitschy, we know. A reviewer judges every line by them, not only the lines a rule names. Earlier wins a conflict:
 
-Tie-breaks: caller-side simplicity beats internal elegance; a real performance need beats surface sugar.
+1. **Simple** — few concepts, few entry points, a small surface. A caller finds the right call from names alone, with minimal steps, imports and type annotations.
+2. **Fast** — never trade hot-path cost for surface sugar. A recommendation that adds runtime cost (allocation, clone, dynamic dispatch, copies at boundaries) must name that cost.
+3. **Beautiful** — reads cleanly: the right names, one idiom, the style guide followed, and types that encode invariants the compiler enforces.
+
+In an API review the gods rule, and two means serve them most often: good ergonomics, and leverage of the type system.
+
+Tie-break: caller-side simplicity beats internal elegance.
 
 ## Hard rules
 
