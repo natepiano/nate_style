@@ -2,7 +2,7 @@
 tier: E
 input_scope: crate
 date_created: '[[2026-04-15]]'
-date_modified: "[[2026-10-16]]"
+date_modified: "[[2026-11-22]]"
 tags:
 - rust
 - api
@@ -21,6 +21,11 @@ Public API includes:
 - examples and README snippets presented as supported usage
 
 If satisfying another style rule would require changing that surface, stop and ask instead of recommending or applying the breaking change.
+
+Before you ask, answer these from the code:
+1. Must it exist? Name each thing that exists and could do the job: a model, a public item, the behavior on the trunk, a line of the plan. Say why each one cannot.
+2. Is it an event? Say who reads the item, and when.
+3. What is the code? Show the item beside its neighbours, with one real scenario.
 
 Prefer API-preserving remediations:
 - private wrapper types or plugins behind the existing entry points
