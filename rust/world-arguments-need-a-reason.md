@@ -36,14 +36,15 @@ Use the narrower form:
 
 ```rust
 // bad: each caller must hold the whole world to seat one cable end
-pub fn seat_end(world: &mut World, cable: Entity, port: Entity) { ... }
+pub fn seat_end(world: &mut World, cable: Entity, side: CableSide, jack: Entity) { ... }
 // good: the caller triggers an event; an observer does the change
-commands.trigger(SeatCableEnd { cable, port });
+commands.trigger(SeatCableEnd { cable, side, jack });
 
 // bad: a read that blocks every writer
-pub fn flying_plug_end(world: &World, cable: Entity) -> Option<Vec3> { ... }
-// good: `cables` is `CableReads`, a SystemParam
-cables.flying_plug_end(cable)
+pub fn flying_plug_end(world: &World, plug: Entity) -> Option<(Entity, CableSide)> { ... }
+// good: `flying_plugs` is `FlyingPlugs`, a SystemParam
+// with `fn end(&self, plug: Entity) -> Option<(Entity, CableSide)>`
+flying_plugs.end(plug)
 ```
 
 `World` stays only where Bevy gives nothing narrower:
