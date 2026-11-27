@@ -3,12 +3,12 @@ date_created: "[[2026-10-13]]"
 date_modified: "[[2026-11-27]]"
 tags: [push]
 mechanism: llm
-test: "Is the full body, including its action first line when there is one, fewer than 500 characters?"
+test: "Is the full body, including each session and action line that appears, fewer than 500 characters?"
 source: "Approved design, 2026-10-13, ~/.local/state/plan-backlog/2026-10-13-user-message-clarity.md: \"a body under 500\"; \"body 454\""
 ---
 ## Keep the push body under 500 characters
 
-Keep the entire push body under 500 characters, including the action first line when there is one. A push with no action has no first line (nate, 2026-11-22: "just elide it"). Cut detail that does not help the user understand or act.
+Keep the entire push body under 500 characters. Count each session and action line that appears, including the line breaks. A push with no action has no action line (nate, 2026-11-22: "just elide it"). Cut detail that does not help the user understand or act.
 
 ### Bad
 **shutdown has been stopped on a permission prompt since 01:32 EDT.** It's asking to read its own saved tool output at `~/.claude1/projects/…/tool-results/bm2daw4h8.txt`. That path is a symlink into `~/.claude/projects/…`, and Claude Code treats the target as outside the unit's allowed directories. Any unit on claude 1 that reads back a large saved output will hit the same prompt. […] To unblock it now: run `tmux attach -t shutdown` […] To stop it happening again: I recommend adding `Read(~/.claude/projects/**/tool-results/**)` to `permissions.allow` […]
